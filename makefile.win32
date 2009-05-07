@@ -1,0 +1,181 @@
+# makefile for Tsuporone's Koyomi environment
+
+CC = lcc
+LD = lcclnk
+
+TARGET1 = tamo
+TARGET2 = koyomi
+TARGET3 = moon
+TARGET4 = igrf
+
+TARGET = $(TARGET1).exe $(TARGET2).exe $(TARGET3).exe $(TARGET4).exe
+
+OBJS1 = birthday_.obj dates.obj ftime_.obj holiday_.obj tamo.obj maya_.obj \
+        qreki_.obj wareki_.obj moon_.obj tamo_solar.obj nepali.obj \
+        decodeURL.obj calendar_.obj print.obj coptic.obj tamo_igrf.obj \
+        campaign.obj
+OBJS2 = birthday2.obj dates2.obj ftime_.obj holiday2.obj koyomi.obj \
+        maya_.obj qreki2.obj wareki2.obj phase2.obj zen2han.obj getstr.obj \
+        nepali2.obj decodeURL.obj
+OBJS3 = moon2.obj decodeURL.obj
+OBJS4 = tamo_igrf2.obj
+
+BINDIR = c:\user\local\bin
+WEBDIR = d:\_drive_d\inetpub\wwwroot\cgi-bin
+
+all: $(TARGET)
+
+allclean: 
+	-del *.kpp
+	-del *.obj
+	-del $(TARGET1).exe
+	-del $(TARGET2).exe
+	-del $(TARGET3).exe
+	-del $(TARGET4).exe
+
+clean: 
+	-del *.obj
+
+install: $(TARGET1).exe $(TARGET2).exe $(TARGET3).exe
+	copy $(TARGET1).exe $(TARGET1).cgi
+	copy $(TARGET1).exe $(BINDIR)
+	copy $(TARGET1).cgi $(WEBDIR)
+	copy $(TARGET2).exe $(BINDIR)
+	copy $(TARGET3).exe $(BINDIR)
+
+$(TARGET1): $(TARGET1).exe
+
+$(TARGET2): $(TARGET2).exe
+
+$(TARGET3): $(TARGET3).exe
+
+$(TARGET4): $(TARGET4).exe
+
+$(TARGET1).exe: $(OBJS1)
+	$(LD) -o $(TARGET1).exe $(OBJS1)
+
+$(TARGET2).exe: $(OBJS2)
+	$(LD) -o $(TARGET2).exe $(OBJS2)
+
+$(TARGET3).exe: $(OBJS3)
+	$(LD) -o $(TARGET3).exe $(OBJS3)
+
+$(TARGET4).exe: $(OBJS4)
+	$(LD) -o $(TARGET4).exe $(OBJS4)
+
+tamo_igrf.obj: tamo_igrf.c
+	$(CC) -DTAMO -c -O tamo_igrf.c
+
+tamo_igrf2.obj: tamo_igrf.c
+	$(CC) -DTEST -c -O tamo_igrf.c -Fotamo_igrf2.obj
+
+birthday_.obj: flower.c
+	kpp flower.c
+	ren flower.kpp birthday_.c
+	$(CC) -c -O birthday_.c
+	del birthday_.c
+
+birthday2.obj: birthday.c
+	kpp birthday.c
+	ren birthday.kpp birthday_.c
+	$(CC) -c -O birthday_.c -Fobirthday2.obj
+	del birthday_.c
+
+moon_.obj: tamo_moon.c
+	kpp tamo_moon.c
+	ren tamo_moon.kpp moon_.c
+	$(CC) -c -O moon_.c
+	del moon_.c
+
+moon2.obj: moon.c
+	kpp moon.c
+	ren moon.kpp moon_.c
+	$(CC) -c -O moon_.c -Fomoon2.obj
+	del moon_.c
+
+decodeURL.obj: decodeURL.c
+	$(CC) -c -O decodeURL.c
+
+ftime_.obj: ftime.c
+	kpp ftime.c
+	ren ftime.kpp ftime_.c
+	$(CC) -c -O ftime_.c
+	del ftime_.c
+
+dates.obj: dates.c
+	$(CC) -DTAMO -c -O dates.c
+
+dates2.obj: dates.c
+	$(CC) -c -O dates.c -Fodates2.obj
+
+holiday_.obj: tamo_func.c
+	kpp tamo_func.c
+	ren tamo_func.kpp holiday_.c
+	$(CC) -c -O holiday_.c
+	del holiday_.c
+
+holiday2.obj: holiday.c
+	kpp holiday.c
+	ren holiday.kpp holiday_.c
+	$(CC) -c -O holiday_.c -Foholiday2.obj
+	del holiday_.c
+
+tamo.obj: tamo.c
+	$(CC) -c -O tamo.c
+
+koyomi.obj: koyomi.c
+	$(CC) -c -O koyomi.c
+
+maya_.obj: maya.c
+	kpp maya.c
+	ren maya.kpp maya_.c
+	$(CC) -c -O maya_.c
+	del maya_.c
+
+qreki_.obj: tamo_qreki.c
+	kpp tamo_qreki.c
+	ren tamo_qreki.kpp qreki_.c
+	$(CC) -DMSDOS -c -O qreki_.c
+	del qreki_.c
+
+qreki2.obj: qreki.c
+	kpp qreki.c
+	ren qreki.kpp qreki_.c
+	$(CC) -DMSDOS -c -O qreki_.c -Foqreki2.obj
+	del qreki_.c
+
+wareki_.obj: tamo_wareki.c
+	kpp tamo_wareki.c
+	ren tamo_wareki.kpp wareki_.c
+	$(CC) -c -O wareki_.c
+	del wareki_.c
+
+wareki2.obj: wareki.c
+	kpp wareki.c
+	ren wareki.kpp wareki_.c
+	$(CC) -c -O wareki_.c -Fowareki2.obj
+	del wareki_.c
+
+nepali.obj: nepali.c
+	$(CC) -DTAMO -c -O nepali.c
+
+nepali2.obj: nepali.c
+	$(CC) -c -O nepali.c  -Fonepali2.obj
+
+coptic.obj: coptic.c
+	$(CC) -c -O coptic.c
+
+tamo_solar.obj: tamo_solar.c
+	$(CC) -c -O tamo_solar.c
+
+calendar_.obj: calendar.c
+	kpp calendar.c
+	ren calendar.kpp calendar_.c
+	$(CC) -c -O calendar_.c
+	del calendar_.c
+
+print.obj: print.c
+	$(CC) -DTAMO -c -O print.c
+
+campaign.obj: campaign.c
+	$(CC) -c -O campaign.c

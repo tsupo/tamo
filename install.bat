@@ -1,0 +1,11 @@
+copy tamo.exe tamo.cgi
+copy tamo.exe c:\user\local\bin
+copy tamo.cgi c:\inetpub\wwwroot\cgi-bin
+copy tbl\week.tbl c:\user\local\lib\koyomi\tbl
+copy tbl\week.tbl c:\inetpub\wwwroot\cgi-bin\tbl
+copy tbl\flower.tbl c:\user\local\lib\koyomi\tbl
+copy tbl\flower.tbl c:\inetpub\wwwroot\cgi-bin\tbl
+copy tbl\tithi.txt c:\user\local\lib\koyomi\tbl
+copy tbl\tithi.txt c:\inetpub\wwwroot\cgi-bin\tbl
+copy tbl\qdate.csv c:\user\local\lib\koyomi\tbl
+copy tbl\qdate.csv c:\inetpub\wwwroot\cgi-bin\tbl

@@ -1,0 +1,245 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 17, 1\r\n"
+    "#pragma code_page(932)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\koyomi32.rc2""  // Microsoft Visual C++ 以外のツールで編集されたリソース\r\n"
+    "#include ""l.jpn\\afxres.rc""          // 標準のコンポーネント\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\koyomi32.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "koyomi32のバージョン情報"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "koyomi32 Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2000,2003  by H. Tsujimura",IDC_STATIC,40,
+                    25,122,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    LTEXT           "mailto: tsupo@na.rim.or.jp",IDC_STATIC,88,40,73,8
+END
+
+IDD_KOYOMI32_DIALOG DIALOGEX 0, 0, 313, 355
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "今日は何の日?"
+FONT 9, "ＭＳ ゴシック"
+BEGIN
+    DEFPUSHBUTTON   "終了",IDOK,273,35,33,14
+    CONTROL         "MonthCalendar1",IDC_MONTHCALENDAR1,"SysMonthCal32",
+                    WS_TABSTOP,7,7,120,104
+    EDITTEXT        IDC_TODAY_INFO,7,113,299,235,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "ヘルプ",IDC_BUTTON_HELP,273,7,33,14
+    PUSHBUTTON      "版数",IDC_BUTTON_VERSION,273,21,33,14
+    PUSHBUTTON      "前年",IDC_BUTTON_PREV,129,7,33,14
+    PUSHBUTTON      "翌年",IDC_BUTTON_NEXT,163,7,33,14
+    PUSHBUTTON      "10年前",IDC_BUTTON_PREV2,129,21,33,14
+    PUSHBUTTON      "10年先",IDC_BUTTON_NEXT2,163,21,33,14
+    PUSHBUTTON      "100年前",IDC_BUTTON_PREV3,129,35,33,14
+    PUSHBUTTON      "100年先",IDC_BUTTON_NEXT3,163,35,33,14
+    PUSHBUTTON      "6時間前",IDC_BUTTON_PREV_6H,200,35,33,14
+    PUSHBUTTON      "6時間後",IDC_BUTTON_NEXT_6H,234,35,33,14
+    PUSHBUTTON      "1時間前",IDC_BUTTON_PREV_1H,200,21,33,14
+    PUSHBUTTON      "1時間後",IDC_BUTTON_NEXT_1H,234,21,33,14
+    PUSHBUTTON      "30分前",IDC_BUTTON_PREV_30min,200,7,33,14
+    PUSHBUTTON      "30分後",IDC_BUTTON_NEXT_30min,234,7,33,14
+    GROUPBOX        "表示したい年月日時分秒を指定",IDC_SPECIFY,163,57,143,51
+    EDITTEXT        IDC_YEAR,167,69,30,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MONTH,211,69,18,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_DAY,241,69,18,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_HOUR,179,90,18,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_MINUTE,211,90,18,13,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_SECOND,241,90,18,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "年",IDC_STATIC,199,73,9,10
+    LTEXT           "月",IDC_STATIC,231,73,9,10
+    LTEXT           "日",IDC_STATIC,261,73,9,10
+    LTEXT           "時",IDC_STATIC,199,94,9,10
+    LTEXT           "分",IDC_STATIC,231,94,9,10
+    LTEXT           "秒",IDC_STATIC,261,94,9,10
+    PUSHBUTTON      "移動",IDC_JUMP,273,76,27,19
+    PUSHBUTTON      "<<",IDC_BUTTON_PREVMONTH,131,61,13,14
+    PUSHBUTTON      ">>",IDC_BUTTON_NEXTMONTH,147,61,13,14
+    PUSHBUTTON      "<",IDC_BUTTON_PREVDAY,131,77,13,14
+    PUSHBUTTON      ">",IDC_BUTTON_NEXTDAY,147,77,13,14
+    PUSHBUTTON      "今日",IDC_BUTTON_TODAY,135,94,21,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "koyomi32 MFC ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "koyomi32\0"
+            VALUE "LegalCopyright", "Copyright (C) 2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "koyomi32.EXE\0"
+            VALUE "ProductName", "koyomi32 ｱﾌﾟﾘｹｰｼｮﾝ\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_KOYOMI32_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 348
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "koyomi32 のバージョン情報(&A)..."
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE 17, 1
+#pragma code_page(932)
+#endif //_WIN32
+#include "res\koyomi32.rc2"  // Microsoft Visual C++ 以外のツールで編集されたリソース
+#include "l.jpn\afxres.rc"          // 標準のコンポーネント
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
