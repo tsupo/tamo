@@ -13,7 +13,7 @@ TARGET = $(TARGET1).exe $(TARGET2).exe $(TARGET3).exe $(TARGET4).exe
 OBJS1 = birthday_.obj dates.obj ftime_.obj holiday_.obj tamo.obj maya_.obj \
         qreki_.obj wareki_.obj moon_.obj tamo_solar.obj nepali.obj \
         decodeURL.obj calendar_.obj print.obj coptic.obj tamo_igrf.obj \
-        campaign.obj
+        campaign.obj bmt.o
 OBJS2 = birthday2.obj dates2.obj ftime_.obj holiday2.obj koyomi.obj \
         maya_.obj qreki2.obj wareki2.obj phase2.obj zen2han.obj getstr.obj \
         nepali2.obj decodeURL.obj
@@ -179,3 +179,6 @@ print.obj: print.c
 
 campaign.obj: campaign.c
 	$(CC) -c -O campaign.c
+
+bmt.o: bmt.c
+	$(CC) -c bmt.c

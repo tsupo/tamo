@@ -13,7 +13,7 @@ TARGET = $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4)
 OBJS1 = birthday.o dates.o ftime.o holiday.o tamo.o maya.o \
         qreki.o wareki.o moon.o tamo_solar.o nepali.o \
         decodeURL.o calendar.o print.o coptic.o tamo_igrf.o \
-        campaign.o
+        campaign.o bmt.o
 OBJS2 = birthday2.o dates2.o ftime.o holiday2.o koyomi.o \
         maya.o qreki2.o wareki2.o phase2.o zen2han.o getstr.o \
         nepali2.o decodeURL.o strcmpi.o
@@ -134,6 +134,9 @@ campaign.o: campaign.c
 
 phase2.o: phase2.c
 	$(CC) -DUNIX -DSYSV -c phase2.c
+
+bmt.o: bmt.c
+	$(CC) -c bmt.c
 
 strcmpi.o: strcmpi.c
 	$(CC) -c strcmpi.c
