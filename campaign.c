@@ -9,22 +9,22 @@
  * History :
  * $Log: campaign.c $
  * Revision 1.7  2007/10/18  12:17:08  tsujimura543
- * u‰Æ‘°‚ÌTŠÔv‚É‘Î‰
+ * ã€Œå®¶æ—ã®é€±é–“ã€ã«å¯¾å¿œ
  *
  * Revision 1.6  2003/11/11  07:07:10  tsujimura543
- * ’·‚¢s‚ğ’Z‚­‚µ‚½
+ * é•·ã„è¡Œã‚’çŸ­ãã—ãŸ
  *
  * Revision 1.5  2003/11/11  07:02:19  tsujimura543
- * K&R •\‹L ¨ ANSI C •\‹L ‚ÉŠ®‘SˆÚs
+ * K&R è¡¨è¨˜ â†’ ANSI C è¡¨è¨˜ ã«å®Œå…¨ç§»è¡Œ
  *
  * Revision 1.4  2003/05/30  07:48:18  tsujimura543
- * 12Œ•ª‚Ü‚Å‚ÌƒLƒƒƒ“ƒy[ƒ“‚ğ‘S‚Ä”½‰f (2003”NŒ»İ)
+ * 12æœˆåˆ†ã¾ã§ã®ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ã‚’å…¨ã¦åæ˜  (2003å¹´ç¾åœ¨)
  *
  * Revision 1.3  2003/05/28  10:58:54  tsujimura543
- * –ˆ”NŠúŠÔ‚ª•Ï“®‚·‚éƒLƒƒƒ“ƒy[ƒ“‚Ì‘Î‰”‚ğ‘‚â‚·@(1Œ•ª‚©‚ç5Œ•ª)
+ * æ¯å¹´æœŸé–“ãŒå¤‰å‹•ã™ã‚‹ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ã®å¯¾å¿œæ•°ã‚’å¢—ã‚„ã™ã€€(1æœˆåˆ†ã‹ã‚‰5æœˆåˆ†)
  *
  * Revision 1.2  2003/05/27  12:18:07  tsujimura543
- * ŠÅŒìTŠÔ‚É‘Î‰
+ * çœ‹è­·é€±é–“ã«å¯¾å¿œ
  *
  * Revision 1.1  2003/05/06  09:33:19  tsujimura543
  * Initial revision
@@ -36,13 +36,13 @@
 #include <string.h>
 #include "tamo.h"
 
-#ifndef	lint
+#ifndef    lint
 static char	*rcs_id =
     "$Header: C:/user/local/src/tamo/RCS/campaign.c 1.7 2007/10/18 12:17:08 tsujimura543 Exp tsujimura543 $";
 #endif
 
 
-/* ƒf[ƒ^ƒtƒ@ƒCƒ‹–¼ */
+/* ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«å */
 static char *campaignTblFile  = "tbl/week.tbl";
 
 void
@@ -69,15 +69,15 @@ printCampaign( char *p, int d1, int m1, int d2, int m2 )
         return;
 
     if ( count == 0 ) {
-        printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+        printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
     }
 
-    printf( "  %s (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n", p, m1, d1, m2, d2 );
+    printf( "  %s (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n", p, m1, d1, m2, d2 );
     count++;
 }
 
 
-/* –ˆ”NAŠJn“úEI—¹“ú‚ª•Ï“®‚·‚éƒLƒƒƒ“ƒy[ƒ“‚Ì•\¦ */
+/* æ¯å¹´ã€é–‹å§‹æ—¥ãƒ»çµ‚äº†æ—¥ãŒå¤‰å‹•ã™ã‚‹ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ã®è¡¨ç¤º */
 void
 printCampaign2( long *flag, long g, int dd, int mm, int yy )
 {
@@ -94,17 +94,17 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
             end = start + 6;
             if ( (dd >= start) && (dd <= end) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ƒAƒŒƒ‹ƒM[TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ã‚¢ãƒ¬ãƒ«ã‚®ãƒ¼é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, start, mm, end );
-                            /* ƒAƒŒƒ‹ƒM[‚Ì“ú(2Œ20“ú)‚ğŠÜ‚ŞT‚Ì3“ú‘O‚©‚ç‚Ì */
-                            /* 1TŠÔ(2Œ17“ú`23“ú)                         */
-                            /* ‚½‚¾‚µA—áŠO“I‚ÉA2Œ16“ú‚©‚ç‚Ì1TŠÔ‚É‚È‚é‚± */
-                            /* ‚Æ‚à‚ ‚é(—á: 2004”N)                         */
-                            /* Œú¶˜J“­È‚Ìus–EƒCƒxƒ“ƒgv‚Ì Webƒy[ƒW‚Å */
-                            /* –ˆ”NAƒAƒŒƒ‹ƒM[TŠÔ‚ªÀÛ‚Í‚¢‚Â‚©‚ç‚¢‚Â‚Ü‚Å */
-                            /* ‚É‚È‚é‚Ì‚©Œf¦‚³‚ê‚éB                       */
+                            /* ã‚¢ãƒ¬ãƒ«ã‚®ãƒ¼ã®æ—¥(2æœˆ20æ—¥)ã‚’å«ã‚€é€±ã®3æ—¥å‰ã‹ã‚‰ã® */
+                            /* 1é€±é–“(2æœˆ17æ—¥ï½23æ—¥)                         */
+                            /* ãŸã ã—ã€ä¾‹å¤–çš„ã«ã€2æœˆ16æ—¥ã‹ã‚‰ã®1é€±é–“ã«ãªã‚‹ã“ */
+                            /* ã¨ã‚‚ã‚ã‚‹(ä¾‹: 2004å¹´)                         */
+                            /* åšç”ŸåŠ´åƒçœã®ã€Œè¡Œäº‹ãƒ»ã‚¤ãƒ™ãƒ³ãƒˆã€ã® Webãƒšãƒ¼ã‚¸ã§ */
+                            /* æ¯å¹´ã€ã‚¢ãƒ¬ãƒ«ã‚®ãƒ¼é€±é–“ãŒå®Ÿéš›ã¯ã„ã¤ã‹ã‚‰ã„ã¤ã¾ã§ */
+                            /* ã«ãªã‚‹ã®ã‹æ²ç¤ºã•ã‚Œã‚‹ã€‚                       */
                 (*flag)++;
             }
         }
@@ -121,13 +121,13 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
             end = start + 6;
             if ( (dd >= start) && (dd <= end) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  %s‚ÌTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
-                        start == 1 ? "—Î" : "‚İ‚Ç‚è",
+                printf( "  %sã®é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
+                        start == 1 ? "ç·‘" : "ã¿ã©ã‚Š",
                         mm, start, mm, end );
-                            /* ‚İ‚Ç‚è‚Ì“ú(4Œ29“ú)§’è‚É”º‚¢A4Œ23“ú` */
-                            /* 4Œ29“ú‚É•ÏX                            */
+                            /* ã¿ã©ã‚Šã®æ—¥(4æœˆ29æ—¥)åˆ¶å®šã«ä¼´ã„ã€4æœˆ23æ—¥ï½ */
+                            /* 4æœˆ29æ—¥ã«å¤‰æ›´                            */
                 (*flag)++;
             }
         }
@@ -140,10 +140,10 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 k = 2;
             if ( k > 0 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  %s (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
-                        k == 1 ? "•wlTŠÔ" : "—«TŠÔ",
+                printf( "  %s (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
+                        k == 1 ? "å©¦äººé€±é–“" : "å¥³æ€§é€±é–“",
                         mm, 10, mm, 16 );
                 (*flag)++;
             }
@@ -156,15 +156,15 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
             g2 = g1 + 6;
             if ( (g >= g1) && (g <= g2) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 m2 = m1;
                 d2 = d1 + 6;
-                printf( "  ‰ÈŠw‹ZpTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ç§‘å­¦æŠ€è¡“é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         m1, d1, m2, d2 );
-                          /* ”­–¾‚Ì“ú(4Œ18“ú)‚ğŠÜ‚ŞT‚ÌŒ—j‚©‚ç—‚T‚Ì“ú—j */
-                          /* ‚Ü‚Å                                          */
+                          /* ç™ºæ˜ã®æ—¥(4æœˆ18æ—¥)ã‚’å«ã‚€é€±ã®æœˆæ›œã‹ã‚‰ç¿Œé€±ã®æ—¥æ›œ */
+                          /* ã¾ã§                                          */
                 (*flag)++;
             }
         }
@@ -172,24 +172,24 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         if ( yy >= 2000 ) {
             if ( dd >= 23 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‚±‚Ç‚à‚Ì“Ç‘TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ã“ã©ã‚‚ã®èª­æ›¸é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 23, mm + 1, 12 );
                 (*flag)++;
             }
         }
     }
 
-    g1 = springStartDay( yy ) + 87 - 3;  /* ”ª\”ª–é‚Ì3“ú‘O */
+    g1 = springStartDay( yy ) + 87 - 3;  /* å…«åå…«å¤œã®3æ—¥å‰ */
     g2 = g1 + 6;
     if ( (g >= g1) && (g <= g2) ) {
         if ( *flag == 0 )
-            printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+            printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
         gregorianFromAbsolute( g1, &d1, &m1, &yyy );
         gregorianFromAbsolute( g2, &d2, &m2, &yyy );
-        printf( "  —Î’ƒTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+        printf( "  ç·‘èŒ¶é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                 m1, d1, m2, d2 );
         (*flag)++;
     }
@@ -206,16 +206,16 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
             g2 = g1 + 6;
             if ( (g >= g1) && (g <= g2) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 m2 = m1;
                 d2 = d1 + 6;
-                printf( "  ŠÅŒìTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  çœ‹è­·é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         m1, d1, m2, d2 );
-                            /* ŠÅŒì‚Ì“ú(5Œ12“ú)‚ğŠÜ‚ŞT‚Ì“ú—j‚©‚ç“y—j‚Ü‚Å  */
-                            /* ‚½‚¾‚µA—áŠO“I‚ÉA5Œ12“ú‚ğŠÜ‚ŞT‚ÌŒ—j‚©‚ç  */
-                            /* —‚T‚Ì“ú—j‚Ü‚ÅA‚É‚È‚é‚±‚Æ‚à‚ ‚é(—á: 2000”N) */
+                            /* çœ‹è­·ã®æ—¥(5æœˆ12æ—¥)ã‚’å«ã‚€é€±ã®æ—¥æ›œã‹ã‚‰åœŸæ›œã¾ã§  */
+                            /* ãŸã ã—ã€ä¾‹å¤–çš„ã«ã€5æœˆ12æ—¥ã‚’å«ã‚€é€±ã®æœˆæ›œã‹ã‚‰  */
+                            /* ç¿Œé€±ã®æ—¥æ›œã¾ã§ã€ã«ãªã‚‹ã“ã¨ã‚‚ã‚ã‚‹(ä¾‹: 2000å¹´) */
                 (*flag)++;
             }
         }
@@ -223,9 +223,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         if ( (yy >= 1967) && (yy <= 1999) ) {
             if ( dd <= 14 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‚±‚Ç‚à‚Ì“Ç‘TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ã“ã©ã‚‚ã®èª­æ›¸é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 1, mm, 14 );
                 (*flag)++;
             }
@@ -233,9 +233,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         else if ( yy >= 2000 ) {
             if ( dd <= 12 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‚±‚Ç‚à‚Ì“Ç‘TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ã“ã©ã‚‚ã®èª­æ›¸é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm - 1, 23, mm, 12 );
                 (*flag)++;
             }
@@ -244,9 +244,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         if ( yy >= 1995 ) {
             if ( dd >= 15 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  î•ñ’ÊMŒŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  æƒ…å ±é€šä¿¡æœˆé–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 15, mm + 1, 15 );
                 (*flag)++;
             }
@@ -255,20 +255,20 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         if ( dd >= 25 ) {
             if ( (yy >= 1972) && (yy <= 1999) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ©—RE“Æ—§‚¨‚æ‚ÑlŒ ‚Ì‚½‚ß‚É“¬‚¤“ìƒAƒtƒŠƒJ‚¨‚æ‚Ñ"
-                        "‚·‚×‚Ä‚Ì‘¼‚ÌA–¯’nl–¯‚Æ‚Ì˜A‘ÑTŠÔ "
-                        "(%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  è‡ªç”±ãƒ»ç‹¬ç«‹ãŠã‚ˆã³äººæ¨©ã®ãŸã‚ã«é—˜ã†å—ã‚¢ãƒ•ãƒªã‚«ãŠã‚ˆã³"
+                        "ã™ã¹ã¦ã®ä»–ã®æ¤æ°‘åœ°äººæ°‘ã¨ã®é€£å¸¯é€±é–“ "
+                        "(%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 25, mm, 31 );
                 (*flag)++;
             }
             else if ( yy >= 2000 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ”ñ©¡’nˆæl–¯‚Æ‚Ì˜A‘ÑTŠÔ "
-                        "(%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  éè‡ªæ²»åœ°åŸŸäººæ°‘ã¨ã®é€£å¸¯é€±é–“ "
+                        "(%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 25, mm, 31 );
                 (*flag)++;
             }
@@ -281,9 +281,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ŠÌ‘ŸTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  è‚è‡“é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -297,9 +297,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  t‚Ìs­‘Š’kTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  æ˜¥ã®è¡Œæ”¿ç›¸è«‡é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -310,17 +310,17 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
         if ( dd <= 15 ) {
             if ( (yy >= 1985) && (yy <= 1994) ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ƒeƒŒƒRƒ€{ŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ãƒ†ãƒ¬ã‚³ãƒ æ—¬é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 1, mm, 15 );
                 (*flag)++;
             }
             else if ( yy >= 1995 ) {
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  î•ñ’ÊMŒŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  æƒ…å ±é€šä¿¡æœˆé–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm - 1, 15, mm, 15 );
                 (*flag)++;
             }
@@ -328,27 +328,27 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
 
         if ( yy >= 1999 ) {
             if ( *flag == 0 )
-                printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-            printf( "  ŠCŠOˆÀ‘SƒLƒƒƒ“ƒy[ƒ“ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+            printf( "  æµ·å¤–å®‰å…¨ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                     mm, 1,
                     yy >= 2002 ? mm + 1 : mm,
                     yy >= 2002 ? 31     : 30  );
-            /* 1999”N‚æ‚è‘O‚Í11Œ‚ÉuŠCŠOˆÀ‘STŠÔv(1993”N`) ‚Æ‚µ‚ÄÀ{ */
+            /* 1999å¹´ã‚ˆã‚Šå‰ã¯11æœˆã«ã€Œæµ·å¤–å®‰å…¨é€±é–“ã€(1993å¹´ï½) ã¨ã—ã¦å®Ÿæ–½ */
             (*flag)++;
         }
 
         if ( (yy >= 1949) && (dd >= 4) && (dd <= 10) ) {
             if ( *flag == 0 )
-                printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
             if ( (yy <= 1952) || (yy == 1956) || (yy == 1957) )
-                printf( "  Œûo‰q¶TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  å£è…”è¡›ç”Ÿé€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 4, mm, 10 );
             else if ( yy <= 1955 )
-                printf( "  Œûo‰q¶‹­’²‰^“® (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  å£è…”è¡›ç”Ÿå¼·èª¿é‹å‹• (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 4, mm, 10 );
             else /* if ( yy >= 1958 ) */
-                printf( "  •‚Ì‰q¶TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  æ­¯ã®è¡›ç”Ÿé€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, 4, mm, 10 );
             (*flag)++;
         }
@@ -360,9 +360,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ŠëŒ¯•¨ˆÀ‘STŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  å±é™ºç‰©å®‰å…¨é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -376,10 +376,10 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ƒnƒ“ƒZƒ“•a‚ğ³‚µ‚­—‰ğ‚·‚éTŠÔ "
-                        "(%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ãƒãƒ³ã‚»ãƒ³ç—…ã‚’æ­£ã—ãç†è§£ã™ã‚‹é€±é–“ "
+                        "(%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -389,9 +389,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
     if ( mm == JULY ) {
         if ( yy >= 2002 ) {
             if ( *flag == 0 )
-                printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-            printf( "  ŠCŠOˆÀ‘SƒLƒƒƒ“ƒy[ƒ“ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+            printf( "  æµ·å¤–å®‰å…¨ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                     mm - 1, 1, mm, 31 );
             (*flag)++;
         }
@@ -405,10 +405,10 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  %sTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
-                        yy <= 1976 ? "H’†“Å—\–h" : "H•i‰q¶",
+                printf( "  %sé€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
+                        yy <= 1976 ? "é£Ÿä¸­æ¯’äºˆé˜²" : "é£Ÿå“è¡›ç”Ÿ",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -424,9 +424,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‹~‹}ˆã—ÃTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  æ•‘æ€¥åŒ»ç™‚é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -440,9 +440,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ˜Vl•ŸƒTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  è€äººç¦ç¥‰é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -456,9 +456,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
             gregorianFromAbsolute( g1, &d1, &m1, &yyy );
             d2 = d1 + 6;
             if ( *flag == 0 )
-                printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-            printf( "  ŒÃ†ƒŠƒTƒCƒNƒ‹TŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+            printf( "  å¤ç´™ãƒªã‚µã‚¤ã‚¯ãƒ«é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                     mm, d1, mm, d2 );
             (*flag)++;
         }
@@ -471,9 +471,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  H‚Ìs­‘Š’kTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  ç§‹ã®è¡Œæ”¿ç›¸è«‡é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -488,9 +488,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‘S‘“œ”A•aTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  å…¨å›½ç³–å°¿ç—…é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -504,9 +504,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 6;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ˆã—ÃˆÀ‘S„iTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  åŒ»ç™‚å®‰å…¨æ¨é€²é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -520,9 +520,9 @@ printCampaign2( long *flag, long g, int dd, int mm, int yy )
                 gregorianFromAbsolute( g1, &d1, &m1, &yyy );
                 d2 = d1 + 13;
                 if ( *flag == 0 )
-                    printf( "\nƒLƒƒƒ“ƒy[ƒ“\n" );
+                    printf( "\nã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³\n" );
 
-                printf( "  ‰Æ‘°‚ÌTŠÔ (%dŒ%d“ú‚©‚ç%dŒ%d“ú‚Ü‚Å)\n",
+                printf( "  å®¶æ—ã®é€±é–“ (%dæœˆ%dæ—¥ã‹ã‚‰%dæœˆ%dæ—¥ã¾ã§)\n",
                         mm, d1, mm, d2 );
                 (*flag)++;
             }
@@ -606,13 +606,13 @@ campaign( long g, int dd, int mm, int yy )
 
 
 /*
- *  Šeíî•ñ•”o—Í
+ *  å„ç¨®æƒ…å ±éƒ¨å‡ºåŠ›
  */
 
 void
 tamo_campaign( int yy, int mm, int dd, long g, int htmlMode )
 {
-    /* ƒLƒƒƒ“ƒy[ƒ“o—Í */
+    /* ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³å‡ºåŠ› */
     if ( htmlMode == OFF )
         campaign( g, dd, mm, yy );
 }
