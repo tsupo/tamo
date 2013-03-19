@@ -1,4 +1,4 @@
-// koyomi32Dlg.cpp : �C���v�������e�[�V���� �t�@�C��
+// koyomi32Dlg.cpp : インプリメンテーション ファイル
 //
 
 #include "stdafx.h"
@@ -14,7 +14,7 @@ static char THIS_FILE[] = __FILE__;
 
 //////////////////////////////////////////////////////////////
 /////////////////
-// �A�v���P�[�V�����̃o�[�W��������\������_�C�A���O
+// アプリケーションのバージョン情報を表示するダイアログ
 
 //##ModelId=3ED5BCC50274
 class CAboutDlg : public CDialog
@@ -23,19 +23,19 @@ public:
 	//##ModelId=3ED5BCC5029F
 	CAboutDlg();
 
-// �_�C�A���O �f�[�^
+// ダイアログ データ
 	//{{AFX_DATA(CAboutDlg)
 	enum { IDD = IDD_ABOUTBOX };
 	//}}AFX_DATA
 
-	// ClassWizard �͉��z�֐��̃I�[�o�[���C�h�𐶐����܂�
+	// ClassWizard は仮想関数のオーバーライドを生成します
 	//{{AFX_VIRTUAL(CAboutDlg)
 	protected:
 	//##ModelId=3ED5BCC502CE
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV �̃T�|�[�g
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV のサポート
 	//}}AFX_VIRTUAL
 
-// �C���v�������e�[�V����
+// インプリメンテーション
 protected:
 	//{{AFX_MSG(CAboutDlg)
 	//}}AFX_MSG
@@ -59,12 +59,12 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 	//{{AFX_MSG_MAP(CAboutDlg)
-		// ���b�Z�[�W �n���h��������܂���B
+		// メッセージ ハンドラがありません。
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CKoyomi32Dlg �_�C�A���O
+// CKoyomi32Dlg ダイアログ
 
 //##ModelId=3ED5BCC403AB
 CKoyomi32Dlg::CKoyomi32Dlg(CWnd* pParent /*=NULL*/)
@@ -81,7 +81,7 @@ CKoyomi32Dlg::CKoyomi32Dlg(CWnd* pParent /*=NULL*/)
 	m_iminute = 0;
 	m_isecond = 0;
 	//}}AFX_DATA_INIT
-	// ����: LoadIcon �� Win32 �� DestroyIcon �̃T�u�V�[�P���X��v�����܂���B
+	// メモ: LoadIcon は Win32 の DestroyIcon のサブシーケンスを要求しません。
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
@@ -153,16 +153,16 @@ BEGIN_MESSAGE_MAP(CKoyomi32Dlg, CDialog)
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
-// CKoyomi32Dlg ���b�Z�[�W �n���h��
+// CKoyomi32Dlg メッセージ ハンドラ
 
 //##ModelId=3ED5BCC500CB
 BOOL CKoyomi32Dlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// "�o�[�W�������..." ���j���[���ڂ��V�X�e�� ���j���[�֒ǉ����܂��B
+	// "バージョン情報..." メニュー項目をシステム メニューへ追加します。
 
-	// IDM_ABOUTBOX �̓R�}���h ���j���[�͈̔͂łȂ���΂Ȃ�܂���B
+	// IDM_ABOUTBOX はコマンド メニューの範囲でなければなりません。
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -178,26 +178,26 @@ BOOL CKoyomi32Dlg::OnInitDialog()
 		}
 	}
 
-	// ���̃_�C�A���O�p�̃A�C�R����ݒ肵�܂��B�t���[�����[�N�̓A�v���P�[�V�����̃��C��
-	// �E�B���h�E���_�C�A���O�łȂ����͎����I�ɐݒ肵�܂���B
-	SetIcon(m_hIcon, TRUE);			// �傫���A�C�R����ݒ�
-	SetIcon(m_hIcon, FALSE);		// �������A�C�R����ݒ�
+	// このダイアログ用のアイコンを設定します。フレームワークはアプリケーションのメイン
+	// ウィンドウがダイアログでない時は自動的に設定しません。
+	SetIcon(m_hIcon, TRUE);			// 大きいアイコンを設定
+	SetIcon(m_hIcon, FALSE);		// 小さいアイコンを設定
 	
-	// TODO: ���ʂȏ��������s�����͂��̏ꏊ�ɒǉ����Ă��������B
-    wday[0] = "��";
-    wday[1] = "��";
-    wday[2] = "��";
-    wday[3] = "��";
-    wday[4] = "��";
-    wday[5] = "��";
-    wday[6] = "�y";
+	// TODO: 特別な初期化を行う時はこの場所に追加してください。
+    wday[0] = "日";
+    wday[1] = "月";
+    wday[2] = "火";
+    wday[3] = "水";
+    wday[4] = "木";
+    wday[5] = "金";
+    wday[6] = "土";
     bMonthCalAvailable = TRUE;
-    PrintKoyomiMessage();           // �N�����̓��t�� koyomi ���b�Z�[�W��\��
+    PrintKoyomiMessage();           // 起動時の日付の koyomi メッセージを表示
 
-	return TRUE;  // TRUE ��Ԃ��ƃR���g���[���ɐݒ肵���t�H�[�J�X�͎����܂���B
+	return TRUE;  // TRUE を返すとコントロールに設定したフォーカスは失われません。
 }
 
-// koyomi.exe / tamo.exe ���N�����A�\�����郁�b�Z�[�W���擾����
+// koyomi.exe / tamo.exe を起動し、表示するメッセージを取得する
 //##ModelId=3ED5BCC403C8
 BOOL    CKoyomi32Dlg::PrintKoyomiMessage(SYSTEMTIME *pSystemTime)
 {
@@ -247,7 +247,7 @@ BOOL    CKoyomi32Dlg::PrintKoyomiMessage(SYSTEMTIME *pSystemTime)
         long    base = baseTime.AbsoluteFromJulian();
 
         if ( jd < base ) {
-            // �O���S���I����ȑO
+            // グレゴリオ暦導入以前
             newTime.GregorianFromAbsolute( jd );
             yy = newTime.GetYear();
             mm = newTime.GetMonth();
@@ -257,7 +257,7 @@ BOOL    CKoyomi32Dlg::PrintKoyomiMessage(SYSTEMTIME *pSystemTime)
             baseTime.SetDateTime( 1752, 9, 1, 0, 0, 0 );
             base = baseTime.AbsoluteFromJulian();
             if ( jd < base ) {
-                // CMonthCalCtrl �̓K�p�͈͊O
+                // CMonthCalCtrl の適用範囲外
                 DisableMonthCalCtrl();
             }
         }
@@ -281,15 +281,19 @@ BOOL    CKoyomi32Dlg::PrintKoyomiMessage(SYSTEMTIME *pSystemTime)
         wDayOfWeek = (jd % 7);
     }
     else {
+        CKoyomiDateTime newTime( yy, mm, dd, HH, MM, SS );
+        long    jd = newTime.AbsoluteFromGregorian();
+        wDayOfWeek = (jd % 7);
+
         EnableMonthCalCtrl();
     }
     wYy = m_targetTime.GetYear();
     wMm = m_targetTime.GetMonth();
     wDd = m_targetTime.GetDay();
 
-    sprintf( todayStr, "%4d/%02d/%02d(%s) %02d:%02d:%02d [%s��]",
+    sprintf( todayStr, "%4d/%02d/%02d(%s) %02d:%02d:%02d [%s暦]",
              wYy, wMm, wDd, wday[wDayOfWeek], HH, MM, SS,
-             bJulian == TRUE ? "�����E�X" : "�O���S���I" );
+             bJulian == TRUE ? "ユリウス" : "グレゴリオ" );
 
     {
         char    cmd[1024];
@@ -350,8 +354,8 @@ BOOL CKoyomi32Dlg::GetCurSel( void )
 
     ret = m_monthcal.GetCurSel(m_targetTime);
     if ( m_targetTime.GetYear() < 0 ) {
-        // �Ȃ��� COleDateTime ���ƁA���܂� GetCurSel() �ł��Ȃ����Ƃ����邽�߁ACTime �� GetCurSel() ������
-        // �������ACTime ���g���ꍇ�A�N�����̗L���͈͂� time_t �Ɠ��l 1970�N1��1��9��0��0�b(���{����) �` 2038�N1��18�� �ƂȂ�
+        // なぜか COleDateTime だと、うまく GetCurSel() できないことがあるため、CTime で GetCurSel() し直す
+        // ただし、CTime を使う場合、年月日の有効範囲は time_t と同様 1970年1月1日9時0分0秒(日本時間) ～ 2038年1月18日 となる
         try {
             CTime       m_targetTime2;
             SYSTEMTIME  sysTime;
@@ -364,11 +368,11 @@ BOOL CKoyomi32Dlg::GetCurSel( void )
             sysTime.wSecond = m_targetTime2.GetSecond();
             m_targetTime    = sysTime;
         }
-        catch (...) {   // ��O�����������ꍇ
+        catch (...) {   // 例外が発生した場合
 #if 1
-            m_targetTime = m_previousTime;                  // ���O�̔N�����ɖ߂�
+            m_targetTime = m_previousTime;                  // 直前の年月日に戻す
 #else
-            m_targetTime = COleDateTime::GetCurrentTime();  // �����I�Ɍ��ݎ����ɖ߂�
+            m_targetTime = COleDateTime::GetCurrentTime();  // 強制的に現在時刻に戻す
 #endif
             ret = FALSE;
         }
@@ -413,20 +417,20 @@ void CKoyomi32Dlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// �����_�C�A���O�{�b�N�X�ɍŏ����{�^����ǉ�����Ȃ�΁A�A�C�R����`�悷��
-// �R�[�h���ȉ��ɋL�q����K�v������܂��BMFC �A�v���P�[�V������ document/view
-// ���f�����g���Ă���̂ŁA���̏����̓t���[�����[�N�ɂ�莩���I�ɏ�������܂��B
+// もしダイアログボックスに最小化ボタンを追加するならば、アイコンを描画する
+// コードを以下に記述する必要があります。MFC アプリケーションは document/view
+// モデルを使っているので、この処理はフレームワークにより自動的に処理されます。
 
 //##ModelId=3ED5BCC500FA
 void CKoyomi32Dlg::OnPaint() 
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // �`��p�̃f�o�C�X �R���e�L�X�g
+		CPaintDC dc(this); // 描画用のデバイス コンテキスト
 
 		SendMessage(WM_ICONERASEBKGND, (WPARAM) dc.GetSafeHdc(), 0);
 
-		// �N���C�A���g�̋�`�̈���̒���
+		// クライアントの矩形領域内の中央
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -434,7 +438,7 @@ void CKoyomi32Dlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// �A�C�R����`�悵�܂��B
+		// アイコンを描画します。
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -443,8 +447,8 @@ void CKoyomi32Dlg::OnPaint()
 	}
 }
 
-// �V�X�e���́A���[�U�[���ŏ����E�B���h�E���h���b�O���Ă���ԁA
-// �J�[�\����\�����邽�߂ɂ������Ăяo���܂��B
+// システムは、ユーザーが最小化ウィンドウをドラッグしている間、
+// カーソルを表示するためにここを呼び出します。
 //##ModelId=3ED5BCC50109
 HCURSOR CKoyomi32Dlg::OnQueryDragIcon()
 {
@@ -454,7 +458,7 @@ HCURSOR CKoyomi32Dlg::OnQueryDragIcon()
 //##ModelId=3ED5BCC50119
 void CKoyomi32Dlg::OnButtonVersion() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
 	CAboutDlg dlgAbout;
 	dlgAbout.DoModal();
 }
@@ -463,7 +467,7 @@ void CKoyomi32Dlg::OnButtonVersion()
 //##ModelId=3ED5BCC50128
 void CKoyomi32Dlg::OnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult) 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     NMDAYSTATE* pDayState= (NMDAYSTATE *)pNMHDR;
 	*pResult = 0;
 
@@ -476,9 +480,9 @@ void CKoyomi32Dlg::OnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
     pDayState->stStart.wHour      = m_targetTime.GetHour();
     pDayState->stStart.wMinute    = m_targetTime.GetMinute();
     pDayState->stStart.wSecond    = m_targetTime.GetSecond();
-    pDayState->stStart.wDayOfWeek = m_targetTime.GetDayOfWeek() - 1;
-        // SYSTEMTIME   �� wDayOfWeek     �� ���j=0�A���j=1�A...�A�y�j=6
-        // COleDateTime �� GetDayOfWeek() �� ���j=1�A���j=2�A...�A�y�j=7
+ // pDayState->stStart.wDayOfWeek = m_targetTime.GetDayOfWeek() - 1;
+        // SYSTEMTIME   の wDayOfWeek     は 日曜=0、月曜=1、...、土曜=6
+        // COleDateTime の GetDayOfWeek() は 日曜=1、月曜=2、...、土曜=7
 
     PrintKoyomiMessage( &(pDayState->stStart) );
     RedrawEditBoxes();
@@ -488,11 +492,11 @@ void CKoyomi32Dlg::OnSelectMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
 //##ModelId=3ED5BCC50138
 void CKoyomi32Dlg::OnButtonPrev() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() <= 1 )
         return;
 
-	// 1�N�O�ɖ߂�
+	// 1年前に戻る
     CKoyomiDateTime newTime( m_targetTime.GetYear() - 1,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -516,11 +520,11 @@ void CKoyomi32Dlg::OnButtonPrev()
 //##ModelId=3ED5BCC50148
 void CKoyomi32Dlg::OnButtonNext() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() >= 9999 )
         return;
 
-	// 1�N��ɐi��
+	// 1年後に進む
     CKoyomiDateTime newTime( m_targetTime.GetYear() + 1,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -544,11 +548,11 @@ void CKoyomi32Dlg::OnButtonNext()
 //##ModelId=3ED5BCC50157
 void CKoyomi32Dlg::OnButtonPrev2() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() <= 10 )
         return;
 
-    // 10�N�O�ɖ߂�
+    // 10年前に戻る
     CKoyomiDateTime newTime( m_targetTime.GetYear() - 10,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -572,11 +576,11 @@ void CKoyomi32Dlg::OnButtonPrev2()
 //##ModelId=3ED5BCC50167
 void CKoyomi32Dlg::OnButtonNext2() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() >= 9990 )
         return;
 
-	// 10�N��ɐi��
+	// 10年後に進む
     CKoyomiDateTime newTime( m_targetTime.GetYear() + 10,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -600,11 +604,11 @@ void CKoyomi32Dlg::OnButtonNext2()
 //##ModelId=3ED5BCC501C5
 void CKoyomi32Dlg::OnButtonPrev3() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() <= 100 )
         return;
 
-    // 100�N�O�ɖ߂�
+    // 100年前に戻る
     CKoyomiDateTime newTime( m_targetTime.GetYear() - 100,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -628,11 +632,11 @@ void CKoyomi32Dlg::OnButtonPrev3()
 //##ModelId=3ED5BCC501C7
 void CKoyomi32Dlg::OnButtonNext3() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( m_targetTime.GetYear() >= 9900 )
         return;
 
-    // 100�N��ɐi��
+    // 100年後に進む
     CKoyomiDateTime newTime( m_targetTime.GetYear() + 100,
                              m_targetTime.GetMonth(),
                              (m_targetTime.GetMonth() !=  2) ||
@@ -656,14 +660,14 @@ void CKoyomi32Dlg::OnButtonNext3()
 //##ModelId=3ED5BCC50177
 void CKoyomi32Dlg::OnButtonPrev6h() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 1) &&
          (m_targetTime.GetMonth() == 1) &&
          (m_targetTime.GetDay()   == 1) &&
          (m_targetTime.GetHour()  <  6)    )
         return;
 
-	// 6���ԑO�ɖ߂�
+	// 6時間前に戻る
     COleDateTimeSpan    diff( 0, 6, 0, 0 );
     m_targetTime -= diff;
 
@@ -679,14 +683,14 @@ void CKoyomi32Dlg::OnButtonPrev6h()
 //##ModelId=3ED5BCC50179
 void CKoyomi32Dlg::OnButtonNext6h() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 9999) &&
          (m_targetTime.GetMonth() ==   12) &&
          (m_targetTime.GetDay()   ==   31) &&
          (m_targetTime.GetHour()  >=   18)    )
         return;
 
-	// 6���Ԍ�ɐi��
+	// 6時間後に進む
     COleDateTimeSpan    diff( 0, 6, 0, 0 );
     m_targetTime += diff;
 
@@ -702,14 +706,14 @@ void CKoyomi32Dlg::OnButtonNext6h()
 //##ModelId=3ED5BCC50187
 void CKoyomi32Dlg::OnButtonPrev1h() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 1) &&
          (m_targetTime.GetMonth() == 1) &&
          (m_targetTime.GetDay()   == 1) &&
          (m_targetTime.GetHour()  <  1)    )
         return;
 
-	// 1���ԑO�ɖ߂�
+	// 1時間前に戻る
     COleDateTimeSpan    diff( 0, 1, 0, 0 );
     m_targetTime -= diff;
 
@@ -725,14 +729,14 @@ void CKoyomi32Dlg::OnButtonPrev1h()
 //##ModelId=3ED5BCC50196
 void CKoyomi32Dlg::OnButtonNext1h() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 9999) &&
          (m_targetTime.GetMonth() ==   12) &&
          (m_targetTime.GetDay()   ==   31) &&
          (m_targetTime.GetHour()  >=   23)    )
         return;
 
-	// 1���Ԍ�ɐi��
+	// 1時間後に進む
     COleDateTimeSpan    diff( 0, 1, 0, 0 );
     m_targetTime += diff;
 
@@ -748,7 +752,7 @@ void CKoyomi32Dlg::OnButtonNext1h()
 //##ModelId=3ED5BCC50198
 void CKoyomi32Dlg::OnBUTTONPREV30min() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()   ==  1) &&
          (m_targetTime.GetMonth()  ==  1) &&
          (m_targetTime.GetDay()    ==  1) &&
@@ -756,7 +760,7 @@ void CKoyomi32Dlg::OnBUTTONPREV30min()
          (m_targetTime.GetMinute() <  30)    )
         return;
 
-	// 30���O�ɖ߂�
+	// 30分前に戻る
     COleDateTimeSpan    diff( 0, 0, 30, 0 );
     m_targetTime -= diff;
 
@@ -772,7 +776,7 @@ void CKoyomi32Dlg::OnBUTTONPREV30min()
 //##ModelId=3ED5BCC501A6
 void CKoyomi32Dlg::OnBUTTONNEXT30min() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()   == 9999) &&
          (m_targetTime.GetMonth()  ==   12) &&
          (m_targetTime.GetDay()    ==   31) &&
@@ -780,7 +784,7 @@ void CKoyomi32Dlg::OnBUTTONNEXT30min()
          (m_targetTime.GetMinute() >=   30)    )
         return;
 
-	// 30����ɐi��
+	// 30分後に進む
     COleDateTimeSpan    diff( 0, 0, 30, 0 );
     m_targetTime += diff;
 
@@ -796,7 +800,7 @@ void CKoyomi32Dlg::OnBUTTONNEXT30min()
 //##ModelId=3ED5BCC501B5
 void CKoyomi32Dlg::OnSelchangeMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult) 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     NMDAYSTATE* pDayState = (NMDAYSTATE *)pNMHDR;
 	*pResult = 0;
 
@@ -824,9 +828,9 @@ void CKoyomi32Dlg::OnSelchangeMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
     pDayState->stStart.wSecond    = m_targetTime.GetSecond();
 
     GetCurSel();
-    pDayState->stStart.wDayOfWeek = m_targetTime.GetDayOfWeek() - 1;
-        // SYSTEMTIME   �� wDayOfWeek     �� ���j=0�A���j=1�A...�A�y�j=6
-        // COleDateTime �� GetDayOfWeek() �� ���j=1�A���j=2�A...�A�y�j=7
+ // pDayState->stStart.wDayOfWeek = m_targetTime.GetDayOfWeek() - 1;
+        // SYSTEMTIME   の wDayOfWeek     は 日曜=0、月曜=1、...、土曜=6
+        // COleDateTime の GetDayOfWeek() は 日曜=1、月曜=2、...、土曜=7
 
     PrintKoyomiMessage( &(pDayState->stStart) );
     RedrawEditBoxes();
@@ -835,9 +839,9 @@ void CKoyomi32Dlg::OnSelchangeMonthcalendar1(NMHDR* pNMHDR, LRESULT* pResult)
 //##ModelId=3ED5BCC501E4
 void CKoyomi32Dlg::OnOK() 
 {
-	// TODO: ���̈ʒu�ɂ��̑��̌��ؗp�̃R�[�h��ǉ����Ă�������
-    // m_iyear, m_imonth, ..., m_isecond �ɔ͈͊O�̒l�������Ă���ƁA�u�I���v�{�^����
-    // �����Ă��I���ł��Ȃ����߁A�����I�� m_targetTime �̓��e��ݒ肵�Ă���A�I������
+	// TODO: この位置にその他の検証用のコードを追加してください
+    // m_iyear, m_imonth, ..., m_isecond に範囲外の値が入っていると、「終了」ボタンを
+    // 押しても終了できないため、強制的に m_targetTime の内容を設定してから、終了する
     RedrawEditBoxes();
 
 	CDialog::OnOK();
@@ -846,8 +850,8 @@ void CKoyomi32Dlg::OnOK()
 //##ModelId=3ED5BCC501E6
 void CKoyomi32Dlg::OnJump() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
-    // �w��N���������b�ֈړ�
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
+    // 指定年月日時分秒へ移動
  /* COleDateTime */ CKoyomiDateTime
                    newTime( m_iyear,
                             m_imonth,
@@ -870,12 +874,12 @@ void CKoyomi32Dlg::OnJump()
 //##ModelId=3ED5BCC501D4
 void CKoyomi32Dlg::OnChangeYear() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curYear = m_iyear;
     m_iyear = GetDlgItemInt( IDC_YEAR );
     if ( (m_iyear < 0) || (m_iyear > 9999 ) ) {
@@ -887,12 +891,12 @@ void CKoyomi32Dlg::OnChangeYear()
 //##ModelId=3ED5BCC501F4
 void CKoyomi32Dlg::OnChangeMonth() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curMonth = m_imonth;
     m_imonth = GetDlgItemInt( IDC_MONTH );
     if ( (m_imonth < 0) || (m_imonth > 99 ) ) {
@@ -904,12 +908,12 @@ void CKoyomi32Dlg::OnChangeMonth()
 //##ModelId=3ED5BCC501F6
 void CKoyomi32Dlg::OnChangeDay() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curDay = m_iday;
     m_iday = GetDlgItemInt( IDC_DAY );
     if ( (m_iday < 0) || (m_iday > 99 ) ) {
@@ -921,12 +925,12 @@ void CKoyomi32Dlg::OnChangeDay()
 //##ModelId=3ED5BCC501F8
 void CKoyomi32Dlg::OnChangeHour() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curHour = m_ihour;
     m_ihour = GetDlgItemInt( IDC_HOUR );
     if ( (m_ihour < 0) || (m_ihour > 99 ) ) {
@@ -938,12 +942,12 @@ void CKoyomi32Dlg::OnChangeHour()
 //##ModelId=3ED5BCC50204
 void CKoyomi32Dlg::OnChangeMinute() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curMinute = m_iminute;
     m_iminute = GetDlgItemInt( IDC_MINUTE );
     if ( (m_iminute < 0) || (m_iminute > 99 ) ) {
@@ -955,12 +959,12 @@ void CKoyomi32Dlg::OnChangeMinute()
 //##ModelId=3ED5BCC50206
 void CKoyomi32Dlg::OnChangeSecond() 
 {
-	// TODO: ���ꂪ RICHEDIT �R���g���[���̏ꍇ�A�R���g���[���́A lParam �}�X�N
-	// ���ł̘_���a�� ENM_CHANGE �t���O�t���� CRichEditCrtl().SetEventMask()
-	// ���b�Z�[�W���R���g���[���֑��邽�߂� CDialog::OnInitDialog() �֐����I�[�o�[
-	// ���C�h���Ȃ����肱�̒ʒm�𑗂�܂���B
+	// TODO: これが RICHEDIT コントロールの場合、コントロールは、 lParam マスク
+	// 内での論理和の ENM_CHANGE フラグ付きで CRichEditCrtl().SetEventMask()
+	// メッセージをコントロールへ送るために CDialog::OnInitDialog() 関数をオーバー
+	// ライドしない限りこの通知を送りません。
 	
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     int curSecond = m_isecond;
     m_isecond = GetDlgItemInt( IDC_SECOND );
     if ( (m_isecond < 0) || (m_isecond > 99 ) ) {
@@ -972,7 +976,7 @@ void CKoyomi32Dlg::OnChangeSecond()
 //##ModelId=3ED5BCC50216
 void CKoyomi32Dlg::OnKillfocusYear() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_iyear = GetDlgItemInt( IDC_YEAR );
     if ( (m_iyear <= 0) || (m_iyear > 9999 ) ) {
         m_iyear = m_targetTime.GetYear();
@@ -983,7 +987,7 @@ void CKoyomi32Dlg::OnKillfocusYear()
 //##ModelId=3ED5BCC50214
 void CKoyomi32Dlg::OnKillfocusMonth() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_imonth = GetDlgItemInt( IDC_MONTH );
     if ( (m_imonth <= 0) || (m_imonth > 12 ) ) {
         m_imonth = m_targetTime.GetMonth();
@@ -994,7 +998,7 @@ void CKoyomi32Dlg::OnKillfocusMonth()
 //##ModelId=3ED5BCC50222
 void CKoyomi32Dlg::OnKillfocusDay() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_iday = GetDlgItemInt( IDC_DAY );
     if ( (m_iday <= 0) || (m_iday > 31 ) ) {
         m_iday = m_targetTime.GetDay();
@@ -1005,7 +1009,7 @@ void CKoyomi32Dlg::OnKillfocusDay()
 //##ModelId=3ED5BCC50224
 void CKoyomi32Dlg::OnKillfocusHour() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_ihour = GetDlgItemInt( IDC_HOUR );
     if ( (m_ihour < 0) || (m_ihour > 24 ) ) {
         m_ihour = m_targetTime.GetHour();
@@ -1016,7 +1020,7 @@ void CKoyomi32Dlg::OnKillfocusHour()
 //##ModelId=3ED5BCC50226
 void CKoyomi32Dlg::OnKillfocusMinute() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_iminute = GetDlgItemInt( IDC_MINUTE );
     if ( (m_iminute < 0) || (m_iminute > 59 ) ) {
         m_iminute = m_targetTime.GetMinute();
@@ -1027,7 +1031,7 @@ void CKoyomi32Dlg::OnKillfocusMinute()
 //##ModelId=3ED5BCC50233
 void CKoyomi32Dlg::OnKillfocusSecond() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     m_isecond = GetDlgItemInt( IDC_SECOND );
     if ( (m_isecond < 0) || (m_isecond > 59 ) ) {
         m_isecond = m_targetTime.GetSecond();
@@ -1041,12 +1045,12 @@ void CKoyomi32Dlg::OnKillfocusSecond()
 //##ModelId=3ED5BCC50235
 void CKoyomi32Dlg::OnButtonPrevMonth() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 1) &&
          (m_targetTime.GetMonth() <= 1)    )
         return;
 
-	// 1���O�ɖ߂�
+	// 1月前に戻る
     int yy, mm, dd;
     yy = m_targetTime.GetYear();
     mm = m_targetTime.GetMonth();
@@ -1094,12 +1098,12 @@ void CKoyomi32Dlg::OnButtonPrevMonth()
 //##ModelId=3ED5BCC50242
 void CKoyomi32Dlg::OnButtonNextMonth() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 9999) &&
          (m_targetTime.GetMonth() >=   12)    )
         return;
 
-	// 1����ɐi��
+	// 1月後に進む
     int yy, mm, dd;
     yy = m_targetTime.GetYear();
     mm = m_targetTime.GetMonth();
@@ -1147,13 +1151,13 @@ void CKoyomi32Dlg::OnButtonNextMonth()
 //##ModelId=3ED5BCC50244
 void CKoyomi32Dlg::OnButtonPrevDay() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 1) &&
          (m_targetTime.GetMonth() == 1) &&
          (m_targetTime.GetDay()   <= 1)    )
         return;
 
-	// 1���O�ɖ߂�
+	// 1日前に戻る
     COleDateTimeSpan    diff( 1, 0, 0, 0 );
     m_targetTime -= diff;
 
@@ -1169,13 +1173,13 @@ void CKoyomi32Dlg::OnButtonPrevDay()
 //##ModelId=3ED5BCC50246
 void CKoyomi32Dlg::OnButtonNextDay() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
     if ( (m_targetTime.GetYear()  == 9999) &&
          (m_targetTime.GetMonth() == 9999) &&
          (m_targetTime.GetDay()   >=   12)    )
         return;
 
-	// 1����ɐi��
+	// 1日後に進む
     COleDateTimeSpan    diff( 1, 0, 0, 0 );
     m_targetTime += diff;
 
@@ -1191,8 +1195,8 @@ void CKoyomi32Dlg::OnButtonNextDay()
 //##ModelId=3ED5BCC50252
 void CKoyomi32Dlg::OnButtonToday() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
-	// �����ɖ߂�
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
+	// 今日に戻る
     m_targetTime = COleDateTime::GetCurrentTime();
 
     m_monthcal.SetCurSel(m_targetTime);
@@ -1207,6 +1211,6 @@ void CKoyomi32Dlg::OnButtonToday()
 //##ModelId=3ED5BCC50254
 void CKoyomi32Dlg::OnButtonHelp() 
 {
-	// TODO: ���̈ʒu�ɃR���g���[���ʒm�n���h���p�̃R�[�h��ǉ����Ă�������
-	MessageBox( "���݁A�s�Ӎ쐬���ł��B", "�w���v", MB_ICONINFORMATION | MB_OK );
+	// TODO: この位置にコントロール通知ハンドラ用のコードを追加してください
+	MessageBox( "現在、鋭意作成中です。", "ヘルプ", MB_ICONINFORMATION | MB_OK );
 }
