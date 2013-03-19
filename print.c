@@ -2,118 +2,127 @@
  *  print.c
  *          by H.Tsujimura  tsupo@na.rim.or.jp
  *                      7 March 2003
- *  Copyright (c) 2003, 2004, 2005, 2006, 2007  Hiroshi Tsujimura
+ *  Copyright (c) 2003, 2004, 2005, 2006, 2007, 2012  Hiroshi Tsujimura
  *  All Rights Reserved.
  *
  * History :
  * $Log: print.c $
+ * Revision 1.38  2012/10/12  10:49:56  tsujimura543
+ * printBahaiCalendar() ã‚’ä¿®æ­£
+ *
+ * Revision 1.37  2012/10/12  10:37:07  tsujimura543
+ * ãƒãƒã‚¤æš¦ã«å¯¾å¿œ
+ *
+ * Revision 1.36  2012/10/12  09:04:38  tsujimura543
+ * ãƒšãƒ«ã‚·ãƒ£æš¦ã«å¯¾å¿œã—ãŸ
+ *
  * Revision 1.35  2007/02/14  08:48:53  tsujimura543
- * •W€o—Í‚ğƒŠƒ_ƒCƒŒƒNƒg‚µ‚Ä‚¢‚éê‡A‚©‚Â”ñhtmlƒ‚[ƒh‚Ì‚Æ‚«A
- * 1s–Ú‚Éƒ^ƒCƒgƒ‹‘Š“–‚Ì•¶š—ñ(‰½”N‰½Œ‰½“ú‚Ì—ï)‚ğ‘}“ü‚·‚é‚æ‚¤
- * ‚É‚µ‚½
+ * æ¨™æº–å‡ºåŠ›ã‚’ãƒªãƒ€ã‚¤ãƒ¬ã‚¯ãƒˆã—ã¦ã„ã‚‹å ´åˆã€ã‹ã¤éhtmlãƒ¢ãƒ¼ãƒ‰ã®ã¨ãã€
+ * 1è¡Œç›®ã«ã‚¿ã‚¤ãƒˆãƒ«ç›¸å½“ã®æ–‡å­—åˆ—(ä½•å¹´ä½•æœˆä½•æ—¥ã®æš¦)ã‚’æŒ¿å…¥ã™ã‚‹ã‚ˆã†
+ * ã«ã—ãŸ
  *
  * Revision 1.34  2007/02/06  10:56:12  tsujimura543
- * copyright •\‹L‚ğƒAƒbƒvƒf[ƒg
+ * copyright è¡¨è¨˜ã‚’ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ
  *
  * Revision 1.33  2006/05/29  05:12:32  tsujimura543
- * ƒCƒ“ƒ^[ƒlƒbƒgŠÔ‘Î‰
+ * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“å¯¾å¿œ
  *
  * Revision 1.32  2005/05/13  13:11:56  tsujimura543
- * RSS ƒAƒCƒRƒ“‚ğ•\¦‚·‚é‚æ‚¤‚É‚µ‚½
+ * RSS ã‚¢ã‚¤ã‚³ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.31  2004/10/25  00:36:40  tsujimura543
- * hi-ho ‚Ì URL ‚ğ•ÏX
+ * hi-ho ã® URL ã‚’å¤‰æ›´
  *
  * Revision 1.30  2004/03/22  12:53:48  tsujimura543
- * PHPŒ¤‹†Š‚Ìu¡“ú‚Í‰½‚Ì“úv‚ğ’Ç‰Á
+ * PHPç ”ç©¶æ‰€ã®ã€Œä»Šæ—¥ã¯ä½•ã®æ—¥ã€ã‚’è¿½åŠ 
  *
  * Revision 1.29  2003/11/11  09:11:42  tsujimura543
- * ƒ†ƒŠƒEƒX—ïAƒCƒXƒ‰ƒ€—ïAƒ†ƒ_ƒ„—ï‚Ì•\¦‚ğÅ“K‰»
+ * ãƒ¦ãƒªã‚¦ã‚¹æš¦ã€ã‚¤ã‚¹ãƒ©ãƒ æš¦ã€ãƒ¦ãƒ€ãƒ¤æš¦ã®è¡¨ç¤ºã‚’æœ€é©åŒ–
  *
  * Revision 1.28  2003/11/11  07:02:19  tsujimura543
- * K&R •\‹L ¨ ANSI C •\‹L ‚ÉŠ®‘SˆÚs
+ * K&R è¡¨è¨˜ â†’ ANSI C è¡¨è¨˜ ã«å®Œå…¨ç§»è¡Œ
  *
  * Revision 1.27  2003/10/30  08:13:54  tsujimura543
- * Another HTML-lint ‚Å•]‰¿‚ª100“_‚É‚È‚é‚æ‚¤‚ÉC³
+ * Another HTML-lint ã§è©•ä¾¡ãŒ100ç‚¹ã«ãªã‚‹ã‚ˆã†ã«ä¿®æ­£
  *
  * Revision 1.26  2003/10/24  01:35:04  tsujimura543
- * Solaris9 ã‚ÅƒRƒ“ƒpƒCƒ‹A“®ìŠm”F
+ * Solaris9 ä¸Šã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã€å‹•ä½œç¢ºèª
  *
  * Revision 1.25  2003/06/05  11:08:21  tsujimura543
- * ƒCƒ“ƒh‘¾‰A—ïAƒlƒp[ƒ‹‘¾‰A—ï‚Ì‘Î‰ŠJn”NŒ“ú‚Ì”»’èğŒŒë‚è‚ğC³
+ * ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦ã€ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ã®å¯¾å¿œé–‹å§‹å¹´æœˆæ—¥ã®åˆ¤å®šæ¡ä»¶èª¤ã‚Šã‚’ä¿®æ­£
  *
  * Revision 1.24  2003/06/05  10:58:46  tsujimura543
- * ƒlƒp[ƒ‹‘¾‰A—ïAƒCƒ“ƒh‘¾—z—ï‚Ì•\¦ŠúŠÔ‚ğ‰ß‹•ûŒü‚ÉŠg’£(1970”N‚Ü‚Å‘ks)
+ * ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ã€ã‚¤ãƒ³ãƒ‰å¤ªé™½æš¦ã®è¡¨ç¤ºæœŸé–“ã‚’éå»æ–¹å‘ã«æ‹¡å¼µ(1970å¹´ã¾ã§é¡è¡Œ)
  *
  * Revision 1.23  2003/05/30  10:46:40  tsujimura543
- * ƒlƒp[ƒ‹‚Ìs–AjÕ“ú‚Ì•\¦‚ğˆê•”‘Î‰
+ * ãƒãƒ‘ãƒ¼ãƒ«ã®è¡Œäº‹ã€ç¥ç¥­æ—¥ã®è¡¨ç¤ºã‚’ä¸€éƒ¨å¯¾å¿œ
  *
  * Revision 1.22  2003/05/30  09:55:37  tsujimura543
- * ƒlƒp[ƒ‹‘¾‰A—ïAƒCƒ“ƒh‘¾—z—ï‚Ì•\¦ŠúŠÔ‚ğŠg’£ (tithi.txt ‚ÌŠg’£‚É”º‚¤)
+ * ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ã€ã‚¤ãƒ³ãƒ‰å¤ªé™½æš¦ã®è¡¨ç¤ºæœŸé–“ã‚’æ‹¡å¼µ (tithi.txt ã®æ‹¡å¼µã«ä¼´ã†)
  *
  * Revision 1.21  2003/05/26  07:47:50  tsujimura543
- * ƒCƒ“ƒh‘–¯—ï(‘‰Æ—ï)‘Î‰Aƒlƒp[ƒ‹‘¾‰A—ïC³
+ * ã‚¤ãƒ³ãƒ‰å›½æ°‘æš¦(å›½å®¶æš¦)å¯¾å¿œã€ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ä¿®æ­£
  *
  * Revision 1.20  2003/05/23  07:07:31  tsujimura543
- * ŠÖ˜AƒŠƒ“ƒN‚ğ2Œ’Ç‰Á
+ * é–¢é€£ãƒªãƒ³ã‚¯ã‚’2ä»¶è¿½åŠ 
  *
  * Revision 1.19  2003/05/20  05:55:50  tsujimura543
- * ƒtƒ‰ƒ“ƒXŠv–½—ï‚ğ“±“üŒã‚·‚×‚Ä‚ÌŠúŠÔ‚É‚í‚½‚Á‚Ä•\¦‰Â”\‚Æ‚µ‚½
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã‚’å°å…¥å¾Œã™ã¹ã¦ã®æœŸé–“ã«ã‚ãŸã£ã¦è¡¨ç¤ºå¯èƒ½ã¨ã—ãŸ
  *
  * Revision 1.18  2003/04/25  11:22:40  tsujimura543
- * HTMLƒ‚[ƒh‚Ì•\¦‚ğáŠ±•ÏX
+ * HTMLãƒ¢ãƒ¼ãƒ‰æ™‚ã®è¡¨ç¤ºã‚’è‹¥å¹²å¤‰æ›´
  *
  * Revision 1.17  2003/04/25  02:08:39  tsujimura543
- * ŠÖ˜AƒŠƒ“ƒN‚ğ1Œ’Ç‰Á
+ * é–¢é€£ãƒªãƒ³ã‚¯ã‚’1ä»¶è¿½åŠ 
  *
  * Revision 1.16  2003/04/24  09:46:25  tsujimura543
- * ŠÖ˜AƒŠƒ“ƒN‚Ì•\¦‚ğáŠ±•ÏX
+ * é–¢é€£ãƒªãƒ³ã‚¯ã®è¡¨ç¤ºã‚’è‹¥å¹²å¤‰æ›´
  *
  * Revision 1.15  2003/04/24  04:29:28  tsujimura543
- * ŠÖ˜AƒŠƒ“ƒN‚ğ•\¦‚·‚é‚æ‚¤‚É‚µ‚½(htmlƒ‚[ƒh)
+ * é–¢é€£ãƒªãƒ³ã‚¯ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ(htmlãƒ¢ãƒ¼ãƒ‰æ™‚)
  *
  * Revision 1.14  2003/04/23  11:09:07  tsujimura543
- * “ü”~A”¼‰Ä¶A“y—p‚Ì•\¦‚ğ‘¾—z—ï‚Ì•û‚ÖˆÚ‚·
- * (¡‰ñ‚ÌC³‚Å•K—v‚È‚­‚È‚Á‚½ŠÖ”‚ğíœ)
+ * å…¥æ¢…ã€åŠå¤ç”Ÿã€åœŸç”¨ã®è¡¨ç¤ºã‚’å¤ªé™½æš¦ã®æ–¹ã¸ç§»ã™
+ * (ä»Šå›ã®ä¿®æ­£ã§å¿…è¦ãªããªã£ãŸé–¢æ•°ã‚’å‰Šé™¤)
  *
  * Revision 1.13  2003/04/16  05:56:37  tsujimura543
- * ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ğˆê’è‚Ì‹K‘¥‚É‚µ‚½‚ª‚Á‚Ä’Tõ‚µƒI[ƒvƒ“‚·‚é‚æ‚¤‚É‚µ‚½
+ * ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸€å®šã®è¦å‰‡ã«ã—ãŸãŒã£ã¦æ¢ç´¢ã—ã‚ªãƒ¼ãƒ—ãƒ³ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.12  2003/04/11  10:58:56  tsujimura543
- * (1) ƒCƒ“ƒh‘¾‰A—ï•\¦‚ÌŒ–¼‚É‰½”Ô–Ú‚ÌŒ‚©‚ğ•¹‹L‚·‚é‚æ‚¤‚É‚µ‚½
- * (2) ƒlƒp[ƒ‹‘¾‰A—ï•\¦‚ğ’Ç‰Á (b’è)
+ * (1) ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦è¡¨ç¤ºã®æœˆåã«ä½•ç•ªç›®ã®æœˆã‹ã‚’ä½µè¨˜ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
+ * (2) ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦è¡¨ç¤ºã‚’è¿½åŠ  (æš«å®š)
  *
  * Revision 1.11  2003/04/02  10:28:42  tsujimura543
- * ƒCƒXƒ‰ƒ€—ï1”N1Œ1“úˆÈ‘O‚Í•\¦‚µ‚È‚¢‚æ‚¤‚ÉC³
+ * ã‚¤ã‚¹ãƒ©ãƒ æš¦1å¹´1æœˆ1æ—¥ä»¥å‰ã¯è¡¨ç¤ºã—ãªã„ã‚ˆã†ã«ä¿®æ­£
  *
  * Revision 1.10  2003/04/02  10:20:09  tsujimura543
- * ƒGƒ`ƒIƒsƒA—ï‚ğƒTƒ|[ƒg
+ * ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦ã‚’ã‚µãƒãƒ¼ãƒˆ
  *
  * Revision 1.9  2003/03/31  11:24:31  tsujimura543
- * ˜a—ï(‘¾—z‘¾‰A—ï)ŠÖ˜A‚¨‚æ‚ÑISOŠÖ˜AC³
- * ƒtƒ‰ƒ“ƒXŠv–½—ï‚Ì•\¦‰Â”\ŠúŠÔ‚ğŠg’£
+ * å’Œæš¦(å¤ªé™½å¤ªé™°æš¦)é–¢é€£ãŠã‚ˆã³ISOé–¢é€£ä¿®æ­£
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã®è¡¨ç¤ºå¯èƒ½æœŸé–“ã‚’æ‹¡å¼µ
  *
  * Revision 1.8  2003/03/24  08:58:03  tsujimura543
- * (1) ˜a—ï(‘¾‰A‘¾—z—ï)‚Ì•\¦‰Â”\ŠúŠÔ‚ğŠg’£
- * (2) ‘å‹‚Æ“y—p‚Ì‰N‚Ì“ú‚ªd‚È‚Á‚½ê‡A•Ğ•û‚µ‚©•\¦‚³‚ê‚È‚¢•s‹ï‡‚ğC³
+ * (1) å’Œæš¦(å¤ªé™°å¤ªé™½æš¦)ã®è¡¨ç¤ºå¯èƒ½æœŸé–“ã‚’æ‹¡å¼µ
+ * (2) å¤§æš‘ã¨åœŸç”¨ã®ä¸‘ã®æ—¥ãŒé‡ãªã£ãŸå ´åˆã€ç‰‡æ–¹ã—ã‹è¡¨ç¤ºã•ã‚Œãªã„ä¸å…·åˆã‚’ä¿®æ­£
  *
  * Revision 1.7  2003/03/20  09:18:02  tsujimura543
- * Šeí—ï’‚Ì•\¦‚ğ’Ç‰Á
+ * å„ç¨®æš¦æ³¨ã®è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.6  2003/03/19  05:12:11  tsujimura543
- * tprintf() ‚ğC³
+ * tprintf() ã‚’ä¿®æ­£
  *
  * Revision 1.5  2003/03/19  04:46:08  tsujimura543
- * Š±x‚Ìo—Í•û®‚ğ‘¼‚Ì—ï‚Æ“¯‚¶‚É‚·‚é
+ * å¹²æ”¯ã®å‡ºåŠ›æ–¹å¼ã‚’ä»–ã®æš¦ã¨åŒã˜ã«ã™ã‚‹
  *
  * Revision 1.4  2003/03/19  03:05:48  tsujimura543
- * ‹Œ—ïŠÖŒW‚Ìo—Í•û–@‚ğ‘¼‚Ì—ï‚Æ“¯‚¶•û®‚É‚·‚é
+ * æ—§æš¦é–¢ä¿‚ã®å‡ºåŠ›æ–¹æ³•ã‚’ä»–ã®æš¦ã¨åŒã˜æ–¹å¼ã«ã™ã‚‹
  *
  * Revision 1.3  2003/03/18  10:20:50  tsujimura543
- * o—ÍŒ‹‰Ê‚ª‚«‚ê‚¢‚É‚È‚é‚æ‚¤‚É’²®
+ * å‡ºåŠ›çµæœãŒãã‚Œã„ã«ãªã‚‹ã‚ˆã†ã«èª¿æ•´
  *
  * Revision 1.2  2003/03/14  09:56:25  tsujimura543
- * Šˆ“®ƒƒ‚‘Î‰€”õ #3
+ * æ´»å‹•ãƒ¡ãƒ¢å¯¾å¿œæº–å‚™ #3
  *
  * Revision 1.1  2003/03/14  09:37:59  tsujimura543
  * Initial revision
@@ -122,7 +131,7 @@
 
 #ifndef lint
 static char     *rcs_id =
-    "$Header: C:/user/local/src/tamo/RCS/print.c 1.35 2007/02/14 08:48:53 tsujimura543 Exp tsujimura543 $";
+    "$Header: C:/user/local/src/tamo/RCS/print.c 1.38 2012/10/12 10:49:56 tsujimura543 Exp tsujimura543 $";
 #endif
 
 #include <stdio.h>
@@ -142,7 +151,7 @@ static char     *rcs_id =
 
 
 /*
- *  ƒwƒbƒ_•”o—Í
+ *  ãƒ˜ãƒƒãƒ€éƒ¨å‡ºåŠ›
  */
 
 void
@@ -166,7 +175,7 @@ printHeader( int yy, int mm, int dd, int htmlMode, int withHeader )
                    stdout );
             fputs( "<META name=\"keywords\" content=\"", stdout );
             fputs(
- "koyomi,today,moon phase,tithi,calendar,¡“ú‚Í‰½‚Ì“ú,—ï,“V•¶,‹Œ—ï,Œ—î\">\n",
+ "koyomi,today,moon phase,tithi,calendar,ä»Šæ—¥ã¯ä½•ã®æ—¥,æš¦,å¤©æ–‡,æ—§æš¦,æœˆé½¢\">\n",
                    stdout );
 #ifdef  RIMNET
             fputs( "<LINK REL=\"alternate\" TYPE=\"application/rss+xml\" "
@@ -188,19 +197,19 @@ printHeader( int yy, int mm, int dd, int htmlMode, int withHeader )
                    stdout );
 #endif  /* !RIMNET */
             fputs( "<TITLE>", stdout );
-            printf( "%d”N%2dŒ%2d“ú‚Ì—ï", yy, mm, dd );
+            printf( "%då¹´%2dæœˆ%2dæ—¥ã®æš¦", yy, mm, dd );
             fputs(  "</TITLE>\n</HEAD>\n\n<BODY>\n", stdout );
-            printf( "<H1>%d”N%2dŒ%2d“ú‚Ì—ï</H1>\n", yy, mm, dd );
+            printf( "<H1>%då¹´%2dæœˆ%2dæ—¥ã®æš¦</H1>\n", yy, mm, dd );
         }
     }
     else {
         if ( !isatty( fileno( stdout ) ) )
-            printf( "%04d”N%2dŒ%2d“ú‚Ì—ï\n", yy, mm, dd );
+            printf( "%04då¹´%2dæœˆ%2dæ—¥ã®æš¦\n", yy, mm, dd );
     }
 }
 
 /*
- *  ƒtƒbƒ^•”o—Í
+ *  ãƒ•ãƒƒã‚¿éƒ¨å‡ºåŠ›
  */
 
 void
@@ -214,7 +223,7 @@ printFooter( int htmlMode, int withHeader )
 
 
 /*
- *  å•¶o—Í
+ *  ä¸»æ–‡å‡ºåŠ›
  */
 
 void
@@ -224,13 +233,13 @@ printMainStatement( int yy, int mm, int dd, int HH, int MM, int SS,
     if ( htmlMode == ON )
         fputs(  "<P>\n", stdout );
     if ( printTime == ON )
-        printf( "¡“ú‚Í %d”N%2dŒ%2d“ú ‚ÅA‚Í %2d%2d•ª%2d•b ‚Å‚·\n",
+        printf( "ä»Šæ—¥ã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã€æ™‚åˆ»ã¯ %2dæ™‚%2dåˆ†%2dç§’ ã§ã™\n",
                 yy, mm, dd, HH, MM, SS );
     else
-        printf( "¡“ú‚Í %d”N%2dŒ%2d“ú ‚Å‚·\n",
+        printf( "ä»Šæ—¥ã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã™\n",
                 yy, mm, dd );
     if ( htmlMode == ON ) {
-        /* RSS •\¦ */
+        /* RSS è¡¨ç¤º */
 #ifdef  RIMNET
         fprintf( stdout, "<a href=\"%s\">",
                  "http://www.na.rim.or.jp/~tsupo/koyomi/koyomi.rdf" );
@@ -250,7 +259,7 @@ printMainStatement( int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‘S‘ÌEƒe[ƒuƒ‹ƒwƒbƒ_o—Í
+ *  å…¨ä½“ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ˜ãƒƒãƒ€å‡ºåŠ›
  */
 
 void
@@ -259,14 +268,14 @@ printTableHeader( int htmlMode )
     if ( htmlMode == ON ) {
         fputs( "<DIV ALIGN=\"CENTER\">\n", stdout );
         fputs(
-           "<TABLE BORDER=\"0\" ALIGN=\"CENTER\" SUMMARY=\"—ï\">\n<TR><TD>\n",
+           "<TABLE BORDER=\"0\" ALIGN=\"CENTER\" SUMMARY=\"æš¦\">\n<TR><TD>\n",
                stdout );
     }
 }
 
 
 /*
- *  ‘S‘ÌEƒe[ƒuƒ‹ƒtƒbƒ^o—Í
+ *  å…¨ä½“ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ•ãƒƒã‚¿å‡ºåŠ›
  */
 
 void
@@ -283,7 +292,7 @@ printTableFooter( int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‘S‘ÌEƒe[ƒuƒ‹ŠÔdØ‚è•”o—Í
+ *  å…¨ä½“ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«é–“ä»•åˆ‡ã‚Šéƒ¨å‡ºåŠ›
  */
 
 void
@@ -296,32 +305,32 @@ printTableSeparator( int htmlMode )
 
 
 /*
- *  Šeíî•ñ•”o—Í
+ *  å„ç¨®æƒ…å ±éƒ¨å‡ºåŠ›
  */
 
 void
 tamo_information( int yy, int mm, int dd, long g,
                   int htmlMode, int printTrain )
 {
-    /* Šeíî•ñ•”Eƒwƒbƒ_o—Í */
+    /* å„ç¨®æƒ…å ±éƒ¨ãƒ»ãƒ˜ãƒƒãƒ€å‡ºåŠ› */
     if ( htmlMode == ON )
         fputs( "<PRE>", stdout );
 
-    /* JR‰c‹Æî•ño—Í */
+    /* JRå–¶æ¥­æƒ…å ±å‡ºåŠ› */
     if ( printTrain == ON )
         trainService( g, dd, mm, yy );
 
-    /* ’a¶ÎA’a¶‰ÔE‰ÔŒ¾—to—Í */
+    /* èª•ç”ŸçŸ³ã€èª•ç”ŸèŠ±ãƒ»èŠ±è¨€è‘‰å‡ºåŠ› */
     flower( g, dd, mm, yy );
 
-    /* Šeíî•ñ•”Eƒtƒbƒ^o—Í */
+    /* å„ç¨®æƒ…å ±éƒ¨ãƒ»ãƒ•ãƒƒã‚¿å‡ºåŠ› */
     if ( htmlMode == ON )
         fputs( "</PRE>\n", stdout );
 }
 
 
 /*
- *  s“ª•”o—Í
+ *  è¡Œé ­éƒ¨å‡ºåŠ›
  */
 
 void
@@ -333,7 +342,7 @@ printLineHeader( int htmlMode )
 
 
 /*
- *  s––•”o—Í
+ *  è¡Œæœ«éƒ¨å‡ºåŠ›
  */
 
 void
@@ -347,20 +356,20 @@ printLineFooter( int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒe[ƒuƒ‹ƒwƒbƒ_o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ˜ãƒƒãƒ€å‡ºåŠ›
  */
 
 void
 printKoyomiTableHeader( int htmlMode )
 {
     if ( htmlMode == ON )
-        fputs( "<TABLE BORDER=\"0\" ALIGN=\"CENTER\" SUMMARY=\"Šî–{î•ñ\">\n",
+        fputs( "<TABLE BORDER=\"0\" ALIGN=\"CENTER\" SUMMARY=\"åŸºæœ¬æƒ…å ±\">\n",
                stdout );
 }
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒe[ƒuƒ‹ƒtƒbƒ^o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ•ãƒƒã‚¿å‡ºåŠ›
  */
 
 void
@@ -372,7 +381,7 @@ printKoyomiTableFooter( int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒ†ƒŠƒEƒX“úo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ¦ãƒªã‚¦ã‚¹æ—¥å‡ºåŠ›
  */
 
 void
@@ -381,30 +390,30 @@ printJulianDate( long g, int HH, int MM, int SS, int htmlMode, int printTime )
     int h;
 
     printLineHeader( htmlMode );
-    printf( "ƒ†ƒŠƒEƒX“ú%s%ld“ú",
+    printf( "ãƒ¦ãƒªã‚¦ã‚¹æ—¥%s%ldæ—¥",
             htmlMode == ON ? "</TD><TD COLSPAN=2>"
                            : "            ",
             g + 1721425L );
     if ( printTime == ON ) {
-        h = HH - 9; /* ƒ[ƒJƒ‹ŠÔ‚ª JST ‚Å‚ ‚é‚±‚Æ‚ğ‰¼’è */
+        h = HH - 9; /* ãƒ­ãƒ¼ã‚«ãƒ«æ™‚é–“ãŒ JST ã§ã‚ã‚‹ã“ã¨ã‚’ä»®å®š */
         if ( h < 0 ) {
             h += 24;
         }
-        printf( "  %02d%02d•ª%02d•b UTC", h, MM, SS );
+        printf( "  %02dæ™‚%02dåˆ†%02dç§’ UTC", h, MM, SS );
     }
     printLineFooter( htmlMode );
 }
 
 
 /*
- *  ‚±‚æ‚İ•”ETSUPOŒ`®o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»TSUPOå½¢å¼å‡ºåŠ›
  */
 
 void
 printTsupoDate( long g, int yy, int mm, int dd, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "TSUPOŒ`®%s%s",
+    printf( "TSUPOå½¢å¼%s%s",
             htmlMode == ON ? "</TD><TD>"
                            : "       ",
             tsupodate( dd, mm, yy ) );
@@ -416,7 +425,7 @@ printTsupoDate( long g, int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”EISOŒ`®o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ISOå½¢å¼å‡ºåŠ›
  */
 
 void
@@ -426,7 +435,7 @@ printIsoDate( long g, int yy, int mm, int dd, int htmlMode )
 
     printLineHeader( htmlMode );
     isoFromAbsolute( g, &a1, &a2, &a3 );
-    printf( "ISOŒ`®%s%4d”N‘æ%2dT‘æ%2d“ú",
+    printf( "ISOå½¢å¼%s%4då¹´ç¬¬%2dé€±ç¬¬%2dæ—¥",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "           ",
             a3, a1, a2 );
@@ -435,7 +444,7 @@ printIsoDate( long g, int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”EƒOƒŒƒSƒŠƒI—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦å‡ºåŠ›
  */
 
 void
@@ -444,20 +453,20 @@ printGregorianCalendar( long g, int yy, int mm, int dd, int htmlMode )
     int reset = 1;
 
     printLineHeader( htmlMode );
-    printf( "ƒOƒŒƒSƒŠƒI—ï%s%4d”N%2dŒ(%s)%2d“ú",
+    printf( "ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦%s%4då¹´%2dæœˆ(%s)%2dæ—¥",
             htmlMode == ON ? "</TD><TD>"
                            : "      ",
             yy, mm, englishMonthName(mm), dd );
     if ( htmlMode == ON )
         fputs( "</TD><TD>", stdout );
-    tprintf( htmlMode, &reset, "  %s—j“ú", weekday(g) );
+    tprintf( htmlMode, &reset, "  %sæ›œæ—¥", weekday(g) );
     checkAmerican( g, dd, mm, yy, htmlMode, &reset );
     printLineFooter( htmlMode );
 }
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒ†ƒŠƒEƒX—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ¦ãƒªã‚¦ã‚¹æš¦å‡ºåŠ›
  */
 
 void
@@ -474,7 +483,7 @@ printJulianCalendar( long g, int yy, int mm, int htmlMode )
 
     printLineHeader( htmlMode );
 
-    printf( "ƒ†ƒŠƒEƒX—ï%s%4d”N%2dŒ(%s)%2d“ú",
+    printf( "ãƒ¦ãƒªã‚¦ã‚¹æš¦%s%4då¹´%2dæœˆ(%s)%2dæ—¥",
             htmlMode == OFF ? "        " :
             checkedOut == 0 ? "</TD><TD COLSPAN=\"2\">"
                             : "</TD><TD>",
@@ -491,7 +500,7 @@ printJulianCalendar( long g, int yy, int mm, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”EƒCƒXƒ‰ƒ€—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ã‚¤ã‚¹ãƒ©ãƒ æš¦å‡ºåŠ›
  */
 
 void
@@ -502,7 +511,7 @@ printIslamicCalendar( long g, int yy, int htmlMode )
     int     checkedOut;
 
     if ( g < absoluteFromGregorian( 19, 7, 622 ) ) {
-        /* ƒCƒXƒ‰ƒ€—ï 1”N1Œ1“úˆÈ‘O‚Ìê‡ */
+        /* ã‚¤ã‚¹ãƒ©ãƒ æš¦ 1å¹´1æœˆ1æ—¥ä»¥å‰ã®å ´åˆ */
         return;
     }
 
@@ -511,7 +520,7 @@ printIslamicCalendar( long g, int yy, int htmlMode )
 
     printLineHeader( htmlMode );
 
-    printf( "ƒCƒXƒ‰ƒ€—ï%s%4d”N%2dŒ(%s)%2d“ú",
+    printf( "ã‚¤ã‚¹ãƒ©ãƒ æš¦%s%4då¹´%2dæœˆ(%s)%2dæ—¥",
             htmlMode == OFF ? "        " :
             checkedOut == 0 ? "</TD><TD COLSPAN=\"2\">"
                             : "</TD><TD>",
@@ -528,7 +537,7 @@ printIslamicCalendar( long g, int yy, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒ†ƒ_ƒ„—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ¦ãƒ€ãƒ¤æš¦å‡ºåŠ›
  */
 
 void
@@ -543,7 +552,7 @@ printHebrewCalendar( long g, int yy, int mm, int htmlMode )
 
     printLineHeader( htmlMode );
 
-    printf( "ƒ†ƒ_ƒ„—ï%s%4d”N%2dŒ(%s)%2d“ú",
+    printf( "ãƒ¦ãƒ€ãƒ¤æš¦%s%4då¹´%2dæœˆ(%s)%2dæ—¥",
             htmlMode == OFF ? "          " :
             checkedOut == 0 ? "</TD><TD COLSPAN=\"2\">"
                             : "</TD><TD>",
@@ -560,14 +569,14 @@ printHebrewCalendar( long g, int yy, int mm, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒ}ƒ„’·Šú—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒãƒ¤é•·æœŸæš¦å‡ºåŠ›
  */
 
 void
 printMayaCalendar( long g, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "ƒ}ƒ„’·Šú—ï%s%s\t%s %s",
+    printf( "ãƒãƒ¤é•·æœŸæš¦%s%s\t%s %s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "        ",
             mayaFromAbsolute( g ),
@@ -578,14 +587,14 @@ printMayaCalendar( long g, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒ}ƒ„’ZŠú—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒãƒ¤çŸ­æœŸæš¦å‡ºåŠ›
  */
 
 void
 printKatunCalendar( long g, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "ƒ}ƒ„’ZŠú—ï%s%s",
+    printf( "ãƒãƒ¤çŸ­æœŸæš¦%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "     ",
             katunFromAbsolute( g ) );
@@ -594,7 +603,7 @@ printKatunCalendar( long g, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒtƒ‰ƒ“ƒXŠv–½—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦å‡ºåŠ›
  */
 
 void
@@ -602,7 +611,7 @@ printFrenchCalendar( long g, int yy, int mm, int dd, int HH, int MM, int SS,
                      int htmlMode, int printTime )
 {
     printLineHeader( htmlMode );
-    printf( "ƒtƒ‰ƒ“ƒXŠv–½—ï%s%s",
+    printf( "ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "  ",
             fdate( g, dd, mm, yy, HH, MM, SS, printTime, htmlMode ) );
@@ -611,14 +620,14 @@ printFrenchCalendar( long g, int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‚±‚æ‚İ•”E˜a—ï(‘¾—z—ï)o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»å’Œæš¦(å¤ªé™½æš¦)å‡ºåŠ›
  */
 
 void
 printJapaneseCalendar( long g, int yy, int mm, int dd, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "˜a—ï(‘¾—z—ï)%s%s",
+    printf( "å’Œæš¦(å¤ªé™½æš¦)%s%s",
             htmlMode == ON ? "</TD><TD>" : "    ",
             wareki( dd, mm, yy, 0 ) );
     if ( htmlMode == ON )
@@ -629,7 +638,7 @@ printJapaneseCalendar( long g, int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”E˜a—ï(‘¾‰A‘¾—z—ï)o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»å’Œæš¦(å¤ªé™°å¤ªé™½æš¦)å‡ºåŠ›
  */
 
 void
@@ -645,7 +654,7 @@ printOldJapaneseCalendar( long g, int yy, int mm, int dd, int htmlMode )
         printLineHeader( htmlMode );
         a1 = dd; a2 = mm; a3 = yy;
         getLunarCalendar( &a1, &a2, &a3, &uruu );
-        printf( "%s‘¾‰A‘¾—z—ï%s%s",
+        printf( "%så¤ªé™°å¤ªé™½æš¦%s%s",
                 htmlMode == ON ? "("
                                : "     ",
                 htmlMode == ON ? ")</TD><TD>"
@@ -662,7 +671,7 @@ printOldJapaneseCalendar( long g, int yy, int mm, int dd, int htmlMode )
         printLineHeader( htmlMode );
         a1 = dd; a2 = mm; a3 = yy;
         getLunarCalendar2( &a1, &a2, &a3, &uruu );
-        printf( "%s‘¾‰A‘¾—z—ï%s%s",
+        printf( "%så¤ªé™°å¤ªé™½æš¦%s%s",
                 htmlMode == ON ? "("
                                : "     ",
                 htmlMode == ON ? ")</TD><TD>"
@@ -677,14 +686,14 @@ printOldJapaneseCalendar( long g, int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”EŠ±xo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»å¹²æ”¯å‡ºåŠ›
  */
 
 void
 printEtoCalendar( long g, int yy, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "     Š±x%s%s",
+    printf( "     å¹²æ”¯%s%s",
             htmlMode == ON ? "</TD><TD>"
                            : "       ",
             eto( g, yy, htmlMode ) );
@@ -696,27 +705,27 @@ printEtoCalendar( long g, int yy, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Ec‹Io—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»çš‡ç´€å‡ºåŠ›
  */
 
 void
 printKigenCalendar( int yy, int mm, int dd, int htmlMode )
 {
     if ( htmlMode == OFF ) {
-        printf( "     c‹I         %4d”N%2dŒ%2d“ú\n", yy + 660, mm, dd );
+        printf( "     çš‡ç´€         %4då¹´%2dæœˆ%2dæ—¥\n", yy + 660, mm, dd );
     }
 }
 
 
 /*
- *  ‚±‚æ‚İ•”E•§‹³‹IŒ³o—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ä»æ•™ç´€å…ƒå‡ºåŠ›
  */
 
 void
 printBuddhaCalendar( int yy, int mm, int dd, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "•§‹³‹IŒ³%s%4d”N%2dŒ%2d“ú",
+    printf( "ä»æ•™ç´€å…ƒ%s%4då¹´%2dæœˆ%2dæ—¥",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "          ",
             yy + 543, mm, dd );
@@ -725,7 +734,7 @@ printBuddhaCalendar( int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒlƒp[ƒ‹‘¾—z—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™½æš¦å‡ºåŠ›
  */
 
 void
@@ -741,7 +750,7 @@ printNepaliCalendar( long g, int yy, int mm, int dd, int HH, int MM, int SS,
     }
 
     printLineHeader( htmlMode );
-    printf( "ƒlƒp[ƒ‹—ï%s%s",
+    printf( "ãƒãƒ‘ãƒ¼ãƒ«æš¦%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "        ",
             p );
@@ -760,7 +769,7 @@ printNepaliCalendar( long g, int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‚±‚æ‚İ•”Eƒlƒp[ƒ‹‘¾‰A—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦å‡ºåŠ›
  */
 
 void
@@ -781,7 +790,7 @@ printNepaliLunarCalendar( int yy, int mm, int dd, int HH, int MM, int SS,
             }
 
             printLineHeader( htmlMode );
-            printf( "ƒlƒp[ƒ‹‘¾‰A—ï%s%s",
+            printf( "ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦%s%s",
                     htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                                    : "    ",
                     p );
@@ -802,7 +811,7 @@ printNepaliLunarCalendar( int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‚±‚æ‚İ•”EƒCƒ“ƒh‘¾‰A—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦å‡ºåŠ›
  */
 
 void
@@ -817,7 +826,7 @@ printIndianLunarCalendar( int yy, int mm, int dd, int HH, int MM, int SS,
 
         if ( p ) {
             printLineHeader( htmlMode );
-            printf( "ƒCƒ“ƒh‘¾‰A—ï%s%s",
+            printf( "ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦%s%s",
                     htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                                    : "      ",
                     p );
@@ -828,7 +837,7 @@ printIndianLunarCalendar( int yy, int mm, int dd, int HH, int MM, int SS,
     if ( ((yy == 1957) && ((mm >= 4) || ((mm == 3) && (dd >=21)))) ||
          ( yy >= 1958) ) {
             printLineHeader( htmlMode );
-            printf( "ƒCƒ“ƒh‘–¯—ï%s%s",
+            printf( "ã‚¤ãƒ³ãƒ‰å›½æ°‘æš¦%s%s",
                     htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                                    : "      ",
                     indianNationalDate( dd, mm, yy ) );
@@ -838,14 +847,14 @@ printIndianLunarCalendar( int yy, int mm, int dd, int HH, int MM, int SS,
 
 
 /*
- *  ‚±‚æ‚İ•”EƒGƒ`ƒIƒsƒA—ïo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦å‡ºåŠ›
  */
 
 void
 printCopticCalendar( long g, int yy, int mm, int dd, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "ƒGƒ`ƒIƒsƒA—ï%s%s",
+    printf( "ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "      ",
             copdate( g, dd, mm, yy ) );
@@ -854,14 +863,65 @@ printCopticCalendar( long g, int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”ESwatchƒCƒ“ƒ^[ƒlƒbƒgŠÔo—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒšãƒ«ã‚·ãƒ£æš¦å‡ºåŠ›
+ */
+
+void
+printPersianCalendar( long g, int yy, int mm, int dd, int htmlMode )
+{
+    char    *p = persianCalendar( g, yy, mm, dd );
+    if ( p && *p ) {
+        printLineHeader( htmlMode );
+        printf( "ãƒšãƒ«ã‚·ãƒ£æš¦%s%s",
+                htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
+                               : "        ",
+                p );
+        printLineFooter( htmlMode );
+    }
+}
+
+
+/*
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»ãƒãƒã‚¤æš¦å‡ºåŠ›
+ */
+
+void
+printBahaiCalendar( long g, int yy, int mm, int dd, int htmlMode )
+{
+    int     bY = 0, bM = 0, bD = 0;
+    char    *p = bahaiCalendar( g, yy, mm, dd, &bY, &bM, &bD );
+    if ( p && *p ) {
+        char    buf[BUFSIZ];
+        int     checkedOut =
+                    checkBahai( buf, bD, bM, bY, dd, mm, yy, htmlMode );
+
+        printLineHeader( htmlMode );
+        printf( "ãƒãƒã‚¤æš¦%s%s",
+                htmlMode == OFF ? "          " :
+                checkedOut == 0 ? "</TD><TD COLSPAN=\"2\">"
+                                : "</TD><TD>",
+                p );
+
+        if ( checkedOut ) {
+            if ( htmlMode == ON )
+                fputs( "</TD><TD>", stdout );
+            fputs( buf, stdout );
+        }
+
+        printLineFooter( htmlMode );
+    }
+}
+
+
+/*
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»Swatchã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“å‡ºåŠ›
  */
 
 void
 printBeat( int HH, int MM, int SS, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "ƒCƒ“ƒ^[ƒlƒbƒgŠÔ%s%s",
+    printf( "ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "      ",
             beatFromAbsolute( HH, MM, SS ) );
@@ -870,14 +930,14 @@ printBeat( int HH, int MM, int SS, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”E¯Ào—Í
+ *  ã“ã‚ˆã¿éƒ¨ãƒ»æ˜Ÿåº§å‡ºåŠ›
  */
 
 void
 printZodiac( long g, int yy, int htmlMode )
 {
     printLineHeader( htmlMode );
-    printf( "¯À%s%s",
+    printf( "æ˜Ÿåº§%s%s",
             htmlMode == ON ? "</TD><TD COLSPAN=\"2\">"
                            : "            ",
             zodiac( g, yy ) );
@@ -886,89 +946,95 @@ printZodiac( long g, int yy, int htmlMode )
 
 
 /*
- *  ‚±‚æ‚İ•”o—Í
+ *  ã“ã‚ˆã¿éƒ¨å‡ºåŠ›
  */
 
 void
 tamo_koyomi( int yy, int mm, int dd, int HH, int MM, int SS, long g,
              int htmlMode, int printTime, int printTsupo )
 {
-    /* ‚±‚æ‚İ•”Eƒe[ƒuƒ‹ƒwƒbƒ_o—Í */
+    /* ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ˜ãƒƒãƒ€å‡ºåŠ› */
     printKoyomiTableHeader( htmlMode );
 
-    /* ƒ†ƒŠƒEƒX“úA(UTC)o—Í */
+    /* ãƒ¦ãƒªã‚¦ã‚¹æ—¥ã€æ™‚åˆ»(UTC)å‡ºåŠ› */
     printJulianDate( g, HH, MM, SS, htmlMode, printTime );
 
-    /* TSUPOŒ`®o—Í */
+    /* TSUPOå½¢å¼å‡ºåŠ› */
     if ( printTsupo == ON ) {
         printTsupoDate( g, yy, mm, dd, htmlMode );
     }
 
-    /* ISOŒ`®o—Í */
+    /* ISOå½¢å¼å‡ºåŠ› */
     printIsoDate( g, yy, mm, dd, htmlMode );
 
-    /* ƒOƒŒƒSƒŠƒI—ïo—Í */
+    /* ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦å‡ºåŠ› */
     printGregorianCalendar( g, yy, mm, dd, htmlMode );
 
-    /* ƒ†ƒŠƒEƒX—ïo—Í */
+    /* ãƒ¦ãƒªã‚¦ã‚¹æš¦å‡ºåŠ› */
     printJulianCalendar( g, yy, mm, htmlMode );
 
-    /* ƒCƒXƒ‰ƒ€—ïo—Í */
+    /* ã‚¤ã‚¹ãƒ©ãƒ æš¦å‡ºåŠ› */
     printIslamicCalendar( g, yy, htmlMode );
 
-    /* ƒ†ƒ_ƒ„—ïo—Í */
+    /* ãƒ¦ãƒ€ãƒ¤æš¦å‡ºåŠ› */
     printHebrewCalendar( g, yy, mm, htmlMode );
 
-    /* ƒ}ƒ„—ïo—Í */
-    /*   --- ƒ}ƒ„ŠÖ˜AŠw‰ï‚Å‚Ì’èà‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ï */
+    /* ãƒãƒ¤æš¦å‡ºåŠ› */
+    /*   --- ãƒãƒ¤é–¢é€£å­¦ä¼šã§ã®å®šèª¬ã«åŸºã¥ããƒãƒ¤é•·æœŸæš¦ */
     printMayaCalendar( g, htmlMode );
 
-    /*   --- ƒ}ƒ„ŠÖ˜AŠw‰ï‚Å‚Ì’èà‚ÉŠî‚Ã‚­ƒ}ƒ„’ZŠú—ï */
+    /*   --- ãƒãƒ¤é–¢é€£å­¦ä¼šã§ã®å®šèª¬ã«åŸºã¥ããƒãƒ¤çŸ­æœŸæš¦ */
     printKatunCalendar( g, htmlMode );
 
-    /* ƒtƒ‰ƒ“ƒXŠv–½—ïo—Í */
+    /* ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦å‡ºåŠ› */
     printFrenchCalendar( g, yy, mm, dd, HH, MM, SS, htmlMode, printTime );
 
-    /* ˜a—ï(‘¾—z—ï)o—Í */
+    /* å’Œæš¦(å¤ªé™½æš¦)å‡ºåŠ› */
     printJapaneseCalendar( g, yy, mm, dd, htmlMode );
 
-    /* ˜a—ï(‘¾‰A‘¾—z—ï)o—Í */
+    /* å’Œæš¦(å¤ªé™°å¤ªé™½æš¦)å‡ºåŠ› */
     printOldJapaneseCalendar( g, yy, mm, dd, htmlMode );
 
-    /* Š±xo—Í */
+    /* å¹²æ”¯å‡ºåŠ› */
     printEtoCalendar( g, yy, htmlMode );
 
-    /* c‹Io—Í */
+    /* çš‡ç´€å‡ºåŠ› */
     printKigenCalendar( yy, mm, dd, htmlMode );
 
-    /* •§‹³‹IŒ³o—Í */
+    /* ä»æ•™ç´€å…ƒå‡ºåŠ› */
     printBuddhaCalendar( yy, mm, dd, htmlMode );
 
-    /* ƒlƒp[ƒ‹—ïo—Í */
+    /* ãƒãƒ‘ãƒ¼ãƒ«æš¦å‡ºåŠ› */
     printNepaliCalendar( g, yy, mm, dd, HH, MM, SS, htmlMode, printTime );
 
-    /* ƒlƒp[ƒ‹‘¾‰A—ïo—Í */
+    /* ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦å‡ºåŠ› */
     printNepaliLunarCalendar( yy, mm, dd, HH, MM, SS, htmlMode );
 
-    /* ƒCƒ“ƒh‘¾‰A—ïo—Í */
+    /* ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦å‡ºåŠ› */
     printIndianLunarCalendar( yy, mm, dd, HH, MM, SS, htmlMode );
 
-    /* ƒGƒ`ƒIƒsƒA—ïo—Í */
+    /* ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦å‡ºåŠ› */
     printCopticCalendar( g, yy, mm, dd, htmlMode );
 
-    /* SwatchƒCƒ“ƒ^[ƒlƒbƒgŠÔo—Í */
+    /* ãƒšãƒ«ã‚·ãƒ£æš¦å‡ºåŠ› */
+    printPersianCalendar( g, yy, mm, dd, htmlMode );
+
+    /* ãƒãƒã‚¤æš¦å‡ºåŠ› */
+    printBahaiCalendar( g, yy, mm, dd, htmlMode );
+
+    /* Swatchã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“å‡ºåŠ› */
     printBeat( HH, MM, SS, htmlMode );
 
-    /* ¯Ào—Í */
+    /* æ˜Ÿåº§å‡ºåŠ› */
     printZodiac( g, yy, htmlMode );
 
-    /* ‚±‚æ‚İ•”Eƒe[ƒuƒ‹ƒwƒbƒ_o—Í */
+    /* ã“ã‚ˆã¿éƒ¨ãƒ»ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ˜ãƒƒãƒ€å‡ºåŠ› */
     printKoyomiTableFooter( htmlMode );
 }
 
 
 /*
- *  ŠÖ˜Aƒy[ƒW(ƒŠƒ“ƒNW)•\¦
+ *  é–¢é€£ãƒšãƒ¼ã‚¸(ãƒªãƒ³ã‚¯é›†)è¡¨ç¤º
  */
 
 void
@@ -982,43 +1048,43 @@ tamo_link( int yy, int mm, int dd, int htmlMode )
 #endif
 
     if ( htmlMode ) {
-        printf( "<HR>\n<P>\n<STRONG>ŠÖ˜Aƒy[ƒW</STRONG>\n</P>\n<UL>\n" );
+        printf( "<HR>\n<P>\n<STRONG>é–¢é€£ãƒšãƒ¼ã‚¸</STRONG>\n</P>\n<UL>\n" );
         printf( "<LI><A HREF=\"http://www.google.co.jp/search?sourceid=nav"
                 "client&amp;hl=ja&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=%d%%E6%%"
-                "9C%%88%d%%E6%%97%%A5\">Google ‚Å %2dŒ%2d“ú ‚ğŒŸõ</A>\n",
+                "9C%%88%d%%E6%%97%%A5\">Google ã§ %2dæœˆ%2dæ—¥ ã‚’æ¤œç´¢</A>\n",
                 mm, dd, mm, dd );
         printf( "<LI><A HREF=\"http://ja.wikipedia.org/wiki/%d%%E6%%9C%%88%d"
-                "%%E6%%97%%A5\">%2dŒ%2d“ú ¡“ú‚Í‰½‚Ì“ú</A> "
-                "(ƒEƒBƒLƒyƒfƒBƒA)\n",
+                "%%E6%%97%%A5\">%2dæœˆ%2dæ—¥ ä»Šæ—¥ã¯ä½•ã®æ—¥</A> "
+                "(ã‚¦ã‚£ã‚­ãƒšãƒ‡ã‚£ã‚¢)\n",
                 mm, dd, mm, dd );
-        printf( "<LI><A HREF=\"http://www.nnh.to/%02d/%02d.html\">%2dŒ%2d“ú"
-                " ¡“ú‚Í‰½‚Ì“ú`–ˆ“ú‚ª‹L”O“ú`</A> "
-                "(“ú–{‹L”O“ú›{˜ğ/•xR‚¢‚Ã‚İ‚³‚ñ)\n",
+        printf( "<LI><A HREF=\"http://www.nnh.to/%02d/%02d.html\">%2dæœˆ%2dæ—¥"
+                " ä»Šæ—¥ã¯ä½•ã®æ—¥ï½æ¯æ—¥ãŒè¨˜å¿µæ—¥ï½</A> "
+                "(æ—¥æœ¬è¨˜å¿µæ—¥å­¸æœƒ/å¯Œå±±ã„ã¥ã¿ã•ã‚“)\n",
                 mm, dd, mm, dd );
         printf( "<LI><A HREF=\"http://koyomi.vis.ne.jp/cgi/today/today.php?"
-                "syy=%d&amp;smm=%d&amp;sdd=%d\">¡“ú‚Í‰½‚Ì“ú</A> "
-                "(‚©‚í‚¤‚»——ï‚³‚ñ)\n",
+                "syy=%d&amp;smm=%d&amp;sdd=%d\">ä»Šæ—¥ã¯ä½•ã®æ—¥</A> "
+                "(ã‹ã‚ã†ãï¼ æš¦ã•ã‚“)\n",
                 yy, mm, dd );
         printf(
 #if 0
                 "<LI><A HREF=\"http://town.hi-ho.ne.jp/cgi-bin/town/cale/"
                 "top_link.pl?month=%s&amp;day=%d&amp;member=2&amp;msnflag="
-                "0\">“ú‚ß‚­‚èƒJƒŒƒ“ƒ_[ (%2dŒ%2d“ú)</A> (Panasonic Hi-Ho)",
+                "0\">æ—¥ã‚ãã‚Šã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ (%2dæœˆ%2dæ—¥)</A> (Panasonic Hi-Ho)",
                 monthName[mm - 1], dd, mm, dd
 #else
  /* http://kurashi.hi-ho.ne.jp/cale/index.html?year=2004&month=10&day=23 */
                 "<LI><A HREF=\"http://kurashi.hi-ho.ne.jp/cale/index.html?"
-                "year=%d&amp;month=%d&amp;day=%d\">“ú‚ß‚­‚èƒJƒŒƒ“ƒ_[ "
-                "(%4d”N%2dŒ%2d“ú)</A> (Panasonic Hi-Ho)",
+                "year=%d&amp;month=%d&amp;day=%d\">æ—¥ã‚ãã‚Šã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ "
+                "(%4då¹´%2dæœˆ%2dæ—¥)</A> (Panasonic Hi-Ho)",
                 yy, mm, dd, yy, mm, dd
 #endif
               );
         printf( "<LI><A HREF=\"http://www.php.co.jp/today/"
-                "%02d-%02d.html\">¡“ú‚Í‰½‚Ì“ú %2dŒ%2d“ú</A> (PHPŒ¤‹†Š)",
+                "%02d-%02d.html\">ä»Šæ—¥ã¯ä½•ã®æ—¥ %2dæœˆ%2dæ—¥</A> (PHPç ”ç©¶æ‰€)",
                 mm, dd, mm, dd );
         printf( "<LI><A HREF=\"http://www.moonsystem.to/calendar/cgi/"
-                "calendar2.cgi?year=%d&amp;month=%d\">Œ—îƒJƒŒƒ“ƒ_[ "
-                "(%d”N%2dŒ)</A> (The Moon Age Calendar)\n",
+                "calendar2.cgi?year=%d&amp;month=%d\">æœˆé½¢ã‚«ãƒ¬ãƒ³ãƒ€ãƒ¼ "
+                "(%då¹´%2dæœˆ)</A> (The Moon Age Calendar)\n",
                 yy, mm, yy, mm );
         printf( "</UL>\n" );
     }
@@ -1026,7 +1092,7 @@ tamo_link( int yy, int mm, int dd, int htmlMode )
 
 
 /*
- *  —ï’AjÕ“úA‹L”O“ú“™‚Ìo—Í
+ *  æš¦æ³¨ã€ç¥ç¥­æ—¥ã€è¨˜å¿µæ—¥ç­‰ã®å‡ºåŠ›
  */
 
 int
@@ -1101,14 +1167,14 @@ tsprintf( char *buf, int htmlMode, int *reset, const char *format, ... )
 
 
 /*
- *  ƒf[ƒ^ƒtƒ@ƒCƒ‹ƒI[ƒvƒ“
+ *  ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ¼ãƒ—ãƒ³
  *
- *      ˆÈ‰º‚Ì‡˜‚Åƒtƒ@ƒCƒ‹‚ğ’Tõ‚·‚é
- *        (1) ¡‰ñ‹N“®‚µ‚½ tamo.exe ‚Ì‘¶İ‚·‚éƒfƒBƒŒƒNƒgƒŠ
- *        (2) ŠÂ‹«•Ï” KOYOMI ‚Ì¦‚·ƒfƒBƒŒƒNƒgƒŠ
- *        (3) ¡‰ñ‹N“®‚µ‚½ tamo.exe ‚Ì‘¶İ‚·‚éƒfƒBƒŒƒNƒgƒŠ‚Ì’¼‰º‚Ì koyomi ƒfƒB
- *            ƒŒƒNƒgƒŠ
- *        (4) ƒJƒŒƒ“ƒgƒfƒBƒŒƒNƒgƒŠ
+ *      ä»¥ä¸‹ã®é †åºã§ãƒ•ã‚¡ã‚¤ãƒ«ã‚’æ¢ç´¢ã™ã‚‹
+ *        (1) ä»Šå›èµ·å‹•ã—ãŸ tamo.exe ã®å­˜åœ¨ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+ *        (2) ç’°å¢ƒå¤‰æ•° KOYOMI ã®ç¤ºã™ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
+ *        (3) ä»Šå›èµ·å‹•ã—ãŸ tamo.exe ã®å­˜åœ¨ã™ã‚‹ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ç›´ä¸‹ã® koyomi ãƒ‡ã‚£
+ *            ãƒ¬ã‚¯ãƒˆãƒª
+ *        (4) ã‚«ãƒ¬ãƒ³ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
  */
 
 FILE    *
