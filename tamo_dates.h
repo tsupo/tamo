@@ -2,111 +2,117 @@
  *  tamo_dates.h
  *          by H.Tsujimura  tsupo@na.rim.or.jp
  *                      17 February 1991
- *  Copyright (c) 1991-1995,1999,2000,2001,2002,2003    Hiroshi Tsujimura
+ *  Copyright (c) 1991-1995,1999-2003,2006,2007,2012  Hiroshi Tsujimura
  *  All Rights Reserved.
  *
  * History :
  * $Log: tamo_dates.h $
+ * Revision 1.86  2012/10/12  10:37:07  tsujimura543
+ * ãƒãƒã‚¤æš¦ã«å¯¾å¿œ
+ *
+ * Revision 1.85  2012/10/12  09:04:38  tsujimura543
+ * ãƒšãƒ«ã‚·ãƒ£æš¦ã«å¯¾å¿œã—ãŸ
+ *
  * Revision 1.84  2007/02/08  02:44:01  tsujimura543
- * ‰ÄŠÔ‚ÌŠJnAI—¹ŠÖ˜Aˆ—‚ğ•ÏXE’Ç‰Á
+ * å¤æ™‚é–“ã®é–‹å§‹ã€çµ‚äº†é–¢é€£å‡¦ç†ã‚’å¤‰æ›´ãƒ»è¿½åŠ 
  *
  * Revision 1.83  2006/05/29  05:11:35  tsujimura543
- * ƒCƒ“ƒ^[ƒlƒbƒgŠÔ‘Î‰
+ * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“å¯¾å¿œ
  *
  * Revision 1.82  2003/11/11  09:11:42  tsujimura543
- * ƒ†ƒŠƒEƒX—ïAƒCƒXƒ‰ƒ€—ïAƒ†ƒ_ƒ„—ï‚Ì•\¦‚ğÅ“K‰»
+ * ãƒ¦ãƒªã‚¦ã‚¹æš¦ã€ã‚¤ã‚¹ãƒ©ãƒ æš¦ã€ãƒ¦ãƒ€ãƒ¤æš¦ã®è¡¨ç¤ºã‚’æœ€é©åŒ–
  *
  * Revision 1.81  2003/11/11  07:02:19  tsujimura543
- * K&R •\‹L ¨ ANSI C •\‹L ‚ÉŠ®‘SˆÚs
+ * K&R è¡¨è¨˜ â†’ ANSI C è¡¨è¨˜ ã«å®Œå…¨ç§»è¡Œ
  *
  * Revision 1.80  2003/05/26  07:47:50  tsujimura543
- * ƒCƒ“ƒh‘–¯—ï(‘‰Æ—ï)‘Î‰Aƒlƒp[ƒ‹‘¾‰A—ïC³
+ * ã‚¤ãƒ³ãƒ‰å›½æ°‘æš¦(å›½å®¶æš¦)å¯¾å¿œã€ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ä¿®æ­£
  *
  * Revision 1.79  2003/04/11  10:58:56  tsujimura543
- * (1) ƒCƒ“ƒh‘¾‰A—ï•\¦‚ÌŒ–¼‚É‰½”Ô–Ú‚ÌŒ‚©‚ğ•¹‹L‚·‚é‚æ‚¤‚É‚µ‚½
- * (2) ƒlƒp[ƒ‹‘¾‰A—ï•\¦‚ğ’Ç‰Á (b’è)
+ * (1) ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦è¡¨ç¤ºã®æœˆåã«ä½•ç•ªç›®ã®æœˆã‹ã‚’ä½µè¨˜ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
+ * (2) ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦è¡¨ç¤ºã‚’è¿½åŠ  (æš«å®š)
  *
  * Revision 1.78  2003/04/02  10:20:09  tsujimura543
- * ƒGƒ`ƒIƒsƒA—ï‚ğƒTƒ|[ƒg
+ * ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦ã‚’ã‚µãƒãƒ¼ãƒˆ
  *
  * Revision 1.77  2003/03/31  05:21:49  tsujimura543
- * ƒwƒbƒ_ƒtƒ@ƒCƒ‹‚ÌˆË‘¶ŠÖŒW‚ğ®—
+ * ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¾å­˜é–¢ä¿‚ã‚’æ•´ç†
  *
  * Revision 1.76  2003/03/20  09:18:02  tsujimura543
- * Šeí—ï’‚Ì•\¦‚ğ’Ç‰Á
+ * å„ç¨®æš¦æ³¨ã®è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.75  2003/03/19  04:46:08  tsujimura543
- * Š±x‚Ìo—Í•û®‚ğ‘¼‚Ì—ï‚Æ“¯‚¶‚É‚·‚é
+ * å¹²æ”¯ã®å‡ºåŠ›æ–¹å¼ã‚’ä»–ã®æš¦ã¨åŒã˜ã«ã™ã‚‹
  *
  * Revision 1.74  2003/03/19  03:05:48  tsujimura543
- * ‹Œ—ïŠÖŒW‚Ìo—Í•û–@‚ğ‘¼‚Ì—ï‚Æ“¯‚¶•û®‚É‚·‚é
+ * æ—§æš¦é–¢ä¿‚ã®å‡ºåŠ›æ–¹æ³•ã‚’ä»–ã®æš¦ã¨åŒã˜æ–¹å¼ã«ã™ã‚‹
  *
  * Revision 1.73  2003/03/18  10:20:50  tsujimura543
- * o—ÍŒ‹‰Ê‚ª‚«‚ê‚¢‚É‚È‚é‚æ‚¤‚É’²®
+ * å‡ºåŠ›çµæœãŒãã‚Œã„ã«ãªã‚‹ã‚ˆã†ã«èª¿æ•´
  *
  * Revision 1.72  2003/03/14  09:37:59  tsujimura543
- * ŠÖ”‚ğ®—
+ * é–¢æ•°ã‚’æ•´ç†
  *
  * Revision 1.71  2003/03/12  10:05:31  tsujimura543
- * Šˆ“®ƒƒ‚‘Î‰€”õ #2
+ * æ´»å‹•ãƒ¡ãƒ¢å¯¾å¿œæº–å‚™ #2
  *
  * Revision 1.70  2003/03/11  02:01:03  tsujimura543
  * for Tsuporone's Activity Memo
  *
  * Revision 1.69  2003/03/07  03:16:24  tsujimura543
- * ƒ[ƒ}—ï(ƒ†ƒŠƒEƒX—ï)‚Ì ides •\¦‚ğ’Ç‰Á
+ * ãƒ­ãƒ¼ãƒæš¦(ãƒ¦ãƒªã‚¦ã‚¹æš¦)ã® ides è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.68  2003/03/03  07:48:25  tsujimura543
- * ƒCƒ“ƒh‘¾‰A—ï‘Î‰
+ * ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦å¯¾å¿œ
  *
  * Revision 1.67  2003/02/28  07:30:49  tsujimura543
- * ƒ†ƒŠƒEƒX—ï‚ÌŒ–¼•\¦(ƒ‰ƒeƒ“Œê)‚ğ’Ç‰Á
+ * ãƒ¦ãƒªã‚¦ã‚¹æš¦ã®æœˆåè¡¨ç¤º(ãƒ©ãƒ†ãƒ³èª)ã‚’è¿½åŠ 
  *
  * Revision 1.66  2003/02/24  10:48:05  tsujimura543
- * ƒlƒp[ƒ‹—ï‚Ì•ª•b•\‹L‚É‘Î‰
+ * ãƒãƒ‘ãƒ¼ãƒ«æš¦ã®æ™‚åˆ†ç§’è¡¨è¨˜ã«å¯¾å¿œ
  *
  * Revision 1.65  2003/02/21  05:05:20  tsujimura543
- * ƒtƒ‰ƒ“ƒXŠv–½—ï‚Ì•\¦‚ğON/OFF‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã®æ™‚åˆ»è¡¨ç¤ºã‚’ON/OFFã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.64  2003/02/19  07:29:36  tsujimura543
- * ƒlƒp[ƒ‹—ï‘Î‰
+ * ãƒãƒ‘ãƒ¼ãƒ«æš¦å¯¾å¿œ
  *
  * Revision 1.63  2003/02/07  04:46:02  tsujimura543
- * ƒCƒXƒ‰ƒ€—ï‚ÌŒ–¼‚ğ•¹‹L‚·‚é‚æ‚¤‚É‚µ‚½
+ * ã‚¤ã‚¹ãƒ©ãƒ æš¦ã®æœˆåã‚’ä½µè¨˜ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.62  2003/02/06  09:41:58  tsujimura543
- * ƒ†ƒ_ƒ„—ğ‚ÌjÕ“ú‚ğ’Ç‰Á
+ * ãƒ¦ãƒ€ãƒ¤æ­´ã®ç¥ç¥­æ—¥ã‚’è¿½åŠ 
  *
  * Revision 1.61  2003/02/06  04:02:42  tsujimura543
- * today ‚Ì’a¶“úƒf[ƒ^ƒtƒ@ƒCƒ‹(birthday.tbl)‚É‘Î‰
+ * today ã®èª•ç”Ÿæ—¥ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«(birthday.tbl)ã«å¯¾å¿œ
  *
  * Revision 1.60  2001/02/20  12:23:36  tsujimura543
- * ‘¼‚Ì”h¶ƒo[ƒWƒ‡ƒ“‚Æ“‡‚·‚é‚½‚ßA‚¢‚Á‚½‚ñ revision ‚ğŒÅ’è
+ * ä»–ã®æ´¾ç”Ÿãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨çµ±åˆã™ã‚‹ãŸã‚ã€ã„ã£ãŸã‚“ revision ã‚’å›ºå®š
  *
  * Revision 1.54  2001/02/02  14:46:40  tsujimura543
- * ’a¶‰ÔAƒLƒƒƒ“ƒy[ƒ“(XXTŠÔAXXŒŠÔ‚È‚Ç)‚ÌŠeZoŠÖ”‚ğ’Ç‰Á
+ * èª•ç”ŸèŠ±ã€ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³(XXé€±é–“ã€XXæœˆé–“ãªã©)ã®å„ç®—å‡ºé–¢æ•°ã‚’è¿½åŠ 
  * 
  * Revision 1.53  2000/08/23  10:57:41  tsujimura543
- * ƒˆ[ƒƒbƒp‚Å‚Ì‰ÄŠÔ‚ÌŠJn“úZoŠÖ”‚ğ’Ç‰Á
+ * ãƒ¨ãƒ¼ãƒ­ãƒƒãƒ‘ã§ã®å¤æ™‚é–“ã®é–‹å§‹æ—¥ç®—å‡ºé–¢æ•°ã‚’è¿½åŠ 
  * 
  * Revision 1.52  2000/06/06  17:57:36  tsujimura543
- * 13¯À‚ÌZoŠÖ”‚ğ’Ç‰Á
+ * 13æ˜Ÿåº§ã®ç®—å‡ºé–¢æ•°ã‚’è¿½åŠ 
  * 
  * Revision 1.51  1999/07/13  11:59:21  tsujimura543
- * ŠJ”­ŠÂ‹«‚ğ Win32 ‚ÉˆÚ‚·
- * -- HTML o—Í‘Î‰ì‹Æ‚â“®ìŠm”F‚Í¡Œã‚àUNIX (peach.na.rim.or.jp) ã‚Ås‚È‚¤ 
+ * é–‹ç™ºç’°å¢ƒã‚’ Win32 ã«ç§»ã™
+ * -- HTML å‡ºåŠ›å¯¾å¿œä½œæ¥­ã‚„å‹•ä½œç¢ºèªã¯ä»Šå¾Œã‚‚UNIX (peach.na.rim.or.jp) ä¸Šã§è¡Œãªã† 
  *
  * Revision 1.50  1996/08/19  02:07:54  tsujimura
- * Withdrawal from `shizuka' (UNIXã‚Å‚ÌŠJ”­I—¹”Å)
+ * Withdrawal from `shizuka' (UNIXä¸Šã§ã®é–‹ç™ºçµ‚äº†ç‰ˆ)
  *
  * Revision 1.9  95/12/03 11:48:16  tsujimura
- * ƒRƒƒ“ƒg‚Ì®—EC³
+ * ã‚³ãƒ¡ãƒ³ãƒˆã®æ•´ç†ãƒ»ä¿®æ­£
  * 
  * Revision 1.8  95/12/02 23:30:48  tsujimura
- * JR‚Ì—¿‹àŒvZ‚Ì“Á—á“úZoŠÖ” trainService() ‚Ìƒvƒƒgƒ^ƒCƒvéŒ¾‚ğ’Ç‰Á
+ * JRã®æ–™é‡‘è¨ˆç®—ã®ç‰¹ä¾‹æ—¥ç®—å‡ºé–¢æ•° trainService() ã®ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ã‚’è¿½åŠ 
  * 
  * Revision 1.7  95/12/02 15:13:22  tsujimura
- * ƒtƒ‰ƒ“ƒXŠv–½—ïZoŠÖ” fdate() ‚Ìƒvƒƒgƒ^ƒCƒvéŒ¾‚ğ’Ç‰Á
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ç®—å‡ºé–¢æ•° fdate() ã®ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ã‚’è¿½åŠ 
  * 
  * Revision 1.6  92/03/29 01:03:38  tsujimura
  * test release
@@ -129,7 +135,7 @@
  */
 
 #ifndef __tamo_dates_h__
-#define __tamo_dates_h__        /* “ñdinclude–h~—p */
+#define __tamo_dates_h__        /* äºŒé‡includeé˜²æ­¢ç”¨ */
 
 #ifndef TRUE
 #define TRUE    1
@@ -151,13 +157,13 @@
 #define MAXLIST 5
 typedef long    dateList[MAXLIST];
 
-#ifdef	__STDC__
+#ifdef                           __STDC__
 #define _(def)  def
 #else
 #define _(def)  ()
 #endif
 
-/* ƒ†[ƒeƒBƒŠƒeƒBŠÖ” */
+/* ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£é–¢æ•° */
 int         lastDayOfGregorianMonth _(( int, int ));
 long        absoluteFromGregorian _(( int, int, int ));
 void        gregorianFromAbsolute _(( long, int *, int *, int * ));
@@ -222,7 +228,7 @@ long        yahrzeit _(( int, int, int, int ));
 
 void        printDateList _(( long * ));
 
-/* 24ß‹CA‹Œ—ï */
+/* 24ç¯€æ°—ã€æ—§æš¦ */
 char        *get_kyureki _(( int *, int *, int *, int * ));
 int         hizuke _(( long ));
 void        get_sekki _(( long, int, int ));
@@ -244,7 +250,7 @@ long        midAutumnDay _(( int ));
 long        setsuStartDay _(( int, int ));
 long        getSekkiDate _(( int, int, int ));
 
-/* ˜a—ï */
+/* å’Œæš¦ */
 char        *wareki _(( int, int, int, int ));
 char        *tsupodate _(( int, int, int ));
 char        *kyusei _(( long ));
@@ -266,7 +272,7 @@ char        *boSouNichi _(( long, int ));
 char        *tsukiTokuNichi _(( long, int ));
 char        *kuenichi _(( long, int ));
 
-/* “Á•Ê‚È“úAjÕ“úA‹L”O“ú */
+/* ç‰¹åˆ¥ãªæ—¥ã€ç¥ç¥­æ—¥ã€è¨˜å¿µæ—¥ */
 long        veteransDay _(( int ));
 long        rememberanceDay _(( int ));
 long        thanksGivingDay _(( int ));
@@ -305,7 +311,7 @@ void        checkKyureki _(( long, int, int, int, int, int ));
 void        checkEto _(( long, int ));
 void        checkTenShaNichi _(( long, int, int, int, int * ));
 
-/* ’a¶“úAƒCƒxƒ“ƒgA‚»‚Ì‘¼ */
+/* èª•ç”Ÿæ—¥ã€ã‚¤ãƒ™ãƒ³ãƒˆã€ãã®ä»– */
 void        birthday _(( long, int, int, int ));
 void        birthday2 _(( long, int, int, int, int ));
 void        idolevent _(( long, int, int, int ));
@@ -314,44 +320,52 @@ void        flower _(( long, int, int, int ));
 void        campaign _(( long, int, int, int ));
 void        trainService _(( long, int, int, int ));
 
-/* ƒ}ƒ„—ï */
+/* ãƒãƒ¤æš¦ */
 char        *mayaFromAbsolute _(( long ));
 long        absoluteFromMaya _(( char * ));
 char        *tsolkinFromAbsolute _(( long ));
 char        *haabuFromAbsolute _(( long ));
 char        *katunFromAbsolute _(( long ));
 
-/* ‹Œ—ï */
+/* æ—§æš¦ */
 void        getLunarCalendar _(( int *, int *, int *, int * ));
 
-/* Še—ï‚Å‚ÌŒ‚Ì–¼‘O */
+/* å„æš¦ã§ã®æœˆã®åå‰ */
 char        *hebrewMonthName _(( int, int ));
 char        *englishMonthName _(( int ));
 char        *latinMonthName _(( int ));
 char        *islamicMonthName _(( int ));
 
-/* Œ—î */
+/* æœˆé½¢ */
 double      moonPhase _(( double, int, int, int ));
 double      moonPhase2 _(( int, int, int, int, int, int ));
 
-/* ƒtƒ‰ƒ“ƒXŠv–½—ï */
+/* ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ */
 char        *fdate _(( long, int, int, int, int, int, int, int, int ));
 
-/* ƒlƒp[ƒ‹—ï */
+/* ãƒãƒ‘ãƒ¼ãƒ«æš¦ */
 char	    *nepdate _(( long, int, int, int, int, int, int, int ));
 char        *nepaliLunarDate _(( int, int, int, int, int, int ));
 
 
-/* ƒCƒ“ƒh‘¾‰A—ï */
+/* ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦ */
 char        *indianLunarDate _(( int, int, int, int, int, int ));
-/* ƒCƒ“ƒh‘‰Æ—ï */
+/* ã‚¤ãƒ³ãƒ‰å›½å®¶æš¦ */
 char        *indianNationalDate _(( int, int, int ));
 
 
-/* ƒGƒ`ƒIƒsƒA—ï */
+/* ã‚¨ãƒã‚ªãƒ”ã‚¢æš¦ */
 char        *copdate _(( long, int, int, int ));
 
-/* Swatch ƒCƒ“ƒ^[ƒlƒbƒgŠÔ */
+/* ãƒšãƒ«ã‚·ãƒ£æš¦ */
+char        *persianCalendar _(( long, int, int, int ));
+
+/* ãƒãƒã‚¤æš¦ */
+char        *bahaiCalendar _(( long, int, int, int, int *, int *, int * ));
+int         checkBahai _(( char *, int, int, int, int, int, int,  int ));
+
+
+/* Swatch ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ™‚é–“ */
 char        *beatFromAbsolute _(( int, int, int ));
 
 #endif	/* __tamo_dates_h__ */
