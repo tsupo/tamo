@@ -7,97 +7,100 @@
  *
  * History :
  * $Log: koyomi.c $
+ * Revision 1.81  2012/10/12  10:57:46  tsujimura543
+ * usage() ã‚’ä¿®æ­£
+ *
  * Revision 1.80  2003/10/24  01:35:04  tsujimura543
- * Solaris9 ã‚ÅƒRƒ“ƒpƒCƒ‹A“®ìŠm”F
+ * Solaris9 ä¸Šã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã€å‹•ä½œç¢ºèª
  *
  * Revision 1.79  2003/03/19  04:46:08  tsujimura543
- * Š±x‚Ìo—Í•û®‚ğ‘¼‚Ì—ï‚Æ“¯‚¶‚É‚·‚é
+ * å¹²æ”¯ã®å‡ºåŠ›æ–¹å¼ã‚’ä»–ã®æš¦ã¨åŒã˜ã«ã™ã‚‹
  *
  * Revision 1.78  2003/03/19  03:05:48  tsujimura543
- * ‹Œ—ïŠÖŒW‚Ìo—Í•û–@‚ğ‘¼‚Ì—ï‚Æ“¯‚¶•û®‚É‚·‚é
+ * æ—§æš¦é–¢ä¿‚ã®å‡ºåŠ›æ–¹æ³•ã‚’ä»–ã®æš¦ã¨åŒã˜æ–¹å¼ã«ã™ã‚‹
  *
  * Revision 1.77  2003/03/14  09:40:04  tsujimura543
- * ŠÖ”‚ğ®—
+ * é–¢æ•°ã‚’æ•´ç†
  *
  * Revision 1.1  2003/03/14  09:37:59  tsujimura543
  * Initial revision
  *
  * Revision 1.76  2003/03/07  03:16:24  tsujimura543
- * ƒ[ƒ}—ï(ƒ†ƒŠƒEƒX—ï)‚Ì ides •\¦‚ğ’Ç‰Á
+ * ãƒ­ãƒ¼ãƒæš¦(ãƒ¦ãƒªã‚¦ã‚¹æš¦)ã® ides è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.75  2003/03/04  06:04:12  tsujimura543
- * ƒCƒ“ƒh‘¾‰A—ï‚ÌZo‰Â”\ŠúŠÔ‚ÌãŒÀ‚Æ‰ºŒÀ‚ğŠg’£
+ * ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦ã®ç®—å‡ºå¯èƒ½æœŸé–“ã®ä¸Šé™ã¨ä¸‹é™ã‚’æ‹¡å¼µ
  *
  * Revision 1.74  2003/03/03  07:48:25  tsujimura543
- * ƒCƒ“ƒh‘¾‰A—ï‘Î‰
+ * ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦å¯¾å¿œ
  *
  * Revision 1.73  2003/02/28  07:30:49  tsujimura543
- * ƒ†ƒŠƒEƒX—ï‚ÌŒ–¼•\¦(ƒ‰ƒeƒ“Œê)‚ğ’Ç‰Á
+ * ãƒ¦ãƒªã‚¦ã‚¹æš¦ã®æœˆåè¡¨ç¤º(ãƒ©ãƒ†ãƒ³èª)ã‚’è¿½åŠ 
  *
  * Revision 1.72  2003/02/27  08:41:01  tsujimura543
- * ‘å‰»ˆÈ~‚ÌŒ³†‚É‘Î‰
+ * å¤§åŒ–ä»¥é™ã®å…ƒå·ã«å¯¾å¿œ
  *
  * Revision 1.71  2003/02/25  05:52:46  tsujimura543
- * CGI‚Éƒpƒ‰ƒ[ƒ^‚ğ“n‚¹‚é‚æ‚¤‚É‚µ‚½
+ * CGIã«ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’æ¸¡ã›ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.70  2003/02/24  10:48:05  tsujimura543
- * ƒlƒp[ƒ‹—ï‚Ì•ª•b•\‹L‚É‘Î‰
+ * ãƒãƒ‘ãƒ¼ãƒ«æš¦ã®æ™‚åˆ†ç§’è¡¨è¨˜ã«å¯¾å¿œ
  *
  * Revision 1.69  2003/02/24  09:25:42  tsujimura543
- * ÀsŒ`®‚ÌŠg’£q‚ª .cgi ‚Ìê‡AContent-type: s‚ğo—Í‚·‚é‚æ‚¤‚É‚µ‚½
+ * å®Ÿè¡Œå½¢å¼ã®æ‹¡å¼µå­ãŒ .cgi ã®å ´åˆã€Content-type: è¡Œã‚’å‡ºåŠ›ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.68  2003/02/21  05:18:38  tsujimura543
- * HTMLƒ‚[ƒh‚Å‚àAƒOƒŒƒSƒŠƒI—ïAƒCƒXƒ‰ƒ€—ïAƒ†ƒ_ƒ„—ï‚ÌŒ–¼•\¦‚ğ‚·‚é
- * ‚æ‚¤‚É‚µ‚½
+ * HTMLãƒ¢ãƒ¼ãƒ‰ã§ã‚‚ã€ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦ã€ã‚¤ã‚¹ãƒ©ãƒ æš¦ã€ãƒ¦ãƒ€ãƒ¤æš¦ã®æœˆåè¡¨ç¤ºã‚’ã™ã‚‹
+ * ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.67  2003/02/21  05:06:24  tsujimura543
- * (1) 13¯ÀASpindenà‚Ìƒ}ƒ„—ï‚Ì•\¦‚ğƒfƒtƒHƒ‹ƒg‚Å‚Í OFF ‚É‚µ‚½
- * (2) ƒtƒ‰ƒ“ƒXŠv–½—ï‚Ì‚Ì•\¦‚ÌON/OFF‚ğ-dƒIƒvƒVƒ‡ƒ“‚Ìw’è‚ ‚è/‚È‚µ‚É
- *     ˜A“®‚³‚¹‚é‚æ‚¤‚É‚µ‚½
- * (3) usage ‚Ì•\¦‚ğ®—‚µ‚½
+ * (1) 13æ˜Ÿåº§ã€Spindenèª¬ã®ãƒãƒ¤æš¦ã®è¡¨ç¤ºã‚’ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ OFF ã«ã—ãŸ
+ * (2) ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã®æ™‚åˆ»ã®è¡¨ç¤ºã®ON/OFFã‚’-dã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®æŒ‡å®šã‚ã‚Š/ãªã—ã«
+ *     é€£å‹•ã•ã›ã‚‹ã‚ˆã†ã«ã—ãŸ
+ * (3) usage ã®è¡¨ç¤ºã‚’æ•´ç†ã—ãŸ
  *
  * Revision 1.66  2003/02/19  09:00:33  tsujimura543
- * usage ‚Å•\¦‚³‚ê‚é“à—e‚ğC³
+ * usage ã§è¡¨ç¤ºã•ã‚Œã‚‹å†…å®¹ã‚’ä¿®æ­£
  *
  * Revision 1.65  2003/02/19  07:29:36  tsujimura543
- * ƒlƒp[ƒ‹—ï‘Î‰
+ * ãƒãƒ‘ãƒ¼ãƒ«æš¦å¯¾å¿œ
  *
  * Revision 1.64  2003/02/07  04:46:59  tsujimura543
- * ƒCƒXƒ‰ƒ€—ï‚¨‚æ‚Ñ˜a—ï‚ÌŒ–¼‚à•\¦‚·‚é‚æ‚¤‚É‚µ‚½
+ * ã‚¤ã‚¹ãƒ©ãƒ æš¦ãŠã‚ˆã³å’Œæš¦ã®æœˆåã‚‚è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.63  2003/02/06  09:41:58  tsujimura543
- * ƒ†ƒ_ƒ„—ğ‚ÌjÕ“ú‚ğ’Ç‰Á
+ * ãƒ¦ãƒ€ãƒ¤æ­´ã®ç¥ç¥­æ—¥ã‚’è¿½åŠ 
  *
  * Revision 1.62  2001/06/13  13:24:23  tsujimura543
- * uğ“úvAu–¾“úv•\¦‘Î‰
+ * ã€Œæ˜¨æ—¥ã€ã€ã€Œæ˜æ—¥ã€è¡¨ç¤ºå¯¾å¿œ
  *
  * Revision 1.61  2001/02/21  14:16:36  tsujimura543
- * HTMLƒ‚[ƒh‘Î‰Ï‚İ‚Ì revision ‚Æ“‡
+ * HTMLãƒ¢ãƒ¼ãƒ‰å¯¾å¿œæ¸ˆã¿ã® revision ã¨çµ±åˆ
  *
  * Revision 1.60  2001/02/20  12:28:19  tsujimura543
- * ‘¼‚Ì”h¶ƒo[ƒWƒ‡ƒ“‚Æ“‡‚·‚é‚½‚ßA‚¢‚Á‚½‚ñ revision ‚ğŒÅ’è
+ * ä»–ã®æ´¾ç”Ÿãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨çµ±åˆã™ã‚‹ãŸã‚ã€ã„ã£ãŸã‚“ revision ã‚’å›ºå®š
  *
  * Revision 1.52  2000/06/06  17:57:36  tsujimura543
- * 13¯À‚Ì•\¦‚ğ’Ç‰Á
+ * 13æ˜Ÿåº§ã®è¡¨ç¤ºã‚’è¿½åŠ 
  * 
  * Revision 1.51  1999/07/08  18:08:27  tsujimura543
- * ŠJ”­ŠÂ‹«‚ğ Win32 ‚ÉˆÚ‚·
- * -- HTML o—Í‘Î‰ì‹Æ‚â“®ìŠm”F‚Í¡Œã‚àUNIX (peach.na.rim.or.jp) ã‚Ås‚È‚¤ 
+ * é–‹ç™ºç’°å¢ƒã‚’ Win32 ã«ç§»ã™
+ * -- HTML å‡ºåŠ›å¯¾å¿œä½œæ¥­ã‚„å‹•ä½œç¢ºèªã¯ä»Šå¾Œã‚‚UNIX (peach.na.rim.or.jp) ä¸Šã§è¡Œãªã† 
  *
  * Revision 1.50  1997/01/21  19:40:28  tsujimura
- * Withdrawal from `shizuka' (UNIXã‚Å‚ÌŠJ”­I—¹”Å)
+ * Withdrawal from `shizuka' (UNIXä¸Šã§ã®é–‹ç™ºçµ‚äº†ç‰ˆ)
  *
  * Revision 1.14  95/12/16 06:13:18  tsujimura
- * TSUPOŒ`®‚Ì•\¦ŠJnˆÊ’u‚ğC³
+ * TSUPOå½¢å¼ã®è¡¨ç¤ºé–‹å§‹ä½ç½®ã‚’ä¿®æ­£
  * 
  * Revision 1.13  95/12/03 11:42:38  tsujimura
- * ƒRƒƒ“ƒg‚Ì®—EC³
+ * ã‚³ãƒ¡ãƒ³ãƒˆã®æ•´ç†ãƒ»ä¿®æ­£
  * 
  * Revision 1.12  95/12/02 23:29:52  tsujimura
- * JR‚Ì—¿‹àŒvZ“Á—á“ú•\¦‹@”\(-JƒIƒvƒVƒ‡ƒ“)‚ğ’Ç‰Á
+ * JRã®æ–™é‡‘è¨ˆç®—ç‰¹ä¾‹æ—¥è¡¨ç¤ºæ©Ÿèƒ½(-Jã‚ªãƒ—ã‚·ãƒ§ãƒ³)ã‚’è¿½åŠ 
  * 
  * Revision 1.11  95/12/02 15:50:28  tsujimura
- * ƒtƒ‰ƒ“ƒXŠv–½—ï‚Ì•\¦‚ğ’Ç‰Á
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã®è¡¨ç¤ºã‚’è¿½åŠ 
  * 
  * Revision 1.10  92/03/29 02:57:58  tsujimura
  * test release
@@ -136,7 +139,7 @@
 
 #ifndef lint
 static char     *rcs_id =
-    "$Header: C:/user/local/src/tamo/RCS/koyomi.c 1.80 2003/10/24 01:35:04 tsujimura543 Exp $";
+    "$Header: C:/user/local/src/tamo/RCS/koyomi.c 1.81 2012/10/12 10:57:46 tsujimura543 Exp tsujimura543 $";
 #endif
 
 static int simplemode        = OFF;
@@ -173,7 +176,7 @@ char    *decodeURL();
 static void
 version()
 {
-    printf( "koyomi $Revision: 1.80 $ by H.Tsujimura\n" );
+    printf( "koyomi $Revision: 1.81 $ by H.Tsujimura\n" );
 #ifdef  __TURBOC__
 #if     __TURBOC__ == 0x0200
     printf( "Compiled with Borland's Turbo C Ver2.0\n" );
@@ -195,7 +198,7 @@ usage()
   printf("  koyomi [-abcdehimstvzAEHJLM] {yesterday|tomorrow}\n");
   printf("    -A: print out all information, if possibble.\n" );
   printf("    -L: print out by LaTeX formatted text.\n" );
-  printf("    -M: print out by HTMP formatted text.\n" );
+  printf("    -M: print out by HTML formatted text.\n" );
   printf("    YYYY: year   (0001-9999)\n");
   printf("      yy: year   (00-99)\n");
   printf("      mm: month  (01-12)\n");
@@ -318,7 +321,7 @@ int yy, mm, dd, HH, MM, SS;
 
     printf("<P ALIGN=\"CENTER\">\n" );
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">‹”N</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">å»å¹´</A>\n",
            yy - 1, mm, dd, HH, MM, SS );
 
     a3 = yy;
@@ -329,27 +332,27 @@ int yy, mm, dd, HH, MM, SS;
         a2 = 12;
     }
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">æŒ</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">å…ˆæœˆ</A>\n",
            a3, a2, a1, HH, MM, SS );
 
     gregorianFromAbsolute( g - 1, &a1, &a2, &a3 );
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">ğ“ú</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">æ˜¨æ—¥</A>\n",
            a3, a2, a1, HH, MM, SS );
 
-    printf("<A HREF=\"koyomi.cgi?y=0&m=0&d=0&H=0\">¡“ú</A>\n");
+    printf("<A HREF=\"koyomi.cgi?y=0&m=0&d=0&H=0\">ä»Šæ—¥</A>\n");
 
     gregorianFromAbsolute( g + 1, &a1, &a2, &a3 );
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">–¾“ú</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">æ˜æ—¥</A>\n",
            a3, a2, a1, HH, MM, SS );
 
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">—ˆŒ</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">æ¥æœˆ</A>\n",
            yy, mm + 1, dd, HH, MM, SS );
 
     printf(
-"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">—ˆ”N</A>\n",
+"<A HREF=\"koyomi.cgi?y=%04d&m=%02d&d=%02d&H=%02d&M=%02d&S=%02d\">æ¥å¹´</A>\n",
            yy + 1, mm, dd, HH, MM, SS );
 }
 
@@ -388,7 +391,7 @@ char    *s;
     strcpy( buf, "\\multicolumn{2}{l|}{" );
     i += strlen(buf);
     while ( *s ) {
-        if ( !strncmp( s, "“ú", strlen("“ú") ) ) {
+        if ( !strncmp( s, "æ—¥", strlen("æ—¥") ) ) {
             buf[i++] = *s++;
             buf[i++] = *s++;
             buf[i++] = '}';
@@ -410,7 +413,7 @@ int     yy, mm, dd, HH, MM, SS;
     long    g;
     char    *p;
 
-    g = absoluteFromGregorian( dd, mm, yy ); /* ¼—ï1”N1Œ1“ú‚©‚ç‚Ì’Ê“ú */
+    g = absoluteFromGregorian( dd, mm, yy ); /* è¥¿æš¦1å¹´1æœˆ1æ—¥ã‹ã‚‰ã®é€šæ—¥ */
     gregorianFromAbsolute( g, &a1, &a2, &a3 );
     yy = a3; mm = a2; dd = a1;
 
@@ -421,17 +424,17 @@ int     yy, mm, dd, HH, MM, SS;
             printf( "\\begin{document}\n" );
         }
         printf( "\\begin{center}\n" );
-        printf( "{\\large ¡“ú‚Ì—ï}\\\\\n" );
+        printf( "{\\large ä»Šæ—¥ã®æš¦}\\\\\n" );
         printf( "\\end{center}\n" );
         printf( "\\medskip\n\\medskip\n" );
         printf( "\\begin{center}\n" );
 
         if ( printTime == ON )
             printf(
-                 "¡“ú‚Í %d”N%2dŒ%2d“ú ‚ÅA‚Í %2d%2d•ª%2d•b ‚Å‚·\\\\\n",
+                 "ä»Šæ—¥ã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã€æ™‚åˆ»ã¯ %2dæ™‚%2dåˆ†%2dç§’ ã§ã™\\\\\n",
                     yy, mm, dd, HH, MM, SS );
         else
-            printf( "¡“ú‚Í %d”N%2dŒ%2d“ú ‚Å‚·\\\\\n", yy, mm, dd );
+            printf( "ä»Šæ—¥ã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã™\\\\\n", yy, mm, dd );
         printf( "\\end{center}\n" );
         printf( "\\medskip\n\\par\n" );
         printf( "\\begin{table}[htbp]\n" );
@@ -442,37 +445,37 @@ int     yy, mm, dd, HH, MM, SS;
     else if ( htmlMode == ON ) {
         if ( withHeader == ON ) {
             printf( "<HTML>\n<HEAD>\n" );
-            printf( "<TITLE>%d”N%02dŒ%02d“ú‚Ì—ï</TITLE>\n", yy, mm, dd );
-            printf( "</HEAD>\n\n<BODY>\n<H1>¡“ú‚Ì—ï</H1>\n<P>\n" );
+            printf( "<TITLE>%då¹´%02dæœˆ%02dæ—¥ã®æš¦</TITLE>\n", yy, mm, dd );
+            printf( "</HEAD>\n\n<BODY>\n<H1>ä»Šæ—¥ã®æš¦</H1>\n<P>\n" );
         }
 
         if ( printTime == ON )
-            printf("%s‚Í %d”N%2dŒ%2d“ú ‚ÅA‚Í %2d%2d•ª%2d•b ‚Å‚·<BR>\n",
-                   tomorrow ? "–¾“ú" : yesterday ? "ğ“ú" : "¡“ú",
+            printf("%sã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã€æ™‚åˆ»ã¯ %2dæ™‚%2dåˆ†%2dç§’ ã§ã™<BR>\n",
+                   tomorrow ? "æ˜æ—¥" : yesterday ? "æ˜¨æ—¥" : "ä»Šæ—¥",
                    yy, mm, dd, HH, MM, SS );
         else
-            printf( "%s‚Í %d”N%2dŒ%2d“ú ‚Å‚·<BR>\n",
-                    tomorrow ? "–¾“ú" : yesterday ? "ğ“ú" : "¡“ú",
+            printf( "%sã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã™<BR>\n",
+                    tomorrow ? "æ˜æ—¥" : yesterday ? "æ˜¨æ—¥" : "ä»Šæ—¥",
                     yy, mm, dd );
 
         printf( "<P>\n<CENTER><TABLE BORDER=0 ALIGN=\"CENTER\">\n" );
     }
     else if ( printTime == ON )
-        printf( "%s‚Í %d”N%2dŒ%2d“ú ‚ÅA‚Í %2d%2d•ª%2d•b ‚Å‚·\n",
-                tomorrow ? "–¾“ú" : yesterday ? "ğ“ú" : "¡“ú",
+        printf( "%sã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã€æ™‚åˆ»ã¯ %2dæ™‚%2dåˆ†%2dç§’ ã§ã™\n",
+                tomorrow ? "æ˜æ—¥" : yesterday ? "æ˜¨æ—¥" : "ä»Šæ—¥",
                 yy, mm, dd, HH, MM, SS );
     else
-        printf( "%s‚Í %d”N%2dŒ%2d“ú ‚Å‚·\n",
-                tomorrow ? "–¾“ú" : yesterday ? "ğ“ú" : "¡“ú",
+        printf( "%sã¯ %då¹´%2dæœˆ%2dæ—¥ ã§ã™\n",
+                tomorrow ? "æ˜æ—¥" : yesterday ? "æ˜¨æ—¥" : "ä»Šæ—¥",
                 yy, mm, dd );
 
     if ( latexMode == ON )
-        printf( "ƒ†ƒŠƒEƒX“ú & %ld“ú & ", g + 1721425L );
+        printf( "ãƒ¦ãƒªã‚¦ã‚¹æ—¥ & %ldæ—¥ & ", g + 1721425L );
     else if ( htmlMode == ON )
-        printf( "<TR><TD>ƒ†ƒŠƒEƒX“ú</TD><TD>%ld“ú</TD><TD>",
+        printf( "<TR><TD>ãƒ¦ãƒªã‚¦ã‚¹æ—¥</TD><TD>%ldæ—¥</TD><TD>",
                 g + 1721425L );
     else
-        printf( "ƒ†ƒŠƒEƒX“ú             %ld“ú", g + 1721425L );
+        printf( "ãƒ¦ãƒªã‚¦ã‚¹æ—¥             %ldæ—¥", g + 1721425L );
     {
 #ifdef  PRINT_UTC
         int     h = HH;
@@ -481,7 +484,7 @@ int     yy, mm, dd, HH, MM, SS;
         if ( h < 0 ) {
             h += 24;
         }
-        printf( "  %02d%02d•ª%02d•b UTC", h, MM, SS );
+        printf( "  %02dæ™‚%02dåˆ†%02dç§’ UTC", h, MM, SS );
 #endif
 #if     0
         if ( ((yy > 1970) && (yy < 2038))                   ||
@@ -497,12 +500,12 @@ int     yy, mm, dd, HH, MM, SS;
                  (HH == 3) && ((MM <  14) ||
                                (MM == 14) && (SS <= 7))))))    ) {
             if ( latexMode == ON ) {
-                printf( "Œ—î %2.1f & \\\\\n",
+                printf( "æœˆé½¢ %2.1f & \\\\\n",
                         moonPhase2( yy, mm, dd, HH, MM, SS ) );
                 printf( "\\hline\n" );
             }
             else {
-                printf( "  Œ—î %2.1f\n",
+                printf( "  æœˆé½¢ %2.1f\n",
                         moonPhase2( yy, mm, dd, HH, MM, SS ) );
             }
         }
@@ -514,16 +517,16 @@ int     yy, mm, dd, HH, MM, SS;
         }
 #else
         if ( latexMode == ON ) {
-            printf( "Œ—î %2.1f & \\\\\n",
+            printf( "æœˆé½¢ %2.1f & \\\\\n",
                     moonPhase2( yy, mm, dd, HH, MM, SS ) );
             printf( "\\hline\n" );
         }
         else if ( htmlMode == ON ) {
-            printf( "Œ—î %2.1f</TD></TR>\n",
+            printf( "æœˆé½¢ %2.1f</TD></TR>\n",
                     moonPhase2( yy, mm, dd, HH, MM, SS ) );
         }
         else {
-            printf( "  Œ—î %2.1f\n",
+            printf( "  æœˆé½¢ %2.1f\n",
                     moonPhase2( yy, mm, dd, HH, MM, SS ) );
         }
 #endif
@@ -532,15 +535,15 @@ int     yy, mm, dd, HH, MM, SS;
     if ( printTsupo == ON ) {
         if ( latexMode == ON ) {
             printf( "\\hline\n" );
-            printf( "TSUPOŒ`® & %s & \\multicolumn{2}{l|}{",
+            printf( "TSUPOå½¢å¼ & %s & \\multicolumn{2}{l|}{",
                     tsupodate( dd, mm, yy ) );
         }
         else if ( htmlMode == ON ) {
-            printf( "<TR><TD>TSUPOŒ`®</TD><TD>%s</TD><TD>",
+            printf( "<TR><TD>TSUPOå½¢å¼</TD><TD>%s</TD><TD>",
                     tsupodate( dd, mm, yy ) );
         }
         else
-            printf( "TSUPOŒ`®       %s", tsupodate( dd, mm, yy ) );
+            printf( "TSUPOå½¢å¼       %s", tsupodate( dd, mm, yy ) );
         checkTsupo( g, dd, mm, yy );
         if ( latexMode == ON )
             printf( "}\\\\\n\\hline" );
@@ -551,26 +554,26 @@ int     yy, mm, dd, HH, MM, SS;
     isoFromAbsolute( g, &a1, &a2, &a3 );
     if ( latexMode == ON ) {
         printf( "\\hline\n" );
-        printf( "ISOŒ`® & \\multicolumn{3}{l|}{%4d”N‘æ%2dT‘æ%2d“ú}\\\\\n",
+        printf( "ISOå½¢å¼ & \\multicolumn{3}{l|}{%4då¹´ç¬¬%2dé€±ç¬¬%2dæ—¥}\\\\\n",
                 a3, a1, a2);
         printf( "\\hline\n\\hline\n" );
     }
     else if ( htmlMode == ON )
         printf(
-           "<TR><TD>ISOŒ`®</TD><TD COLSPAN=2>%4d”N‘æ%2dT‘æ%2d“ú</TD></TR>\n",
+           "<TR><TD>ISOå½¢å¼</TD><TD COLSPAN=2>%4då¹´ç¬¬%2dé€±ç¬¬%2dæ—¥</TD></TR>\n",
                a3, a1, a2 );
     else
-        printf( "ISOŒ`®           %4d”N‘æ%2dT‘æ%2d“ú\n", a3, a1, a2 );
+        printf( "ISOå½¢å¼           %4då¹´ç¬¬%2dé€±ç¬¬%2dæ—¥\n", a3, a1, a2 );
 
     if ( latexMode == ON )
-        printf("ƒOƒŒƒSƒŠƒI—ï & %4d”N%2dŒ%2d“ú & \\multicolumn{2}{l|}{%s—j“ú ",
+        printf("ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦ & %4då¹´%2dæœˆ%2dæ—¥ & \\multicolumn{2}{l|}{%sæ›œæ—¥ ",
                yy, mm, dd, weekday(g) );
     else if ( htmlMode == ON )
         printf(
-	     "<TR><TD>ƒOƒŒƒSƒŠƒI—ï</TD><TD>%4d”N%2dŒ(%s)%2d“ú</TD><TD>%s—j“ú",
+	     "<TR><TD>ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦</TD><TD>%4då¹´%2dæœˆ(%s)%2dæ—¥</TD><TD>%sæ›œæ—¥",
                 yy, mm, englishMonthName(mm), dd, weekday(g) );
     else
-        printf( "ƒOƒŒƒSƒŠƒI—ï      %4d”N%2dŒ(%s)%2d“ú  %s—j“ú",
+        printf( "ã‚°ãƒ¬ã‚´ãƒªã‚ªæš¦      %4då¹´%2dæœˆ(%s)%2dæ—¥  %sæ›œæ—¥",
                 yy, mm, englishMonthName(mm), dd, weekday(g) );
     checkAmerican( g, dd, mm, yy, htmlMode );
     if ( latexMode == ON )
@@ -581,13 +584,13 @@ int     yy, mm, dd, HH, MM, SS;
 
     julianFromAbsolute( g, &a1, &a2, &a3 );
     if ( latexMode == ON )
-        printf( "ƒ†ƒŠƒEƒX—ï & %4d”N%2dŒ%2d“ú & \\multicolumn{2}{l|}{",
+        printf( "ãƒ¦ãƒªã‚¦ã‚¹æš¦ & %4då¹´%2dæœˆ%2dæ—¥ & \\multicolumn{2}{l|}{",
                 a3, a2, a1 );
     else if ( htmlMode == ON )
-        printf( "<TR><TD>ƒ†ƒŠƒEƒX—ï</TD><TD>%4d”N%2dŒ(%s)%2d“ú</TD><TD>",
+        printf( "<TR><TD>ãƒ¦ãƒªã‚¦ã‚¹æš¦</TD><TD>%4då¹´%2dæœˆ(%s)%2dæ—¥</TD><TD>",
                 a3, a2, latinMonthName(a2), a1 );
     else
-        printf( "ƒ†ƒŠƒEƒX—ï        %4d”N%2dŒ(%s)%2d“ú",
+        printf( "ãƒ¦ãƒªã‚¦ã‚¹æš¦        %4då¹´%2dæœˆ(%s)%2dæ—¥",
 	        a3, a2, latinMonthName(a2), a1 );
     checkRoman( g, a1, a2, a3 );
     checkGreek( g, a1, a2, a3, mm, yy );
@@ -599,13 +602,13 @@ int     yy, mm, dd, HH, MM, SS;
 
     islamicFromAbsolute( g, &a1, &a2, &a3 );
     if ( latexMode == ON )
-        printf( "ƒCƒXƒ‰ƒ€—ï & %4d”N%2dŒ%2d“ú & \\multicolumn{2}{l|}{",
+        printf( "ã‚¤ã‚¹ãƒ©ãƒ æš¦ & %4då¹´%2dæœˆ%2dæ—¥ & \\multicolumn{2}{l|}{",
                 a3, a2, a1 );
     else if ( htmlMode == ON )
-        printf( "<TR><TD>ƒCƒXƒ‰ƒ€—ï</TD><TD>%4d”N%2dŒ(%s)%2d“ú</TD><TD>",
+        printf( "<TR><TD>ã‚¤ã‚¹ãƒ©ãƒ æš¦</TD><TD>%4då¹´%2dæœˆ(%s)%2dæ—¥</TD><TD>",
                 a3, a2, islamicMonthName(a2), a1 );
     else
-        printf( "ƒCƒXƒ‰ƒ€—ï        %4d”N%2dŒ(%s)%2d“ú",
+        printf( "ã‚¤ã‚¹ãƒ©ãƒ æš¦        %4då¹´%2dæœˆ(%s)%2dæ—¥",
                 a3, a2, islamicMonthName(a2), a1 );
     checkIslamic( g, a1, a2, a3, yy );
     if ( latexMode == ON )
@@ -616,14 +619,14 @@ int     yy, mm, dd, HH, MM, SS;
 
     hebrewFromAbsolute( g, &a1, &a2, &a3 );
     if ( latexMode == ON )
-        printf( "ƒ†ƒ_ƒ„—ï & %4d”N%2dŒ%2d“ú & \\multicolumn{2}{l|}{",
+        printf( "ãƒ¦ãƒ€ãƒ¤æš¦ & %4då¹´%2dæœˆ%2dæ—¥ & \\multicolumn{2}{l|}{",
                 a3, a2, a1 );
     else if ( htmlMode == ON )
         printf(
-	    "<TR><TD>ƒ†ƒ_ƒ„—ï</TD><TD>%4d”N%2dŒ(%s)%2d“ú</TD><TD COILSPAN=2>",
+	    "<TR><TD>ãƒ¦ãƒ€ãƒ¤æš¦</TD><TD>%4då¹´%2dæœˆ(%s)%2dæ—¥</TD><TD COILSPAN=2>",
                 a3, a2, hebrewMonthName(a2, a3), a1 );
     else
-        printf( "ƒ†ƒ_ƒ„—ï          %4d”N%2dŒ(%s)%2d“ú",
+        printf( "ãƒ¦ãƒ€ãƒ¤æš¦          %4då¹´%2dæœˆ(%s)%2dæ—¥",
                 a3, a2, hebrewMonthName(a2, a3), a1 );
     checkHebrew( g, a1, a2, a3, mm, yy );
     if ( latexMode == ON )
@@ -634,37 +637,37 @@ int     yy, mm, dd, HH, MM, SS;
 
     if ( simplemode == OFF ) {
         /*
-         * ƒ}ƒ„ŠÖ˜AŠw‰ï‚Å‚Ì’èà‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ï
+         * ãƒãƒ¤é–¢é€£å­¦ä¼šã§ã®å®šèª¬ã«åŸºã¥ããƒãƒ¤é•·æœŸæš¦
          */
         if ( latexMode == ON ) {
             printf( "\\hline\n" );
-            printf( "ƒ}ƒ„’·Šú—ï & %s & \\multicolumn{2}{l|}{%s %s}\\\\\n",
+            printf( "ãƒãƒ¤é•·æœŸæš¦ & %s & \\multicolumn{2}{l|}{%s %s}\\\\\n",
                     mayaFromAbsolute( g ),
                     tsolkinFromAbsolute( g ),
                     haabuFromAbsolute( g )    );
         }
         else if ( htmlMode == ON )
-            printf( "<TR><TD>ƒ}ƒ„’·Šú—ï</TD><TD>%s</TD><TD>%s %s</TD></TR>\n",
+            printf( "<TR><TD>ãƒãƒ¤é•·æœŸæš¦</TD><TD>%s</TD><TD>%s %s</TD></TR>\n",
                     mayaFromAbsolute( g ),
                     tsolkinFromAbsolute( g ),
                     haabuFromAbsolute( g )    );
         else {
-            printf( "ƒ}ƒ„’·Šú—ï        %s\t%s %s\n",
+            printf( "ãƒãƒ¤é•·æœŸæš¦        %s\t%s %s\n",
                     mayaFromAbsolute( g ),
                     tsolkinFromAbsolute( g ),
                     haabuFromAbsolute( g )    );
 #if     0
 /*
- * ˆÈ‰º‚Í
+ * ä»¥ä¸‹ã¯
  *     ``Calendrical Calculations, Part II: Three Historical Calendars''
  *     by E. M. Reingold,  N. Dershowitz, and S. M. Clamen,
  *     Software--Practice and Experience, Volume 23, Number 4 (April, 1993),
  *     pages 383-404.
- * ‚É‚æ‚éZo•û–@‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ğ
- * (GNU Emacs ‚Ì calendarŠÖ˜AELISPƒvƒƒOƒ‰ƒ€‚ÅÌ—p‚µ‚Ä‚¢‚éB’èà‚æ‚è2“ú•ª“ú
- *  •t‚ªá‚­‚È‚Á‚Ä‚¢‚é)
+ * ã«ã‚ˆã‚‹ç®—å‡ºæ–¹æ³•ã«åŸºã¥ããƒãƒ¤é•·æœŸæ­´
+ * (GNU Emacs ã® calendaré–¢é€£ELISPãƒ—ãƒ­ã‚°ãƒ©ãƒ ã§æ¡ç”¨ã—ã¦ã„ã‚‹ã€‚å®šèª¬ã‚ˆã‚Š2æ—¥åˆ†æ—¥
+ *  ä»˜ãŒè‹¥ããªã£ã¦ã„ã‚‹)
  */
-            printf( "Goodman-Martinez-Thompsonà‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ï\n" );
+            printf( "Goodman-Martinez-Thompsonèª¬ã«åŸºã¥ããƒãƒ¤é•·æœŸæš¦\n" );
             printf( "                  %s\t%s %s\n",
                     mayaFromAbsolute( g - 2L ),
                     tsolkinFromAbsolute( g - 2L ),
@@ -672,11 +675,11 @@ int     yy, mm, dd, HH, MM, SS;
 #endif
 
         /*
-         * Spindenà‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ï
-         *    Spindenà‚Í’èà‚ÉŸ‚¢‚Å—L—Í‚Èà
+         * Spindenèª¬ã«åŸºã¥ããƒãƒ¤é•·æœŸæš¦
+         *    Spindenèª¬ã¯å®šèª¬ã«æ¬¡ã„ã§æœ‰åŠ›ãªèª¬
          */
             if ( printSpinden == ON ) {
-                printf( "Spindenà‚ÉŠî‚Ã‚­ƒ}ƒ„’·Šú—ï\n" );
+                printf( "Spindenèª¬ã«åŸºã¥ããƒãƒ¤é•·æœŸæš¦\n" );
                 printf( "                  %s\t%s %s\n",
                         mayaFromAbsolute(g - 2L + (1137140L - 1232041L)),
                         tsolkinFromAbsolute(g - 2L + (1137140L - 1232041L)),
@@ -685,19 +688,19 @@ int     yy, mm, dd, HH, MM, SS;
         }
 
         /*
-         * ƒ}ƒ„ŠÖ˜AŠw‰ï‚Å‚Ì’èà‚ÉŠî‚Ã‚­ƒ}ƒ„’ZŠú—ï
+         * ãƒãƒ¤é–¢é€£å­¦ä¼šã§ã®å®šèª¬ã«åŸºã¥ããƒãƒ¤çŸ­æœŸæš¦
          */
         if ( latexMode == ON ) {
             printf( "\\hline\n" );
-            printf( "ƒ}ƒ„’ZŠú—ï & \\multicolumn{3}{l|}{%s}\\\\\n",
+            printf( "ãƒãƒ¤çŸ­æœŸæš¦ & \\multicolumn{3}{l|}{%s}\\\\\n",
                     katunFromAbsolute( g ) );
             printf( "\\hline\n" );
         }
         else if ( htmlMode == ON )
-            printf( "<TR><TD>ƒ}ƒ„’ZŠú—ï</TD><TD COLSPAN=2>%s</TD></TR>\n",
+            printf( "<TR><TD>ãƒãƒ¤çŸ­æœŸæš¦</TD><TD COLSPAN=2>%s</TD></TR>\n",
                     katunFromAbsolute( g ) );
         else
-            printf( "ƒ}ƒ„’ZŠú—ï     %s\n", katunFromAbsolute( g ) );
+            printf( "ãƒãƒ¤çŸ­æœŸæš¦     %s\n", katunFromAbsolute( g ) );
     }
 
     if ( (yy >= 1975) || (yy <= 1799) ||
@@ -707,34 +710,34 @@ int     yy, mm, dd, HH, MM, SS;
           (g <= absoluteFromGregorian( 22, 9, 1800 )))     ) {
         if ( latexMode == ON ) {
             printf( "\\hline\n" );
-            printf( "ƒtƒ‰ƒ“ƒXŠv–½—ï & \\multicolumn{3}{l|}{%s}\\\\\n",
+            printf( "ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ & \\multicolumn{3}{l|}{%s}\\\\\n",
                     fdate( g, dd, mm, yy, HH, MM, SS, printTime, OFF ) );
             printf( "\\hline\n" );
         }
         else if ( htmlMode == ON )
-            printf( "<TR><TD>ƒtƒ‰ƒ“ƒXŠv–½—ï</TD><TD COLSPAN=2>%s</TD></TR>\n",
+            printf( "<TR><TD>ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦</TD><TD COLSPAN=2>%s</TD></TR>\n",
                     fdate( g, dd, mm, yy, HH, MM, SS, printTime, htmlMode ) );
         else
-            printf( "ƒtƒ‰ƒ“ƒXŠv–½—ï  %s\n",
+            printf( "ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦  %s\n",
                     fdate( g, dd, mm, yy, HH, MM, SS, printTime, htmlMode ) );
     }
     if ( latexMode == ON ) {
         printf( "\\hline\n" );
-        printf( "˜a—ï & %s  & \\multicolumn{2}{l|}{%s %s %s",
+        printf( "å’Œæš¦ & %s  & \\multicolumn{2}{l|}{%s %s %s",
                 wareki( dd, mm, yy, 0 ), kyusei(g), nijuhachishuku( g ),
                 junichoku( g, dd, mm, yy, &a1 ) );
         if ( ( p = sanrinbou( g, a1 ) ) != NULL )
             printf( " %s", p );
     }
     else if ( htmlMode == ON ) {
-        printf( "<TR><TD>˜a—ï(‘¾—z—ï)</TD><TD>%s</TD><TD>%s %s %s",
+        printf( "<TR><TD>å’Œæš¦(å¤ªé™½æš¦)</TD><TD>%s</TD><TD>%s %s %s",
                 wareki( dd, mm, yy, 0 ), kyusei(g), nijuhachishuku( g ),
                 junichoku( g, dd, mm, yy, &a1 ) );
         if ( ( p = sanrinbou( g, a1 ) ) != NULL )
             printf( " %s", p );
     }
     else {
-        printf( "˜a—ï ‘¾—z—ğ     %s  %s  %s  %s",
+        printf( "å’Œæš¦ å¤ªé™½æ­´     %s  %s  %s  %s",
                 wareki( dd, mm, yy, 0 ), kyusei(g), nijuhachishuku( g ),
                 junichoku( g, dd, mm, yy, &a1 ) );
         if ( ( p = sanrinbou( g, a1 ) ) != NULL )
@@ -754,74 +757,74 @@ int     yy, mm, dd, HH, MM, SS;
         a1 = dd; a2 = mm; a3 = yy;
         p  = get_kyureki( &a1, &a2, &a3, &uruu );
         if ( latexMode == ON ) {
-            printf( "‘¾‰A‘¾—z—ï & %s & \\multicolumn{2}{l|}{",
+            printf( "å¤ªé™°å¤ªé™½æš¦ & %s & \\multicolumn{2}{l|}{",
                     wareki( a1, a2, a3, uruu ) );
             checkKyureki( a1, a2, a3, uruu, p, htmlMode );
             printf( "}\\\\\n" );
             printf( "\\hline\n" );
         }
         else if ( htmlMode == ON ) {
-            printf( "<TR><TD>(‘¾‰A‘¾—z—ï)</TD><TD>%s</TD><TD>",
+            printf( "<TR><TD>(å¤ªé™°å¤ªé™½æš¦)</TD><TD>%s</TD><TD>",
                     wareki( a1, a2, a3, uruu ) );
             checkKyureki( a1, a2, a3, uruu, p, htmlMode );
             printf( "</TD></TR>\n" );
         }
         else {
-            printf( "     ‘¾‰A‘¾—z—ï %s", wareki( a1, a2, a3, uruu ) );
+            printf( "     å¤ªé™°å¤ªé™½æš¦ %s", wareki( a1, a2, a3, uruu ) );
             checkKyureki( a1, a2, a3, uruu, p, htmlMode );
             putchar( '\n' );
         }
     }
 
     if ( latexMode == ON ) {
-        printf( "Š±x & %s", splitEto( eto( g, yy, OFF ) ) );
+        printf( "å¹²æ”¯ & %s", splitEto( eto( g, yy, OFF ) ) );
         checkEto( g, htmlMode );
         printf( "\\\\\n" );
 
         printf( "\\hline\n\\hline\n" );
-        printf( "¯À & %s & \\\\\n", split2( zodiac( g, yy ) ) );
+        printf( "æ˜Ÿåº§ & %s & \\\\\n", split2( zodiac( g, yy ) ) );
         printf( "\\hline\n" );
         if ( printZodiac13 == ON ) {
-            printf( "13¯À & %s & \\\\\n", split2( zodiac13(g,yy) ) );
+            printf( "13æ˜Ÿåº§ & %s & \\\\\n", split2( zodiac13(g,yy) ) );
             printf( "\\hline\n" );
         }
     }
     else if ( htmlMode == ON ) {
-        printf( "<TR><TD>Š±x</TD><TD>%s",
+        printf( "<TR><TD>å¹²æ”¯</TD><TD>%s",
                 eto( g, yy, htmlMode ));
         checkEto( g, htmlMode );
         printf( "</TD></TR>\n" );
 
-        printf("<TR><TD>•§‹³‹IŒ³</TD><TD COLSPAN=2>%4d”N%2dŒ%2d“ú</TD></TR>\n"
+        printf("<TR><TD>ä»æ•™ç´€å…ƒ</TD><TD COLSPAN=2>%4då¹´%2dæœˆ%2dæ—¥</TD></TR>\n"
                , yy + 543, mm, dd );
-        printf( "<TR><TD>ƒlƒp[ƒ‹—ï</TD><TD COLSPAN=2>%s</TD></TR>\n",
+        printf( "<TR><TD>ãƒãƒ‘ãƒ¼ãƒ«æš¦</TD><TD COLSPAN=2>%s</TD></TR>\n",
                 nepdate(g, dd, mm, yy, HH, MM, SS, printTime) );
-        printf( "<TR><TD>¯À</TD><TD COLSPAN=2>%s</TD></TR>\n",
+        printf( "<TR><TD>æ˜Ÿåº§</TD><TD COLSPAN=2>%s</TD></TR>\n",
                 zodiac(g,yy));
         if ( printZodiac13 == ON )
-            printf( "<TR><TD>13¯À</TD><TD COLSPAN=2>%s</TD></TR>\n",
+            printf( "<TR><TD>13æ˜Ÿåº§</TD><TD COLSPAN=2>%s</TD></TR>\n",
                     zodiac13(g,yy));
     }
     else {
-        printf( "     Š±x       %s", eto( g, yy, htmlMode ) );
+        printf( "     å¹²æ”¯       %s", eto( g, yy, htmlMode ) );
         checkEto( g, htmlMode );
         putchar( '\n' );
 
-        printf( "     c‹I         %4d”N%2dŒ%2d“ú\n", yy + 660, mm, dd );
-        printf( "•§‹³‹IŒ³          %4d”N%2dŒ%2d“ú\n", yy + 543, mm, dd );
-        printf( "ƒlƒp[ƒ‹—ï        %s\n",
+        printf( "     çš‡ç´€         %4då¹´%2dæœˆ%2dæ—¥\n", yy + 660, mm, dd );
+        printf( "ä»æ•™ç´€å…ƒ          %4då¹´%2dæœˆ%2dæ—¥\n", yy + 543, mm, dd );
+        printf( "ãƒãƒ‘ãƒ¼ãƒ«æš¦        %s\n",
                 nepdate(g, dd, mm, yy, HH, MM, SS, printTime) );
         if ( ((yy == 2001) && (mm == 12) && (dd >  15)) ||
              ((yy >= 2002) && (yy <= 2011))             ||
              ((yy == 2012) && (mm ==  1) && (dd <= 22))    ) {
             char    *p = indianLunarDate( dd, mm, yy, HH, MM, SS );
             if ( p ) {
-                printf( "ƒCƒ“ƒh‘¾‰A—ï      %s\n", p );
+                printf( "ã‚¤ãƒ³ãƒ‰å¤ªé™°æš¦      %s\n", p );
             }
         }
-        printf( "¯À                      %s\n", zodiac( g, yy ) );
+        printf( "æ˜Ÿåº§                      %s\n", zodiac( g, yy ) );
         if ( printZodiac13 == ON )
-            printf( "13¯À                    %s\n", zodiac13( g, yy ) );
+            printf( "13æ˜Ÿåº§                    %s\n", zodiac13( g, yy ) );
     }
 
     if ( latexMode == ON ) {
