@@ -11,48 +11,48 @@
  * bug fixed
  *
  * Revision 1.15  2003/11/11  09:11:42  tsujimura543
- * ƒ†ƒŠƒEƒX—ïAƒCƒXƒ‰ƒ€—ïAƒ†ƒ_ƒ„—ï‚Ì•\¦‚ğÅ“K‰»
+ * ãƒ¦ãƒªã‚¦ã‚¹æš¦ã€ã‚¤ã‚¹ãƒ©ãƒ æš¦ã€ãƒ¦ãƒ€ãƒ¤æš¦ã®è¡¨ç¤ºã‚’æœ€é©åŒ–
  *
  * Revision 1.14  2003/11/11  07:02:19  tsujimura543
- * K&R •\‹L ¨ ANSI C •\‹L ‚ÉŠ®‘SˆÚs
+ * K&R è¡¨è¨˜ â†’ ANSI C è¡¨è¨˜ ã«å®Œå…¨ç§»è¡Œ
  *
  * Revision 1.13  2003/05/27  12:20:06  tsujimura543
- * tamo_func.c “à‚Ì #define ‚Ìˆê•”‚ğ tamo.h ‚ÉˆÚ“®
+ * tamo_func.c å†…ã® #define ã®ä¸€éƒ¨ã‚’ tamo.h ã«ç§»å‹•
  *
  * Revision 1.12  2003/05/26  07:47:50  tsujimura543
- * ƒCƒ“ƒh‘–¯—ï(‘‰Æ—ï)‘Î‰Aƒlƒp[ƒ‹‘¾‰A—ïC³
+ * ã‚¤ãƒ³ãƒ‰å›½æ°‘æš¦(å›½å®¶æš¦)å¯¾å¿œã€ãƒãƒ‘ãƒ¼ãƒ«å¤ªé™°æš¦ä¿®æ­£
  *
  * Revision 1.11  2003/05/06  09:33:53  tsujimura543
- * htmlMode ‚ª OFF ‚Ì‚Æ‚«AƒLƒƒƒ“ƒy[ƒ“‚ğ•\¦‚·‚é‚æ‚¤‚É‚µ‚½
+ * htmlMode ãŒ OFF ã®ã¨ãã€ã‚­ãƒ£ãƒ³ãƒšãƒ¼ãƒ³ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.10  2003/04/25  11:25:23  tsujimura543
- * ¥‹C•Î·‚ğ•\¦‚·‚é‚æ‚¤‚É‚µ‚½
+ * ç£æ°—åå·®ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.9  2003/04/24  04:29:28  tsujimura543
- * ŠÖ˜AƒŠƒ“ƒN‚ğ•\¦‚·‚é‚æ‚¤‚É‚µ‚½(htmlƒ‚[ƒh)
+ * é–¢é€£ãƒªãƒ³ã‚¯ã‚’è¡¨ç¤ºã™ã‚‹ã‚ˆã†ã«ã—ãŸ(htmlãƒ¢ãƒ¼ãƒ‰æ™‚)
  *
  * Revision 1.8  2003/04/16  05:56:37  tsujimura543
- * ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ğˆê’è‚Ì‹K‘¥‚É‚µ‚½‚ª‚Á‚Ä’Tõ‚µƒI[ƒvƒ“‚·‚é‚æ‚¤‚É‚µ‚½
+ * ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸€å®šã®è¦å‰‡ã«ã—ãŸãŒã£ã¦æ¢ç´¢ã—ã‚ªãƒ¼ãƒ—ãƒ³ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.7  2003/03/31  11:24:31  tsujimura543
- * ˜a—ï(‘¾—z‘¾‰A—ï)ŠÖ˜A‚¨‚æ‚ÑISOŠÖ˜AC³
- * ƒtƒ‰ƒ“ƒXŠv–½—ï‚Ì•\¦‰Â”\ŠúŠÔ‚ğŠg’£
+ * å’Œæš¦(å¤ªé™½å¤ªé™°æš¦)é–¢é€£ãŠã‚ˆã³ISOé–¢é€£ä¿®æ­£
+ * ãƒ•ãƒ©ãƒ³ã‚¹é©å‘½æš¦ã®è¡¨ç¤ºå¯èƒ½æœŸé–“ã‚’æ‹¡å¼µ
  *
  * Revision 1.6  2003/03/24  08:58:03  tsujimura543
- * (1) ˜a—ï(‘¾‰A‘¾—z—ï)‚Ì•\¦‰Â”\ŠúŠÔ‚ğŠg’£
- * (2) ‘å‹‚Æ“y—p‚Ì‰N‚Ì“ú‚ªd‚È‚Á‚½ê‡A•Ğ•û‚µ‚©•\¦‚³‚ê‚È‚¢•s‹ï‡‚ğC³
+ * (1) å’Œæš¦(å¤ªé™°å¤ªé™½æš¦)ã®è¡¨ç¤ºå¯èƒ½æœŸé–“ã‚’æ‹¡å¼µ
+ * (2) å¤§æš‘ã¨åœŸç”¨ã®ä¸‘ã®æ—¥ãŒé‡ãªã£ãŸå ´åˆã€ç‰‡æ–¹ã—ã‹è¡¨ç¤ºã•ã‚Œãªã„ä¸å…·åˆã‚’ä¿®æ­£
  *
  * Revision 1.5  2003/03/18  10:20:50  tsujimura543
- * o—ÍŒ‹‰Ê‚ª‚«‚ê‚¢‚É‚È‚é‚æ‚¤‚É’²®
+ * å‡ºåŠ›çµæœãŒãã‚Œã„ã«ãªã‚‹ã‚ˆã†ã«èª¿æ•´
  *
  * Revision 1.4  2003/03/14  09:37:59  tsujimura543
- * ŠÖ”‚ğ®—
+ * é–¢æ•°ã‚’æ•´ç†
  *
  * Revision 1.3  2003/03/12  06:49:40  tsujimura543
- * Šˆ“®ƒƒ‚‘Î‰€”õ
+ * æ´»å‹•ãƒ¡ãƒ¢å¯¾å¿œæº–å‚™
  *
  * Revision 1.2  2003/03/11  12:13:53  tsujimura543
- * ƒRƒƒ“ƒg‚ğ®—
+ * ã‚³ãƒ¡ãƒ³ãƒˆã‚’æ•´ç†
  *
  * Revision 1.1  2003/03/11  01:38:18  tsujimura543
  * Initial revision
@@ -100,37 +100,37 @@
 #define LAST            -1
 
 
-#define SK24_SHOUKAN     1  /* ¬Š¦ */
-#define SK24_DAIKAN      2  /* ‘åŠ¦ */
-#define SK24_RISSHUN     3  /* —§t */
-#define SK24_USUI        4  /* ‰J… */
-#define SK24_KEICHITSU   5  /* Œ[å­ */
-#define SK24_SHUNBUN     6  /* t•ª */
-#define SK24_SEIMEI      7  /* ´–¾ */
-#define SK24_KOKUU       8  /* ’‰J */
-#define SK24_RIKKA       9  /* —§‰Ä */
-#define SK24_SHOUMAN    10  /* ¬– */
-#define SK24_BOUSHU     11  /* äŠí */
-#define SK24_GESHI      12  /* ‰ÄŠ */
-#define SK24_SHOUSHO    13  /* ¬‹ */
-#define SK24_TAISHO     14  /* ‘å‹ */
-#define SK24_RISSHUU    15  /* —§H */
-#define SK24_SHOSHO     16  /* ˆ‹ */
-#define SK24_HAKURO     17  /* ”’˜I */
-#define SK24_SHUUBUN    18  /* H•ª */
-#define SK24_KANRO      19  /* Š¦˜I */
-#define SK24_SOUKOU     20  /* ‘š~ */
-#define SK24_RITTOU     21  /* —§“~ */
-#define SK24_SHOUSETSU  22  /* ¬á */
-#define SK24_TAISETSU   23  /* ‘åá */
-#define SK24_TOUJI      24  /* “~Š */
+#define SK24_SHOUKAN     1  /* å°å¯’ */
+#define SK24_DAIKAN      2  /* å¤§å¯’ */
+#define SK24_RISSHUN     3  /* ç«‹æ˜¥ */
+#define SK24_USUI        4  /* é›¨æ°´ */
+#define SK24_KEICHITSU   5  /* å•“èŸ„ */
+#define SK24_SHUNBUN     6  /* æ˜¥åˆ† */
+#define SK24_SEIMEI      7  /* æ¸…æ˜ */
+#define SK24_KOKUU       8  /* ç©€é›¨ */
+#define SK24_RIKKA       9  /* ç«‹å¤ */
+#define SK24_SHOUMAN    10  /* å°æº€ */
+#define SK24_BOUSHU     11  /* èŠ’ç¨® */
+#define SK24_GESHI      12  /* å¤è‡³ */
+#define SK24_SHOUSHO    13  /* å°æš‘ */
+#define SK24_TAISHO     14  /* å¤§æš‘ */
+#define SK24_RISSHUU    15  /* ç«‹ç§‹ */
+#define SK24_SHOSHO     16  /* å‡¦æš‘ */
+#define SK24_HAKURO     17  /* ç™½éœ² */
+#define SK24_SHUUBUN    18  /* ç§‹åˆ† */
+#define SK24_KANRO      19  /* å¯’éœ² */
+#define SK24_SOUKOU     20  /* éœœé™ */
+#define SK24_RITTOU     21  /* ç«‹å†¬ */
+#define SK24_SHOUSETSU  22  /* å°é›ª */
+#define SK24_TAISETSU   23  /* å¤§é›ª */
+#define SK24_TOUJI      24  /* å†¬è‡³ */
 
 #define leapyear( year )    ( ((year)%4==0) && \
                               (((year)%100!=0) || ((year)%400==0)) )
 
 char    *getSekkiName2 _(( int day, int month, int year, int *sekki_no ));
 void    getLunarCalendar2 _(( int *day, int *month, int *year, int *uruu ));
-char	*get_kyureki2 _(( int *d, int *m, int *y, int *u ));
+char                              *get_kyureki2 _(( int *d, int *m, int *y, int *u ));
 
 BOOL    isFullMoonDay _(( long _yy, long _mm, long _dd ));
 void    tamo_moon _(( long _yy, long _mm, long _dd,
