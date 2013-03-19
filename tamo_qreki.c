@@ -6,13 +6,13 @@
 \*---------------------------------------------------------------------------*/
 
 /*
- *	“úŒo‚l‚‰‚˜	listings.byte
+ *	æ—¥çµŒï¼­ï½‰ï½˜	listings.byte
  *
- *	“úŒo BYTE / January 1988 Hobby
- *		‘åˆÀC•§–Å‚ªˆê”­‚Å‚í‚©‚é˜Z—jƒvƒƒOƒ‰ƒ€ p.239-243
- *		—é–Ø@—²
+ *	æ—¥çµŒ BYTE / January 1988 Hobby
+ *		å¤§å®‰ï¼Œä»æ»…ãŒä¸€ç™ºã§ã‚ã‹ã‚‹å…­æ›œãƒ—ãƒ­ã‚°ãƒ©ãƒ  p.239-243
+ *		éˆ´æœ¨ã€€éš†
  *
- *		‘¾—z‚ÆŒ‚Ì‰©Œo‚ğ—˜—p‚µ‚Ä
+ *		å¤ªé™½ã¨æœˆã®é»„çµŒã‚’åˆ©ç”¨ã—ã¦
  *		1987.11.11. (WED)
  *		Ver.    1.01
  *		By      Takashi S.
@@ -38,121 +38,136 @@
  *
  *		modified by Tsuporone (H.Tsujimura) tsupo@na.rim.or.jp
  *							17 February 1991
- *		‚±‚Ìƒ\[ƒXƒvƒƒOƒ‰ƒ€‚Í ral‚Ì Taian_teller (Turbo Pascal”Å)
- *		‚ğ ethyl‚ª MS-C ‚ÉˆÚA‚µ‚½‚à‚Ì‚©‚ç•K—v‚ÈŠÖ”‚ğæ‚èo‚µA‰ü
- *		‘¢‚µ‚½‚à‚Ì‚Å‚·B‹Œ—ïA‰©ŒoAß‹C‚ÌŒvZ‚Í‚ ‚­‚Ü‚Å‚à‹ß—‚Å‚·‚Ì
- *		‚ÅÀÛ‚ÆH‚¢ˆá‚¢‚ª¶‚¶‚é‚±‚Æ‚ª‚ ‚è‚Ü‚·B
+ *		ã“ã®ã‚½ãƒ¼ã‚¹ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯ ralæ°ã® Taian_teller (Turbo Pascalç‰ˆ)
+ *		ã‚’ ethylæ°ãŒ MS-C ã«ç§»æ¤ã—ãŸã‚‚ã®ã‹ã‚‰å¿…è¦ãªé–¢æ•°ã‚’å–ã‚Šå‡ºã—ã€æ”¹
+ *		é€ ã—ãŸã‚‚ã®ã§ã™ã€‚æ—§æš¦ã€é»„çµŒã€ç¯€æ°—ã®è¨ˆç®—ã¯ã‚ãã¾ã§ã‚‚è¿‘ä¼¼ã§ã™ã®
+ *		ã§å®Ÿéš›ã¨é£Ÿã„é•ã„ãŒç”Ÿã˜ã‚‹ã“ã¨ãŒã‚ã‚Šã¾ã™ã€‚
  *
  *                                                       3 December 1995
- *              ‚³‚ç‚ÉAX‰Àj‚Ì today.exe ‚Ìƒ\[ƒX‚Ìˆê•”(inreki.c) ‚ğQl
- *              ‚Éu’ªv‚ÌZoˆ—‚ğ’Ç‰Á‚µ‚Ü‚µ‚½B
+ *              ã•ã‚‰ã«ã€æ£®ä½³å²æ°ã® today.exe ã®ã‚½ãƒ¼ã‚¹ã®ä¸€éƒ¨(inreki.c) ã‚’å‚è€ƒ
+ *              ã«ã€Œæ½®ã€ã®ç®—å‡ºå‡¦ç†ã‚’è¿½åŠ ã—ã¾ã—ãŸã€‚
  *
  * History :
  * $Log: tamo_qreki.c $
+ * Revision 1.91  2013/01/22  10:28:38  tsujimura543
+ * åœŸç”¨é–¢é€£ã€ä¿®æ­£
+ *
+ * Revision 1.90  2013/01/22  08:01:10  tsujimura543
+ * äºŒåå››ç¯€å­£é–¢é€£ã‚’ä¿®æ­£
+ *
+ * Revision 1.89  2012/08/21  11:02:10  tsujimura543
+ * ã€Œä¸­ç§‹ç¯€(ä¸­å›½)ã€ã‚’è¿½åŠ 
+ *
+ * Revision 1.88  2012/08/21  07:40:17  tsujimura543
+ * ã€Œäº¥ã®å­ã€ã‚’è¿½åŠ 
+ *
+ * Revision 1.87  2012/08/20  09:06:37  tsujimura543
+ * æ—§æš¦ã®2033å¹´å•é¡Œã®å¯¾ç­–ã‚’å®Ÿè£…
+ *
  * Revision 1.86  2003/11/11  07:02:19  tsujimura543
- * K&R •\‹L ¨ ANSI C •\‹L ‚ÉŠ®‘SˆÚs
+ * K&R è¡¨è¨˜ â†’ ANSI C è¡¨è¨˜ ã«å®Œå…¨ç§»è¡Œ
  *
  * Revision 1.85  2003/11/07  12:03:00  tsujimura543
- * ”ŠO‘‚ÌjÕ“ú‚ğ’Ç‰Á
+ * è«¸å¤–å›½ã®ç¥ç¥­æ—¥ã‚’è¿½åŠ 
  *
  * Revision 1.84  2003/10/24  02:41:14  tsujimura543
- * ƒf[ƒ^ƒtƒ@ƒCƒ‹‚Ì’u‚«êŠ‚ğ“ˆê
+ * ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®ç½®ãå ´æ‰€ã‚’çµ±ä¸€
  *
  * Revision 1.83  2003/05/30  07:49:50  tsujimura543
- * “y—pŠÖ˜A‚Ìs–‚ğ’Ç‰Á
+ * åœŸç”¨é–¢é€£ã®è¡Œäº‹ã‚’è¿½åŠ 
  *
  * Revision 1.82  2003/04/25  04:49:21  tsujimura543
- * sun_cel_value ‚ğƒOƒ[ƒoƒ‹•Ï”‚Å‚Í‚È‚­‚µ‚½‚±‚Æ‚É‚æ‚é•s‹ï‡‚ğC³
- * (‹Œ—ï‚Ì”N•\¦‚ª1”N¬‚³‚­•\¦‚³‚ê‚é‚±‚Æ‚ª‚ ‚é)
+ * sun_cel_value ã‚’ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ã§ã¯ãªãã—ãŸã“ã¨ã«ã‚ˆã‚‹ä¸å…·åˆã‚’ä¿®æ­£
+ * (æ—§æš¦ã®å¹´è¡¨ç¤ºãŒ1å¹´å°ã•ãè¡¨ç¤ºã•ã‚Œã‚‹ã“ã¨ãŒã‚ã‚‹)
  *
  * Revision 1.81  2003/04/23  12:04:33  tsujimura543
- * •s—v‚ÈƒR[ƒh‚ğíœ
+ * ä¸è¦ãªã‚³ãƒ¼ãƒ‰ã‚’å‰Šé™¤
  *
  * Revision 1.80  2003/04/23  12:00:37  tsujimura543
- * “y—p‚Ì‰N‚Æ“y—p‚Ì“ñ‚Ì‰N‚ğ‹æ•Ê‚Å‚«‚é‚æ‚¤‚É‚µ‚½
+ * åœŸç”¨ã®ä¸‘ã¨åœŸç”¨ã®äºŒã®ä¸‘ã‚’åŒºåˆ¥ã§ãã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.79  2003/04/23  11:30:44  tsujimura543
- * 1880”N‚Ì“ü”~‚ª6Œ10“ú‚Æ11“ú‚Ì—¼•û‚É‚È‚Á‚Ä‚µ‚Ü‚¤•s‹ï‡‚É‘Îˆ
+ * 1880å¹´ã®å…¥æ¢…ãŒ6æœˆ10æ—¥ã¨11æ—¥ã®ä¸¡æ–¹ã«ãªã£ã¦ã—ã¾ã†ä¸å…·åˆã«å¯¾å‡¦
  *
  * Revision 1.78  2003/04/23  11:19:44  tsujimura543
- * 1975”NˆÈ‘O‚ÌGß(“ü”~A”¼‰Ä¶A“y—p)‚Ì•\¦‚É‘Î‰
+ * 1975å¹´ä»¥å‰ã®é›‘ç¯€(å…¥æ¢…ã€åŠå¤ç”Ÿã€åœŸç”¨)ã®è¡¨ç¤ºã«å¯¾å¿œ
  *
  * Revision 1.77  2003/04/23  11:09:07  tsujimura543
- * “ü”~A”¼‰Ä¶A“y—p‚Ì•\¦‚ğ‘¾—z—ï‚Ì•û‚ÖˆÚ‚·
- * (¡‰ñ‚ÌC³‚Å•K—v‚È‚­‚È‚Á‚½ŠÖ”‚ğíœ)
+ * å…¥æ¢…ã€åŠå¤ç”Ÿã€åœŸç”¨ã®è¡¨ç¤ºã‚’å¤ªé™½æš¦ã®æ–¹ã¸ç§»ã™
+ * (ä»Šå›ã®ä¿®æ­£ã§å¿…è¦ãªããªã£ãŸé–¢æ•°ã‚’å‰Šé™¤)
  *
  * Revision 1.76  2003/04/23  09:44:15  tsujimura543
- * Ğ“ú‚Ì•\¦‚ğ‘¾‰A‘¾—z—ï‚Ì•û‚©‚ç‚ÍŠO‚·
+ * ç¤¾æ—¥ã®è¡¨ç¤ºã‚’å¤ªé™°å¤ªé™½æš¦ã®æ–¹ã‹ã‚‰ã¯å¤–ã™
  *
  * Revision 1.75  2003/04/23  09:27:12  tsujimura543
- * 24ß‹C‚Ì•\¦‚ğ‘¾‰A‘¾—z—ï(‹Œ—ï)‚©‚ç‘¾—z—ï(V—ï)‚Ì•û‚ÉˆÚ‚·
+ * 24ç¯€æ°—ã®è¡¨ç¤ºã‚’å¤ªé™°å¤ªé™½æš¦(æ—§æš¦)ã‹ã‚‰å¤ªé™½æš¦(æ–°æš¦)ã®æ–¹ã«ç§»ã™
  *
  * Revision 1.74  2003/04/16  05:56:37  tsujimura543
- * ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ğˆê’è‚Ì‹K‘¥‚É‚µ‚½‚ª‚Á‚Ä’Tõ‚µƒI[ƒvƒ“‚·‚é‚æ‚¤‚É‚µ‚½
+ * ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸€å®šã®è¦å‰‡ã«ã—ãŸãŒã£ã¦æ¢ç´¢ã—ã‚ªãƒ¼ãƒ—ãƒ³ã™ã‚‹ã‚ˆã†ã«ã—ãŸ
  *
  * Revision 1.73  2003/04/15  12:36:01  tsujimura543
- * qdate.csv ‚ğg‚Á‚Ä‹Œ—ï‚ğ‹‚ß‚éê‡A(V—ï)12Œ‚Ì‚İVŒ(‹Œ—ï1“ú)ˆÈ~‚Ì•\¦‚ª
- * ‚¨‚©‚µ‚­‚È‚é(V—ï‚Æ“¯‚¶”NŒ“ú‚É‚È‚Á‚Ä‚µ‚Ü‚¤)•s‹ï‡‚ğC³
+ * qdate.csv ã‚’ä½¿ã£ã¦æ—§æš¦ã‚’æ±‚ã‚ã‚‹å ´åˆã€(æ–°æš¦)12æœˆã®ã¿æ–°æœˆ(æ—§æš¦1æ—¥)ä»¥é™ã®è¡¨ç¤ºãŒ
+ * ãŠã‹ã—ããªã‚‹(æ–°æš¦ã¨åŒã˜å¹´æœˆæ—¥ã«ãªã£ã¦ã—ã¾ã†)ä¸å…·åˆã‚’ä¿®æ­£
  *
  * Revision 1.72  2003/04/15  05:25:58  tsujimura543
- * ‹Œ—ï‚Ìs–‚ğ’Ç‰Á
+ * æ—§æš¦ã®è¡Œäº‹ã‚’è¿½åŠ 
  *
  * Revision 1.71  2003/03/31  11:24:31  tsujimura543
- * ˜a—ï(‘¾—z‘¾‰A—ï)ŠÖ˜AC³ (getSekkiDateByName() ‚ğ’Ç‰Á)
+ * å’Œæš¦(å¤ªé™½å¤ªé™°æš¦)é–¢é€£ä¿®æ­£ (getSekkiDateByName() ã‚’è¿½åŠ )
  *
  * Revision 1.70  2003/03/31  05:21:49  tsujimura543
- * ƒwƒbƒ_ƒtƒ@ƒCƒ‹‚ÌˆË‘¶ŠÖŒW‚ğ®—
+ * ãƒ˜ãƒƒãƒ€ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¾å­˜é–¢ä¿‚ã‚’æ•´ç†
  *
  * Revision 1.69  2003/03/24  08:58:03  tsujimura543
- * (1) ˜a—ï(‘¾‰A‘¾—z—ï)‚Ì•\¦‰Â”\ŠúŠÔ‚ğŠg’£
- * (2) ‘å‹‚Æ“y—p‚Ì‰N‚Ì“ú‚ªd‚È‚Á‚½ê‡A•Ğ•û‚µ‚©•\¦‚³‚ê‚È‚¢•s‹ï‡‚ğC³
+ * (1) å’Œæš¦(å¤ªé™°å¤ªé™½æš¦)ã®è¡¨ç¤ºå¯èƒ½æœŸé–“ã‚’æ‹¡å¼µ
+ * (2) å¤§æš‘ã¨åœŸç”¨ã®ä¸‘ã®æ—¥ãŒé‡ãªã£ãŸå ´åˆã€ç‰‡æ–¹ã—ã‹è¡¨ç¤ºã•ã‚Œãªã„ä¸å…·åˆã‚’ä¿®æ­£
  *
  * Revision 1.68  2003/03/20  10:04:33  tsujimura543
- * ‹¥‰ï“ú‚ğuß“ü“ú‚É‚æ‚éŒv‚Å‚Í‚È‚­AÀÛ‚Ì‹Œ—ï‚ÌŒ‚ğŒ³‚ÉŒvZ‚·‚é‚æ‚¤C³
+ * å‡¶ä¼šæ—¥ã‚’ã€Œç¯€å…¥æ—¥ã«ã‚ˆã‚‹æœˆã€ã§ã¯ãªãã€å®Ÿéš›ã®æ—§æš¦ã®æœˆã‚’å…ƒã«è¨ˆç®—ã™ã‚‹ã‚ˆã†ä¿®æ­£
  *
  * Revision 1.67  2003/03/20  09:18:02  tsujimura543
- * Šeí—ï’‚Ì•\¦‚ğ’Ç‰Á
+ * å„ç¨®æš¦æ³¨ã®è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.66  2003/03/19  03:05:48  tsujimura543
- * ‹Œ—ïŠÖŒW‚Ìo—Í•û–@‚ğ‘¼‚Ì—ï‚Æ“¯‚¶•û®‚É‚·‚é
+ * æ—§æš¦é–¢ä¿‚ã®å‡ºåŠ›æ–¹æ³•ã‚’ä»–ã®æš¦ã¨åŒã˜æ–¹å¼ã«ã™ã‚‹
  *
  * Revision 1.65  2003/03/18  10:20:50  tsujimura543
- * o—ÍŒ‹‰Ê‚ª‚«‚ê‚¢‚É‚È‚é‚æ‚¤‚É’²®
+ * å‡ºåŠ›çµæœãŒãã‚Œã„ã«ãªã‚‹ã‚ˆã†ã«èª¿æ•´
  *
  * Revision 1.64  2003/03/11  02:04:01  tsujimura543
  * for Tsuporone's Activity memo
  *
  * Revision 1.63  2003/03/03  07:48:04  tsujimura543
- * •s¬A“ú‚É‘Î‰
+ * ä¸æˆå°±æ—¥ã«å¯¾å¿œ
  *
  * Revision 1.62  2002/12/20  07:51:57  tsujimura543
- * äc“ú‚Ì•\¦‚ğ’Ç‰Á
+ * è‡˜æ—¥ã®è¡¨ç¤ºã‚’è¿½åŠ 
  *
  * Revision 1.61  2001/02/21  14:16:36  tsujimura543
- * HTMLƒ‚[ƒh‘Î‰Ï‚İ‚Ì revision ‚Æ“‡
+ * HTMLãƒ¢ãƒ¼ãƒ‰å¯¾å¿œæ¸ˆã¿ã® revision ã¨çµ±åˆ
  *
  * Revision 1.60  2001/02/20  12:23:36  tsujimura543
- * ‘¼‚Ì”h¶ƒo[ƒWƒ‡ƒ“‚Æ“‡‚·‚é‚½‚ßA‚¢‚Á‚½‚ñ revision ‚ğŒÅ’è
+ * ä»–ã®æ´¾ç”Ÿãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨çµ±åˆã™ã‚‹ãŸã‚ã€ã„ã£ãŸã‚“ revision ã‚’å›ºå®š
  *
  * Revision 1.53  2001/01/22  08:44:28  tsujimura543
- * ‚±‚±Å‹ß‚Ì”N‚Ì24ß‹CŠÖ˜A‚Ì“ú•t‚ª‚¨‚©‚µ‚¢(2001”N‚Ìß•ª‚ª2Œ1“ú‚Æ•\¦‚³‚ê
- * ‚éA‚È‚Ç)•s‹ï‡‚É‘Îˆ
+ * ã“ã“æœ€è¿‘ã®å¹´ã®24ç¯€æ°—é–¢é€£ã®æ—¥ä»˜ãŒãŠã‹ã—ã„(2001å¹´ã®ç¯€åˆ†ãŒ2æœˆ1æ—¥ã¨è¡¨ç¤ºã•ã‚Œ
+ * ã‚‹ã€ãªã©)ä¸å…·åˆã«å¯¾å‡¦
  * 
  * Revision 1.52  2000/08/23  11:03:57  tsujimura543
- * 2000”N‚Ì“ü”~‚Ì“ú•t‚ª‚¨‚©‚µ‚¢•s‹ï‡‚É‘Îˆ
+ * 2000å¹´ã®å…¥æ¢…ã®æ—¥ä»˜ãŒãŠã‹ã—ã„ä¸å…·åˆã«å¯¾å‡¦
  * 
  * Revision 1.51  1999/07/06  18:49:09  tsujimura543
- * ŠJ”­ŠÂ‹«‚ğ Win32 ‚ÉˆÚ‚·
- * -- HTML o—Í‘Î‰ì‹Æ‚â“®ìŠm”F‚Í¡Œã‚àUNIX (peach.na.rim.or.jp) ã‚Ås‚È‚¤
+ * é–‹ç™ºç’°å¢ƒã‚’ Win32 ã«ç§»ã™
+ * -- HTML å‡ºåŠ›å¯¾å¿œä½œæ¥­ã‚„å‹•ä½œç¢ºèªã¯ä»Šå¾Œã‚‚UNIX (peach.na.rim.or.jp) ä¸Šã§è¡Œãªã†
  *
  * Revision 1.50  1996/08/19  02:10:16  tsujimura
- * Withdrawal from `shizuka' (UNIXã‚Å‚ÌŠJ”­I—¹”Å)
+ * Withdrawal from `shizuka' (UNIXä¸Šã§ã®é–‹ç™ºçµ‚äº†ç‰ˆ)
  *
  * Revision 1.7  95/12/03 11:43:58  tsujimura
- * ƒRƒƒ“ƒg‚Ì®—EC³
+ * ã‚³ãƒ¡ãƒ³ãƒˆã®æ•´ç†ãƒ»ä¿®æ­£
  * 
  * Revision 1.6  95/12/02 19:07:00  tsujimura
- * ’ª‚Ì•\¦‚ğ’Ç‰Á
+ * æ½®ã®è¡¨ç¤ºã‚’è¿½åŠ 
  * 
  * Revision 1.5  92/03/29 16:28:58  tsujimura
  * test release
@@ -193,48 +208,48 @@
 
 #ifndef	lint
 static char	*rcs_id =
-  "$Header: C:/user/local/src/tamo/RCS/tamo_qreki.c 1.86 2003/11/11 07:02:19 tsujimura543 Exp tsujimura543 $";
+  "$Header: C:/user/local/src/tamo/RCS/tamo_qreki.c 1.91 2013/01/22 10:28:38 tsujimura543 Exp tsujimura543 $";
 #endif
 
 static int	calc_new_moon( double yrs, double *mn_kk, double *sn_kk );
 
 
 /*---------------------------------------------------------------------------*\
-|        ‹Œ—ïZoƒ‹[ƒ`ƒ“                                                     |
+|        æ—§æš¦ç®—å‡ºãƒ«ãƒ¼ãƒãƒ³                                                     |
 \*---------------------------------------------------------------------------*/
 
 #if 0
-static char *sk[] = {"t•ª", "´–¾", "’‰J", "—§‰Ä", "¬–", "äŠí",
-                     "‰ÄŠ", "¬‹", "‘å‹", "—§H", "ˆ‹", "”’˜I",
-                     "H•ª", "Š¦˜I", "‘š~", "—§“~", "¬á", "‘åá",
-                     "“~Š", "¬Š¦", "‘åŠ¦", "—§t", "‰J…", "Œ[å­"};
+static char *sk[] = {"æ˜¥åˆ†", "æ¸…æ˜", "ç©€é›¨", "ç«‹å¤", "å°æº€", "èŠ’ç¨®",
+                     "å¤è‡³", "å°æš‘", "å¤§æš‘", "ç«‹ç§‹", "å‡¦æš‘", "ç™½éœ²",
+                     "ç§‹åˆ†", "å¯’éœ²", "éœœé™", "ç«‹å†¬", "å°é›ª", "å¤§é›ª",
+                     "å†¬è‡³", "å°å¯’", "å¤§å¯’", "ç«‹æ˜¥", "é›¨æ°´", "å•“èŸ„"};
 #endif
-static char *rk[] = {"æŸ", "—Fˆø", "æ•‰", "•§–Å", "‘åˆÀ", "ÔŒû"};
+static char *rk[] = {"å…ˆå‹", "å‹å¼•", "å…ˆè² ", "ä»æ»…", "å¤§å®‰", "èµ¤å£"};
 
 
 struct	CONST_TBL {				/* constant table	  */
-    double	ef;	/* U•     */		/* amplitude of vibration */
-    double	ph;	/* ‰ŠúˆÊ‘Š */		/* initial phase	  */
-    double	sc;	/* Šp‘¬“x   */		/* angular velocity	  */
+    double	ef;	/* æŒ¯å¹…     */		/* amplitude of vibration */
+    double	ph;	/* åˆæœŸä½ç›¸ */		/* initial phase	  */
+    double	sc;	/* è§’é€Ÿåº¦   */		/* angular velocity	  */
 };
 
-#define	MOON_N	13	/* Œ ‰©Œo Û“®€‚Ì” */
+#define	MOON_N	13	/* æœˆ é»„çµŒ æ‘‚å‹•é …ã®æ•° */
 
-static	struct	CONST_TBL	mn[14] = {	/* Œ ‰©Œo */	/* 21 */
-    /*  U•@ ‰ŠúˆÊ‘Š@@   Šp‘¬“x  */
-    { 0.0000 , 124.8754 ,  4812.67881 }, /* ‰Šú’l  •½‹ÏŠp‘¬“x */
-    { 6.2887 , 338.915  ,   4771.9886 }, /* ’†S·(@‹ß“_Œ: 27.55455“ú) */
-    { 1.2740 , 107.248  ,  -4133.3536 }, /*  o ·(@@@@: 31.81194“ú) */
-    { 0.6583 ,  51.668  ,   8905.3422 }, /* “ñ‹Ï·(”¼ñ–]Œ: 14.76529“ú) */
-    { 0.2136 , 317.831  ,   9543.9773 }, /* @@@(”¼‹ß“_Œ: 13.77728“ú) */
-    { 0.1856 , 176.531  ,    359.9905 }, /*  ”N ·(@‹ß“_”N:365.25964“ú) */
+static	struct	CONST_TBL	mn[14] = {	/* æœˆ é»„çµŒ */	/* 21 */
+    /*  æŒ¯å¹…ã€€ åˆæœŸä½ç›¸ã€€ã€€   è§’é€Ÿåº¦  */
+    { 0.0000 , 124.8754 ,  4812.67881 }, /* åˆæœŸå€¤  å¹³å‡è§’é€Ÿåº¦ */
+    { 6.2887 , 338.915  ,   4771.9886 }, /* ä¸­å¿ƒå·®(ã€€è¿‘ç‚¹æœˆ: 27.55455æ—¥) */
+    { 1.2740 , 107.248  ,  -4133.3536 }, /*  å‡º å·®(ã€€ã€€ã€€ã€€: 31.81194æ—¥) */
+    { 0.6583 ,  51.668  ,   8905.3422 }, /* äºŒå‡å·®(åŠæœ”æœ›æœˆ: 14.76529æ—¥) */
+    { 0.2136 , 317.831  ,   9543.9773 }, /* ã€€ã€€ã€€(åŠè¿‘ç‚¹æœˆ: 13.77728æ—¥) */
+    { 0.1856 , 176.531  ,    359.9905 }, /*  å¹´ å·®(ã€€è¿‘ç‚¹å¹´:365.25964æ—¥) */
     { 0.1143 , 292.463  ,   9664.0404 },
     { 0.0588 ,  86.160  ,    638.6350 },
     { 0.0572 , 103.780  ,  -3773.3630 },
     { 0.0533 ,  30.580  ,  13677.3310 },
     { 0.0459 , 124.860  ,  -8545.3520 },
     { 0.0410 , 342.380  ,   4411.9980 },
-    { 0.0348 ,  25.830  ,   4452.6710 }, /* ŒŠp·(@ñ–]Œ: 29.53059“ú) */
+    { 0.0348 ,  25.830  ,   4452.6710 }, /* æœˆè§’å·®(ã€€æœ”æœ›æœˆ: 29.53059æ—¥) */
     { 0.0305 , 155.450  ,   5131.9790 }
 /*  { 0.0153 , 240.790  ,    758.6980 },
  *  { 0.0125 , 271.380  ,  14436.0290 },
@@ -247,11 +262,11 @@ static	struct	CONST_TBL	mn[14] = {	/* Œ ‰©Œo */	/* 21 */
 };
 
 #if	0
-#define	MOON_M	4	/* Œ ‰©ˆÜ Û“®€‚Ì” */
+#define	MOON_M	4	/* æœˆ é»„ç·¯ æ‘‚å‹•é …ã®æ•° */
 
-static	struct	CONST_TBL	mn2[5] = {	/* Œ ‰©ˆÜ */	/* 10 */
-   /*  U•@ ‰ŠúˆÊ‘Š@@   Šp‘¬“x */
-    { 0.0000 ,   0.000 ,      0.0000 },	/* ‰Šú’l ?? */
+static	struct	CONST_TBL	mn2[5] = {	/* æœˆ é»„ç·¯ */	/* 10 */
+   /*  æŒ¯å¹…ã€€ åˆæœŸä½ç›¸ã€€ã€€   è§’é€Ÿåº¦ */
+    { 0.0000 ,   0.000 ,      0.0000 },	/* åˆæœŸå€¤ ?? */
     { 5.1282 , 236.231 ,   4832.0202 },
     { 0.2806 , 215.147 ,   9604.0088 },
     { 0.2777 ,  77.316 ,     60.0316 },
@@ -265,14 +280,14 @@ static	struct	CONST_TBL	mn2[5] = {	/* Œ ‰©ˆÜ */	/* 10 */
 };
 #endif
 
-#define	SUN_N	10	/* ‘¾—z ‰©Œo Û“®€‚Ì” */
+#define	SUN_N	10	/* å¤ªé™½ é»„çµŒ æ‘‚å‹•é …ã®æ•° */
 #define	SUN_EF1	0.00005
 
-static	struct	CONST_TBL	sn[11] = {	/* ‘¾—z ‰©Œo */	/* 16 */
-    /*  U•@ ‰ŠúˆÊ‘Š@@   Šp‘¬“x   */
-    { 0.0000 , 279.0358 ,    360.00769 }, /* ‰Šú’l  •½‹ÏŠp‘¬“x		     */
-    { 1.9159 , 356.531  ,    359.9910  }, /*       (@‹ß“_”N:365.25964“ú) */
-    { 0.0200 , 353.060  ,    719.9810  }, /*       (”¼‹ß“_”N:182.62982“ú) */
+static	struct	CONST_TBL	sn[11] = {	/* å¤ªé™½ é»„çµŒ */	/* 16 */
+    /*  æŒ¯å¹…ã€€ åˆæœŸä½ç›¸ã€€ã€€   è§’é€Ÿåº¦   */
+    { 0.0000 , 279.0358 ,    360.00769 }, /* åˆæœŸå€¤  å¹³å‡è§’é€Ÿåº¦		     */
+    { 1.9159 , 356.531  ,    359.9910  }, /*       (ã€€è¿‘ç‚¹å¹´:365.25964æ—¥) */
+    { 0.0200 , 353.060  ,    719.9810  }, /*       (åŠè¿‘ç‚¹å¹´:182.62982æ—¥) */
     { -.0048 , 248.640  ,    -19.3410  },
     { 0.0020 , 285.000  ,    329.6400  },
     { 0.0018 , 334.200  ,  -4452.6700  },
@@ -290,18 +305,18 @@ static	struct	CONST_TBL	sn[11] = {	/* ‘¾—z ‰©Œo */	/* 16 */
 };
 
 
-/*@ƒ†ƒŠƒEƒX¢‹I‚ğ‹‚ß‚é  */
+/*ã€€ãƒ¦ãƒªã‚¦ã‚¹ä¸–ç´€ã‚’æ±‚ã‚ã‚‹  */
 double
-julcen( long ld )   /* ld: ƒ†ƒŠƒEƒX“ú */
+julcen( long ld )   /* ld: ãƒ¦ãƒªã‚¦ã‚¹æ—¥ */
 {
     return((ld - 15019.5) / 36525);
 }
 
-/*  ƒ†ƒŠƒEƒX¢‹I ¨ Œ‚Ì—£Šp ¨ Œ—î@*/
+/*  ãƒ¦ãƒªã‚¦ã‚¹ä¸–ç´€ â†’ æœˆã®é›¢è§’ â†’ æœˆé½¢ã€€*/
 int
-geturei( long ld )  /* ld: ƒ†ƒŠƒEƒX“ú */
+geturei( long ld )  /* ld: ãƒ¦ãƒªã‚¦ã‚¹æ—¥ */
 {
-    long    l;  /* ¬”“_ˆÈ‰ºØÌ‚Ä—p‚Ìƒeƒ“ƒ|ƒ‰ƒŠ */
+    long    l;  /* å°æ•°ç‚¹ä»¥ä¸‹åˆ‡æ¨ã¦ç”¨ã®ãƒ†ãƒ³ãƒãƒ©ãƒª */
     double  a, b, rikaku;
 
     a = julcen(ld);
@@ -313,7 +328,7 @@ geturei( long ld )  /* ld: ƒ†ƒŠƒEƒX“ú */
 }
 
 
-/*** Šî€”N(1975”N1Œ1“ú)‚©‚ç‚Ì”N” ***/
+/*** åŸºæº–å¹´(1975å¹´1æœˆ1æ—¥)ã‹ã‚‰ã®å¹´æ•° ***/
 static double
 year_sum( int d, int m, int y )
 {
@@ -324,7 +339,7 @@ year_sum( int d, int m, int y )
 }
 
 
-/*** Œ ‰©Œo ***/
+/*** æœˆ é»„çµŒ ***/
 static double
 moon_cel( double yrs )
 {
@@ -340,7 +355,7 @@ moon_cel( double yrs )
 }
 
 
-/*** ‘¾—z ‰©Œo ***/
+/*** å¤ªé™½ é»„çµŒ ***/
 static double
 sun_cel( double yrs )
 {
@@ -377,18 +392,18 @@ sun_cel_val( double yrs )
     return ( sun_cel_value );
 }
 
-#define	NEE     0   /* q */
-#define	USHI    1   /* ‰N */
-#define	TORA    2   /* “Ğ */
-#define	UU      3   /* ‰K */
-#define	TATSU   4   /* ’C */
-#define	MEE     5   /* –¤ */
-#define	UMA     6   /* Œß */
-#define	HITSUJI 7   /* –¢ */
-#define	SARU    8   /* \ */
-#define	TORI    9   /* “Ñ */
-#define	IMU     10  /* œú */
-#define	WII     11  /* ˆå */
+#define	NEE     0   /* å­ */
+#define	USHI    1   /* ä¸‘ */
+#define	TORA    2   /* å¯… */
+#define	UU      3   /* å¯ */
+#define	TATSU   4   /* è¾° */
+#define	MEE     5   /* å·³ */
+#define	UMA     6   /* åˆ */
+#define	HITSUJI 7   /* æœª */
+#define	SARU    8   /* ç”³ */
+#define	TORI    9   /* é…‰ */
+#define	IMU     10  /* æˆŒ */
+#define	WII     11  /* äº¥ */
 
 #define	shi(g)			( ( (g) + 2 ) %  12 )
 
@@ -399,9 +414,9 @@ getSekkiDate( int day, int month, int year )
     double  sun_cel1, sun_cel2, yrs;
     double  sekki, sekki1, sekki2, tmp;
 
-    tmp = d - 720987.0;	/* 1975”N 1Œ 1“ú‚©‚ç‚Ì’Ê“ú */
+    tmp = d - 720987.0;	/* 1975å¹´ 1æœˆ 1æ—¥ã‹ã‚‰ã®é€šæ—¥ */
     do {
-        /*** ‘¾—z ‰©Œo ***/
+        /*** å¤ªé™½ é»„çµŒ ***/
         yrs = (tmp + (-9.0 / 24.0)) / 365.25;
         tmp += 1.0;
         d++;
@@ -410,7 +425,7 @@ getSekkiDate( int day, int month, int year )
         if (sun_cel2 < sun_cel1)
             sun_cel2 += 360.0;
 
-        /*** “ñ\lß‹C ***/
+        /*** äºŒåå››ç¯€æ°— ***/
         sekki  = -1.0;
         sekki1 = sun_cel1 / 15.0;
         sekki2 = sun_cel2 / 15.0;
@@ -425,7 +440,7 @@ getSekkiDate( int day, int month, int year )
 }
 
 /*
- *	—§t‚Ì“ú‚ğ‹‚ß‚é
+ *	ç«‹æ˜¥ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 springStartDay( int y )
@@ -434,7 +449,7 @@ springStartDay( int y )
 }
 
 /*
- *	t•ª‚Ì“ú‚ğ‹‚ß‚é
+ *	æ˜¥åˆ†ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 midSpringDay( int y )
@@ -443,7 +458,7 @@ midSpringDay( int y )
 }
 
 /*
- *	—§‰Ä‚Ì“ú‚ğ‹‚ß‚é
+ *	ç«‹å¤ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 summerStartDay( int y )
@@ -452,43 +467,43 @@ summerStartDay( int y )
 }
 
 /*
- *	‰ÄŠ‚Ì“ú‚ğ‹‚ß‚é
+ *	å¤è‡³ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 midSummerDay( int y )
 {
-    return ( getSekkiDate( 20, 6, y ) );
+    return ( getSekkiDate( 19, 6, y ) );
 }
 
 /*
- *	—§H‚Ì“ú‚ğ‹‚ß‚é
+ *	ç«‹ç§‹ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 autumnStartDay( int y )
 {
-    return ( getSekkiDate( 6, 8, y ) );
+    return ( getSekkiDate( 5, 8, y ) );
 }
 
 /*
- *	H•ª‚Ì“ú‚ğ‹‚ß‚é
+ *	ç§‹åˆ†ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 midAutumnDay( int y )
 {
-    return ( getSekkiDate( 22, 9, y ) );
+    return ( getSekkiDate( 21, 9, y ) );
 }
 
 /*
- *	—§“~‚Ì“ú‚ğ‹‚ß‚é
+ *	ç«‹å†¬ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 winterStartDay( int y )
 {
-    return ( getSekkiDate( 7, 11, y ) );
+    return ( getSekkiDate( 6, 11, y ) );
 }
 
 /*
- *  24ß‹C‚Ì“ú‚ğ‹‚ß‚é
+ *  24ç¯€æ°—ã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 
 long
@@ -497,76 +512,76 @@ sekkiDay( int sekkiKind, int y )
     long    d = -1;
 
     switch ( sekkiKind ) {
-    case SK24_SHOUKAN:      /* ¬Š¦ */
+    case SK24_SHOUKAN:      /* å°å¯’ */
         d = getSekkiDate( 5, 1, y );
         break;
-    case SK24_DAIKAN:       /* ‘åŠ¦ */
+    case SK24_DAIKAN:       /* å¤§å¯’ */
         d = getSekkiDate( 19, 1, y );
         break;
-    case SK24_RISSHUN:      /* —§t */
+    case SK24_RISSHUN:      /* ç«‹æ˜¥ */
         d = springStartDay( y );
         break;
-    case SK24_USUI:         /* ‰J… */
+    case SK24_USUI:         /* é›¨æ°´ */
         d = getSekkiDate( 16, 2, y );
         break;
-    case SK24_KEICHITSU:    /* Œ[å­ */
+    case SK24_KEICHITSU:    /* å•“èŸ„ */
         d = getSekkiDate( 5, 3, y );
         break;
-    case SK24_SHUNBUN:      /* t•ª */
+    case SK24_SHUNBUN:      /* æ˜¥åˆ† */
         d = midSpringDay( y );
         break;
-    case SK24_SEIMEI:       /* ´–¾ */
+    case SK24_SEIMEI:       /* æ¸…æ˜ */
         d = getSekkiDate( 4, 4, y );
         break;
-    case SK24_KOKUU:        /* ’‰J */
+    case SK24_KOKUU:        /* ç©€é›¨ */
         d = getSekkiDate( 18, 4, y );
         break;
-    case SK24_RIKKA:        /* —§‰Ä */
+    case SK24_RIKKA:        /* ç«‹å¤ */
         d = summerStartDay( y );
         break;
-    case SK24_SHOUMAN:      /* ¬– */
+    case SK24_SHOUMAN:      /* å°æº€ */
         d = getSekkiDate( 18, 5, y );
         break;
-    case SK24_BOUSHU:       /* äŠí */
-        d = getSekkiDate( 5, 6, y );
+    case SK24_BOUSHU:       /* èŠ’ç¨® */
+        d = getSekkiDate( 4, 6, y );
         break;
-    case SK24_GESHI:        /* ‰ÄŠ */
+    case SK24_GESHI:        /* å¤è‡³ */
         d = midSummerDay( y );
         break;
-    case SK24_SHOUSHO:      /* ¬‹ */
+    case SK24_SHOUSHO:      /* å°æš‘ */
         d = getSekkiDate( 5, 7, y );
         break;
-    case SK24_TAISHO:       /* ‘å‹ */
+    case SK24_TAISHO:       /* å¤§æš‘ */
         d = getSekkiDate( 19, 7, y );
         break;
-    case SK24_RISSHUU:      /* —§H */
+    case SK24_RISSHUU:      /* ç«‹ç§‹ */
         d = autumnStartDay( y );
         break;
-    case SK24_SHOSHO:       /* ˆ‹ */
+    case SK24_SHOSHO:       /* å‡¦æš‘ */
         d = getSekkiDate( 20, 8, y );
         break;
-    case SK24_HAKURO:       /* ”’˜I */
-        d = getSekkiDate( 7, 9, y );
+    case SK24_HAKURO:       /* ç™½éœ² */
+        d = getSekkiDate( 5, 9, y );
         break;
-    case SK24_SHUUBUN:      /* H•ª */
+    case SK24_SHUUBUN:      /* ç§‹åˆ† */
         d = midAutumnDay( y );
         break;
-    case SK24_KANRO:        /* Š¦˜I */
-        d = getSekkiDate( 8, 10, y );
+    case SK24_KANRO:        /* å¯’éœ² */
+        d = getSekkiDate( 7, 10, y );
         break;
-    case SK24_SOUKOU:       /* ‘š~ */
+    case SK24_SOUKOU:       /* éœœé™ */
         d = getSekkiDate( 22, 10, y );
         break;
-    case SK24_RITTOU:       /* —§“~ */
+    case SK24_RITTOU:       /* ç«‹å†¬ */
         d = winterStartDay( y );
         break;
-    case SK24_SHOUSETSU:    /* ¬á */
+    case SK24_SHOUSETSU:    /* å°é›ª */
         d = getSekkiDate( 21, 11, y );
         break;
-    case SK24_TAISETSU:     /* ‘åá */
+    case SK24_TAISETSU:     /* å¤§é›ª */
         d = getSekkiDate( 6, 12, y );
         break;
-    case SK24_TOUJI:        /* “~Š */
+    case SK24_TOUJI:        /* å†¬è‡³ */
         d = getSekkiDate( 20, 12, y );
         break;
     }
@@ -575,30 +590,30 @@ sekkiDay( int sekkiKind, int y )
 }
 
 /*
- *	ß“ü‚è‚Ì“ú‚ğ‹‚ß‚é
+ *	ç¯€å…¥ã‚Šã®æ—¥ã‚’æ±‚ã‚ã‚‹
  */
 long
 setsuStartDay( int mm, int yy )
 {
     static int  day[] = {
-        2,  /* ³Œß  (—§t) */
-        5,  /* “ñŒß  (Œ[å­) */
-        4,  /* OŒß  (´–¾) */
-        5,  /* lŒß  (—§‰Ä) */
-       	5,  /* ŒÜŒß  (äŠí) */
-        6,  /* ˜ZŒß  (¬‹) */
-        6,  /* µŒß  (—§H) */
-       	7,  /* ”ªŒß  (”’˜I) */
-        8,  /* ‹ãŒß  (Š¦˜I) */
-        7,  /* \Œß  (—§“~) */
-       	6,  /* \ˆêŒß(‘åá) */
-        5   /* \“ñŒß(¬Š¦) */
+        2,  /* æ­£æœˆç¯€  (ç«‹æ˜¥) */
+        5,  /* äºŒæœˆç¯€  (å•“èŸ„) */
+        4,  /* ä¸‰æœˆç¯€  (æ¸…æ˜) */
+        5,  /* å››æœˆç¯€  (ç«‹å¤) */
+       	5,  /* äº”æœˆç¯€  (èŠ’ç¨®) */
+        6,  /* å…­æœˆç¯€  (å°æš‘) */
+        6,  /* ä¸ƒæœˆç¯€  (ç«‹ç§‹) */
+       	7,  /* å…«æœˆç¯€  (ç™½éœ²) */
+        8,  /* ä¹æœˆç¯€  (å¯’éœ²) */
+        7,  /* åæœˆç¯€  (ç«‹å†¬) */
+       	6,  /* åä¸€æœˆç¯€(å¤§é›ª) */
+        5   /* åäºŒæœˆç¯€(å°å¯’) */
     };
 
     return ( getSekkiDate( day[(mm-1)%12], mm, yy ) );
 }
 
-/*** ‘O‚Ìñ ***/
+/*** å‰ã®æœ” ***/
 static int
 back_new_moon( double yrs, int *day_before )
 {
@@ -614,7 +629,7 @@ back_new_moon( double yrs, int *day_before )
     return ((int)sn_kk / 30);
 }
 
-/*** Ÿ‚Ìñ ***/
+/*** æ¬¡ã®æœ” ***/
 static int
 next_new_moon( double yrs, int *day_after )
 {
@@ -630,7 +645,7 @@ next_new_moon( double yrs, int *day_after )
     return ((int)sn_kk / 30);
 }
 
-/*** Œñ ***/
+/*** æœˆæœ” ***/
 static int
 calc_new_moon( double yrs, double *mn_kk, double *sn_kk )
 {
@@ -638,7 +653,7 @@ calc_new_moon( double yrs, double *mn_kk, double *sn_kk )
     double  sn_kk1, mn_kk1;
     double  sn_kk2, mn_kk2;
 
-    /*** ‰©Œo ***/
+    /*** é»„çµŒ ***/
     mn_kk1 = moon_cel(yrs);
     sn_kk1 = sun_cel(yrs);
     mn_kk2 = moon_cel(yrs + DAY_PER_YEAR);
@@ -648,7 +663,7 @@ calc_new_moon( double yrs, double *mn_kk, double *sn_kk )
     if (sn_kk2 < sn_kk1)
         sn_kk2 += 360.0;
 
-    /*** ñ ***/
+    /*** æœ” ***/
     new_moon_flag = 0;
     if ((mn_kk1 < sn_kk1) && (mn_kk2 > sn_kk2))
         new_moon_flag = 1;
@@ -663,7 +678,7 @@ calc_new_moon( double yrs, double *mn_kk, double *sn_kk )
 }
 
 
-/*** ’èñE’è‹C‚É‚æ‚é‰A—ïŒvZ ***/
+/*** å®šæœ”ãƒ»å®šæ°—ã«ã‚ˆã‚‹é™°æš¦è¨ˆç®— ***/
 void
 getLunarCalendar( int *day, int *month, int *year, int *uruu )
 {
@@ -679,12 +694,13 @@ getLunarCalendar( int *day, int *month, int *year, int *uruu )
     int     new_moon_after;
     double  yrs;
     double  cel_mn, cel_sn;
+    int yyyy = *year, mm = *month, dd = *day;
 
     yrs = year_sum( *day, *month, *year );
     day_before = 1;
     year_up = 0;
 
-    /*** ¡Œ‚Ìñ ***/
+    /*** ä»Šæœˆã®æœ” ***/
     new_moon_flag = calc_new_moon(yrs, &cel_mn, &cel_sn);
     new_moon_before = (int)cel_sn / 30;
     if (cel_mn < cel_sn)
@@ -693,10 +709,10 @@ getLunarCalendar( int *day, int *month, int *year, int *uruu )
         day_before = (int)(cel_mn - cel_sn) / 13 - 28;
         new_moon_before = back_new_moon(yrs, &day_before);
     }
-    *day = day_before;				/* ‘¾‰A—ï “ú */
+    *day = day_before;				/* å¤ªé™°æš¦ æ—¥ */
     lc_month0 = new_moon_before + 2;
 
-    /*** —ˆŒ‚Ìñ ***/
+    /*** æ¥æœˆã®æœ” ***/
     day_after = -day_before;
     new_moon_after = next_new_moon(yrs, &day_after);
     if (new_moon_after < new_moon_before) {
@@ -711,7 +727,7 @@ getLunarCalendar( int *day, int *month, int *year, int *uruu )
     if ((sun_cel_val(yrs) - (double)((long)(yrs) * 360L)) > 360.0)
         year_up = 1;
 
-    /*** ‘O‚Ì‚Q•ª‚QŠ ***/
+    /*** å‰ã®ï¼’åˆ†ï¼’è‡³ ***/
     moon_before = 0;
     if (new_moon_before > (sk_month0 + 2)) {
         moon_before = new_moon_before - sk_month0 - 2;
@@ -724,7 +740,7 @@ getLunarCalendar( int *day, int *month, int *year, int *uruu )
             new_moon_before -= 12;
     }
 
-    /*** Ÿ‚Ì‚Q•ª‚QŠ ***/
+    /*** æ¬¡ã®ï¼’åˆ†ï¼’è‡³ ***/
     moon_after = 3 - moon_before - 1;
     if (moon_after < 0)
         moon_after = 0;
@@ -746,6 +762,37 @@ getLunarCalendar( int *day, int *month, int *year, int *uruu )
     }
     if (year_up > 0)
         (*year)++;
+
+    /* 2033å¹´å•é¡Œå¯¾ç­– */
+    // å‚è€ƒ: http://ja.wikipedia.org/wiki/%E6%97%A7%E6%9A%A62033%E5%B9%B4%E5%95%8F%E9%A1%8C
+    if (((yyyy == 2033) && ((mm > 8)                  ||
+                            ((mm == 8) && (dd >= 25))   )) ||
+        ((yyyy == 2034) && ((mm < 3)                  ||
+                            ((mm == 3) && (dd <  20))   ))   ) {
+        if (*uruu == 1)
+        {
+            if (*month == 7) {
+                // é–7æœˆ â†’ 8æœˆ
+                (*month)++;
+                *uruu = 0;
+            }
+            else if (*month == 1) {
+                // é–1æœˆ â†’ 1æœˆ
+                *uruu = 0;
+            }
+        }
+        else if ((*month == 8) || (*month == 9)) {
+            // 8æœˆ â†’ 9æœˆã€9æœˆ â†’ 10æœˆ
+            (*month)++;
+        }
+        else if (*month == 1) {
+            // 1æœˆ â†’ 12æœˆ
+            (*year)--;
+            (*month)--;
+        }
+
+        // 11æœˆã¨é–11æœˆã¯ãã®ã¾ã¾
+    }
 }
 
 
@@ -757,188 +804,192 @@ checkKyureki( long g, int d, int m, int y, int u, int htmlMode )
     int     ks      = ( g + 14 ) % 60;
     char    *p;
 	char	*d0 = "  %s";
-	char	*d1 = "•s¬A“ú";
-	char	*d2 = "Î‰ºH";
+	char	*d1 = "ä¸æˆå°±æ—¥";
+	char	*d2 = "æ­³ä¸‹é£Ÿ";
 
     tprintf( htmlMode, &reset, d0, rk[(m + d - 2) % 6] );
 
     if ( ( d == 10 ) || ( d == 25 ) )
-        tprintf( htmlMode, &reset, "  ’·’ª" );
+        tprintf( htmlMode, &reset, "  é•·æ½®" );
     if ( ( d == 11 ) || ( d == 26 ) )
-        tprintf( htmlMode, &reset, "  á’ª" );
+        tprintf( htmlMode, &reset, "  è‹¥æ½®" );
     if ( ( ( d >=  3 ) && ( d <=  6 ) ) ||
          ( ( d >= 12 ) && ( d <= 13 ) ) ||
          ( ( d >= 18 ) && ( d <= 21 ) ) ||
          ( ( d >= 27 ) && ( d <= 28 ) )    )
-        tprintf( htmlMode, &reset, "  ’†’ª" );
+        tprintf( htmlMode, &reset, "  ä¸­æ½®" );
     if (   ( d <=  2 )                   ||
          ( ( d >= 14 ) && ( d <= 17 ) ) ||
            ( d >= 29 )                      )
-        tprintf( htmlMode, &reset, "  ‘å’ª" );
+        tprintf( htmlMode, &reset, "  å¤§æ½®" );
     if ( ( ( d >=  7 ) && ( d <=  9 ) ) ||
          ( ( d >= 22 ) && ( d <= 24 ) )    )
-        tprintf( htmlMode, &reset, "  ¬’ª" );
+        tprintf( htmlMode, &reset, "  å°æ½®" );
 
     if ( m == 1 ) {
         if ( d == 1 )
-            tprintf( htmlMode, &reset, "  ‹Œ³Œ" );
+            tprintf( htmlMode, &reset, "  æ—§æ­£æœˆ" );
         if ( d == 7 )
-            tprintf( htmlMode, &reset, "  ‹Œµ‘" );
+            tprintf( htmlMode, &reset, "  æ—§ä¸ƒè‰" );
         if ( (d >= 3) && (d <= 9) )
-            tprintf( htmlMode, &reset, "  tß(’†‘)" );
+            tprintf( htmlMode, &reset, "  æ˜¥ç¯€(ä¸­å›½)" );
         if ( d == 15 )
-            tprintf( htmlMode, &reset, "  Œ³ªß(’†‘)" );
+            tprintf( htmlMode, &reset, "  å…ƒå®µç¯€(ä¸­å›½)" );
         if ( d == 20 )
-            tprintf( htmlMode, &reset, "  “ñ\“ú³Œ" );
+            tprintf( htmlMode, &reset, "  äºŒåæ—¥æ­£æœˆ" );
     }
     if ( ( m == 2 ) && ( d == 2 ) )
-        tprintf( htmlMode, &reset, "  “ñ“ú‹„" );
+        tprintf( htmlMode, &reset, "  äºŒæ—¥ç¸" );
     if ( ( m == 3 ) && ( d == 3 ) )
-        tprintf( htmlMode, &reset, "  ‹Œ‚Ğ‚ÈÕ" );
+        tprintf( htmlMode, &reset, "  æ—§ã²ãªç¥­" );
     if ( ( m == 4 ) && ( d == 8 ) )
-        tprintf( htmlMode, &reset, "  ‹ŒŠÁ•§" );
+        tprintf( htmlMode, &reset, "  æ—§æ½…ä»" );
     if ( m == 5 ) {
         if ( d == 5 ) {
-            tprintf( htmlMode, &reset, "  ‹Œ’[Œß‚Ìß‹å" );
-            tprintf( htmlMode, &reset, "  ’[Œßß(’†‘)" );
+            tprintf( htmlMode, &reset, "  æ—§ç«¯åˆã®ç¯€å¥" );
+            tprintf( htmlMode, &reset, "  ç«¯åˆç¯€(ä¸­å›½)" );
         }
         if ( d == 29 )
-            tprintf( htmlMode, &reset, "  ’B“wß(’†‘)" );
+            tprintf( htmlMode, &reset, "  é”åŠªç¯€(ä¸­å›½)" );
     }
     if ( m == 6 ) {
         if ( (d == 24) || (d == 25) )
-            tprintf( htmlMode, &reset, "  ‰Î”cß(’†‘)" );
+            tprintf( htmlMode, &reset, "  ç«æŠŠç¯€(ä¸­å›½)" );
     }
     if ( m == 7 ) {
         if ( d == 7 )
-            tprintf( htmlMode, &reset, "  ‹Œµ—[" );
+            tprintf( htmlMode, &reset, "  æ—§ä¸ƒå¤•" );
         if ( d == 15 )
-            tprintf( htmlMode, &reset, "  ‹Œ–~" );
+            tprintf( htmlMode, &reset, "  æ—§ç›†" );
         if ( d == 24 )
-            tprintf( htmlMode, &reset, "  ‹Œ’n‘ –~" );
+            tprintf( htmlMode, &reset, "  æ—§åœ°è”µç›†" );
     }
     if ( m == 8 ) {
         if ( d == 1 )
-            tprintf( htmlMode, &reset, "  ‹Œ”ªñ" );
+            tprintf( htmlMode, &reset, "  æ—§å…«æœ”" );
         if ( d == 14 )
-            tprintf( htmlMode, &reset, "  ‘ÒªŒ" );
-        if ( d == 15 )
-            tprintf( htmlMode, &reset, "  \ŒÜ–é" );
+            tprintf( htmlMode, &reset, "  å¾…å®µæœˆ" );
+        if ( d == 15 ) {
+            tprintf( htmlMode, &reset, "  åäº”å¤œ" );
+            tprintf( htmlMode, &reset, "  ä¸­ç§‹ç¯€(ä¸­å›½)" );
+        }
         if ( d == 16 )
-            tprintf( htmlMode, &reset, "  \˜Z–é" );
+            tprintf( htmlMode, &reset, "  åå…­å¤œ" );
         if ( d == 17 )
-            tprintf( htmlMode, &reset, "  —§‘ÒŒ" );
+            tprintf( htmlMode, &reset, "  ç«‹å¾…æœˆ" );
         if ( d == 18 )
-            tprintf( htmlMode, &reset, "  ‹‘ÒŒ" );
+            tprintf( htmlMode, &reset, "  å±…å¾…æœˆ" );
         if ( d == 19 )
-            tprintf( htmlMode, &reset, "  ‰ç‘ÒŒ" );
+            tprintf( htmlMode, &reset, "  è‡¥å¾…æœˆ" );
         if ( d == 20 )
-            tprintf( htmlMode, &reset, "  X‘ÒŒ" );
+            tprintf( htmlMode, &reset, "  æ›´å¾…æœˆ" );
     }
     if ( m == 9 ) {
         if ( d == 9 ) {
-            tprintf( htmlMode, &reset, "  Œä‹ã“ú" );
-            tprintf( htmlMode, &reset, "  d—zß(’†‘)" );
+            tprintf( htmlMode, &reset, "  å¾¡ä¹æ—¥" );
+            tprintf( htmlMode, &reset, "  é‡é™½ç¯€(ä¸­å›½)" );
         }
         if ( d == 13 )
-            tprintf( htmlMode, &reset, "  \O–é" );
+            tprintf( htmlMode, &reset, "  åä¸‰å¤œ" );
         if ( d == 28 )
-            tprintf( htmlMode, &reset, "  EqÕ(’†‘)" );
+            tprintf( htmlMode, &reset, "  å­”å­ç¥­(ä¸­å›½)" );
     }
     if ( m == 10 ) {
         if ( d <= 12 ) {
             if ( shi( g ) == WII )
-                tprintf( htmlMode, &reset, "  ˜FŠJ‚«" );
-                                    /* ‹Œ—ï10ŒÅ‰‚Ìˆå‚Ì“ú */
+                tprintf( htmlMode, &reset, "  ç‚‰é–‹ã" );
+                                    /* æ—§æš¦10æœˆæœ€åˆã®äº¥ã®æ—¥ */
         }
         if ( d == 5 )
-            tprintf( htmlMode, &reset, "  c‹e‚Ì‰ƒ" );
+            tprintf( htmlMode, &reset, "  æ®‹èŠã®å®´" );
         if ( d == 10 )
-            tprintf( htmlMode, &reset, "  \“ú–é" );
+            tprintf( htmlMode, &reset, "  åæ—¥å¤œ" );
+        if ( shi( g ) == WII )
+            tprintf( htmlMode, &reset, "  äº¥ã®å­" );
     }
     if ( ( m == 12 ) && ( d == 8 ) )
-        tprintf( htmlMode, &reset, "  äc“ú" );
+        tprintf( htmlMode, &reset, "  è‡˜æ—¥" );
 
     switch ( m ) {
-    case  1 : /* ‹Œ 1Œ */
-    case  7 : /* ‹Œ 7Œ */
-        if ( (d + 5) % 8 == 0 )	/* 3“ú,11“ú,19“ú,27“ú */
+    case  1 : /* æ—§ 1æœˆ */
+    case  7 : /* æ—§ 7æœˆ */
+        if ( (d + 5) % 8 == 0 )	/* 3æ—¥,11æ—¥,19æ—¥,27æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
-    case  2 : /* ‹Œ 2Œ */
-    case  8 : /* ‹Œ 8Œ */
-        if ( (d + 6) % 8 == 0 )	/* 2“ú,10“ú,18“ú,26“ú */
+    case  2 : /* æ—§ 2æœˆ */
+    case  8 : /* æ—§ 8æœˆ */
+        if ( (d + 6) % 8 == 0 )	/* 2æ—¥,10æ—¥,18æ—¥,26æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
-    case  3 : /* ‹Œ 3Œ */
-    case  9 : /* ‹Œ 9Œ */
-        if ( (d + 7) % 8 == 0 )	/* 1“ú,9“ú,17“ú,25“ú */
+    case  3 : /* æ—§ 3æœˆ */
+    case  9 : /* æ—§ 9æœˆ */
+        if ( (d + 7) % 8 == 0 )	/* 1æ—¥,9æ—¥,17æ—¥,25æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
-    case  4 : /* ‹Œ 4Œ */
-    case 10 : /* ‹Œ10Œ */
-        if ( (d + 4) % 8 == 0 )	/* 4“ú,12“ú,20“ú,28“ú */
+    case  4 : /* æ—§ 4æœˆ */
+    case 10 : /* æ—§10æœˆ */
+        if ( (d + 4) % 8 == 0 )	/* 4æ—¥,12æ—¥,20æ—¥,28æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
-    case  5 : /* ‹Œ 5Œ */
-    case 11 : /* ‹Œ11Œ */
-        if ( (d + 3) % 8 == 0 )	/* 5“ú,13“ú,21“ú,29“ú */
+    case  5 : /* æ—§ 5æœˆ */
+    case 11 : /* æ—§11æœˆ */
+        if ( (d + 3) % 8 == 0 )	/* 5æ—¥,13æ—¥,21æ—¥,29æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
-    case  6 : /* ‹Œ 6Œ */
-    case 12 : /* ‹Œ12Œ */
-        if ( (d + 2) % 8 == 0 )	/* 6“ú,14“ú,22“ú,30“ú */
+    case  6 : /* æ—§ 6æœˆ */
+    case 12 : /* æ—§12æœˆ */
+        if ( (d + 2) % 8 == 0 )	/* 6æ—¥,14æ—¥,22æ—¥,30æ—¥ */
             tprintf( htmlMode, &reset, d0, d1 );
         break;
     }
 
     switch ( yearEto ) {
-    case 0:	/* q‚Ì”N */
-        if ( ks == 13 )    /* ’š‰N */
+    case 0:	/* å­ã®å¹´ */
+        if ( ks == 13 )    /* ä¸ä¸‘ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 1:	/* ‰N‚Ì”N */
-        if ( ks == 26 )    /* M“Ğ */
+    case 1:	/* ä¸‘ã®å¹´ */
+        if ( ks == 26 )    /* åºšå¯… */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 2:	/* “Ğ‚Ì”N */
-        if ( ks ==  3 )    /* ’š‰K */
+    case 2:	/* å¯…ã®å¹´ */
+        if ( ks ==  3 )    /* ä¸å¯ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 3:	/* ‰K‚Ì”N */
-        if ( ks == 28 )    /* p’C */
+    case 3:	/* å¯ã®å¹´ */
+        if ( ks == 28 )    /* å£¬è¾° */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 4:	/* ’C‚Ì”N */
-        if ( ks == 53 )    /* ’š–¤ */
+    case 4:	/* è¾°ã®å¹´ */
+        if ( ks == 53 )    /* ä¸å·³ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 5:	/* –¤‚Ì”N */
-        if ( ks == 42 )    /* •¸Œß */
+    case 5:	/* å·³ã®å¹´ */
+        if ( ks == 42 )    /* ä¸™åˆ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 6:	/* Œß‚Ì”N */
-        if ( ks == 43 )    /* ’š–¢ */
+    case 6:	/* åˆã®å¹´ */
+        if ( ks == 43 )    /* ä¸æœª */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 7:	/* –¢‚Ì”N */
-        if ( ks == 56 )    /* M\ */
+    case 7:	/* æœªã®å¹´ */
+        if ( ks == 56 )    /* åºšç”³ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 8:	/* \‚Ì”N */
-        if ( ks == 33 )    /* ’š“Ñ */
+    case 8:	/* ç”³ã®å¹´ */
+        if ( ks == 33 )    /* ä¸é…‰ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 9:	/* “Ñ‚Ì”N */
-        if ( ks == 22 )    /* •¸œú */
+    case 9:	/* é…‰ã®å¹´ */
+        if ( ks == 22 )    /* ä¸™æˆŒ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 10:	/* œú‚Ì”N */
-        if ( ks == 47 )    /* hˆå */
+    case 10:	/* æˆŒã®å¹´ */
+        if ( ks == 47 )    /* è¾›äº¥ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
-    case 11:	/* ˆå‚Ì”N */
-        if ( ks == 36 )    /* Mq */
+    case 11:	/* äº¥ã®å¹´ */
+        if ( ks == 36 )    /* åºšå­ */
             tprintf( htmlMode, &reset, d0, d2 );
         break;
     }
@@ -1012,7 +1063,7 @@ getKokei( int day, int month, int year, double *sun_cel1, double *sun_cel2 )
     int     kokei;
     double  yrs;
 
-    /*** ‘¾—z ‰©Œo ***/
+    /*** å¤ªé™½ é»„çµŒ ***/
     yrs = year_sum(day, month, year);
     *sun_cel1 = sun_cel(yrs);
     *sun_cel2 = sun_cel(yrs + DAY_PER_YEAR);
@@ -1035,16 +1086,53 @@ zassetsu( int day, int month, int year )
     int     kokei;
     double  sun_cel1, sun_cel2;
 
-    /*** ‘¾—z ‰©Œo ***/
+    /*** å¤ªé™½ é»„çµŒ ***/
     kokei = getKokei( day, month, year, &sun_cel1, &sun_cel2 );
     if ( kokei % 90 == 27 ) {
         if ( shi( absoluteFromGregorian(day,month,year) ) == USHI ) {
             if ( month == 7 )
-                return ( "“y—p  “y—p‚Ì‰N" );
+                return ( "åœŸç”¨  åœŸç”¨ã®ä¸‘" );
         }
-        return( "“y—p" );
+
+        return ( "åœŸç”¨" );
     }
-    if ( ( kokei >= 117 ) && ( kokei < 135 ) ) {    /* ‰Ä‚Ì“y—p */
+    if ( kokei % 90 == 45 ) {
+        long    jd = absoluteFromGregorian( day, month, year );
+        if ( month == 2 ) {
+            if ( jd == springStartDay( year ) )
+                return ( NULL );
+        }
+        else if ( month == 5 ) {
+            if ( jd == summerStartDay( year ) )
+                return ( NULL );
+        }
+        else if ( month == 8 ) {
+            if ( jd == autumnStartDay( year ) )
+                return ( NULL );
+        }
+        else if ( month == 11 ) {
+            if ( jd == winterStartDay( year ) )
+                return ( NULL );
+        }
+        else
+            return ( NULL );
+
+        return ( "åœŸç”¨" );
+    }
+
+    if ( ( kokei >= 27 ) && ( kokei < 45 ) ) {      /* æ˜¥ã®åœŸç”¨ */
+        long    jd = absoluteFromGregorian( day, month, year );
+
+        //  å·³ãƒ»åˆãƒ»é…‰
+        if ( ( shi( jd ) == MEE  ) ||
+             ( shi( jd ) == UMA  ) ||
+             ( shi( jd ) == TORI )    )
+            return ( "åœŸç”¨ã®é–“æ—¥" );
+
+        return ( "åœŸç”¨" );
+    }
+
+    if ( ( kokei >= 117 ) && ( kokei < 135 ) ) {    /* å¤ã®åœŸç”¨ */
         long    jd = absoluteFromGregorian( day, month, year );
         if ( shi( jd ) == USHI ) {
             int     y, m, d;
@@ -1052,26 +1140,46 @@ zassetsu( int day, int month, int year )
             gregorianFromAbsolute( jd - 12, &d, &m, &y );
             kokei = getKokei( d, m, y, &sun_cel1, &sun_cel2 );
             if ( ( kokei >= 117 ) && ( kokei < 135 ) ) {
-                /* 1‚Â‘O‚Ì‰N‚Ì“ú‚à“y—pŠúŠÔ’†‚Å‚ ‚ê‚Î */
-                return ( "“y—p‚Ì“ñ‚Ì‰N" );
+                /* 1ã¤å‰ã®ä¸‘ã®æ—¥ã‚‚åœŸç”¨æœŸé–“ä¸­ã§ã‚ã‚Œã° */
+                return ( "åœŸç”¨ã®äºŒã®ä¸‘" );
             }
 
             if ( month == 7 ) {
                 kokei = getKokei( day - 3, month, year, &sun_cel1, &sun_cel2 );
                 if ( kokei % 90 == 27 )
-                    return ( "“y—p‚Ì‰N  “y—pO˜Y" );
+                    return ( "åœŸç”¨ã®ä¸‘  åœŸç”¨ä¸‰éƒ" );
             }
-            return ( "“y—p‚Ì‰N" );
+            return ( "åœŸç”¨ã®ä¸‘" );
         }
 
         if ( month == 7 ) {
             kokei = getKokei( day - 3, month, year, &sun_cel1, &sun_cel2 );
             if ( kokei % 90 == 27 )
-                return ( "“y—pO˜Y" );
+                return ( "åœŸç”¨ä¸‰éƒ" );
         }
+
+        //  å¯ãƒ»è¾°ãƒ»ç”³
+        if ( ( shi( jd ) == UU    ) ||
+             ( shi( jd ) == TATSU ) ||
+             ( shi( jd ) == SARU  )    )
+            return ( "åœŸç”¨ã®é–“æ—¥" );
+
+        return ( "åœŸç”¨" );
     }
-    else
-    if ( ( kokei >= 297 ) && ( kokei < 315 ) ) {    /* “~‚Ì“y—p */
+
+    if ( ( kokei >= 207 ) && ( kokei < 225 ) ) {    /* ç§‹ã®åœŸç”¨ */
+        long    jd = absoluteFromGregorian( day, month, year );
+
+        //  æœªãƒ»é…‰ãƒ»äº¥
+        if ( ( shi( jd ) == HITSUJI ) ||
+             ( shi( jd ) == TORI    ) ||
+             ( shi( jd ) == WII     )    )
+            return ( "åœŸç”¨ã®é–“æ—¥" );
+
+        return ( "åœŸç”¨" );
+    }
+
+    if ( ( kokei >= 297 ) && ( kokei < 315 ) ) {    /* å†¬ã®åœŸç”¨ */
         long    jd = absoluteFromGregorian( day, month, year );
         if ( shi( jd ) == USHI ) {
             int     y, m, d;
@@ -1079,19 +1187,27 @@ zassetsu( int day, int month, int year )
             gregorianFromAbsolute( jd - 12, &d, &m, &y );
             kokei = getKokei( d, m, y, &sun_cel1, &sun_cel2 );
             if ( ( kokei >= 297 ) && ( kokei < 315 ) ) {
-                /* 1‚Â‘O‚Ì‰N‚Ì“ú‚à“y—pŠúŠÔ’†‚Å‚ ‚ê‚Î */
-                return ( "Š¦‚Ì“y—p‚Ì“ñ‚Ì‰N(’·–ìŒ§‰ª’Js)" );
+                /* 1ã¤å‰ã®ä¸‘ã®æ—¥ã‚‚åœŸç”¨æœŸé–“ä¸­ã§ã‚ã‚Œã° */
+                return ( "å¯’ã®åœŸç”¨ã®äºŒã®ä¸‘(é•·é‡çœŒå²¡è°·å¸‚)" );
             }
 
-            return ( "Š¦‚Ì“y—p‚Ì‰N(’·–ìŒ§‰ª’Js)" );
+            return ( "å¯’ã®åœŸç”¨ã®ä¸‘(é•·é‡çœŒå²¡è°·å¸‚)" );
         }
+
+        //  å¯ãƒ»å·³ãƒ»å¯…
+        if ( ( shi( jd ) == UU   ) ||
+             ( shi( jd ) == MEE  ) ||
+             ( shi( jd ) == TORA )    )
+            return ("åœŸç”¨ã®é–“æ—¥");
+
+        return ( "åœŸç”¨" );
     }
 
     if ( (kokei == 80) && (sun_cel1 <= 80.0) ) {	/* for 2000.06.10-11 */
-        return( "“ü”~" );
+        return ( "å…¥æ¢…" );
     }
     if ( kokei == 100 )
-        return( "”¼‰Ä¶" );
+        return ( "åŠå¤ç”Ÿ" );
 
     return ( NULL );
 }
